@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import LayoutContent from './components/LayoutContent';
 import Home from './pages/Home';
@@ -20,10 +20,10 @@ export default function App() {
       domain={domain}
       clientId={clientId}
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: window.location.origin + import.meta.env.BASE_URL,
       }}
     >
-      <BrowserRouter>
+      <HashRouter>
         <LayoutContent>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -37,7 +37,7 @@ export default function App() {
             <Route path="/logistique/notifications" element={<LogistiqueNotifications />} />
           </Routes>
         </LayoutContent>
-      </BrowserRouter>
+      </HashRouter>
     </Auth0Provider>
   );
 }

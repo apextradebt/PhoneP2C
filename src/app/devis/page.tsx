@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { ChevronRight, Smartphone, Wrench, FileText, CheckCircle, Search, Users, Plus, Trash2, Download, TrendingDown, Shield, Zap, BarChart2 } from "lucide-react";
 import dynamic from 'next/dynamic';
-import { DevisPDF } from "@/components/DevisPDF";
+import { DevisPDF } from "../components/DevisPDF";
 import { DeviceGrade, DevisItem, Expertise } from "@/types";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine } from 'recharts';
 
@@ -39,22 +39,22 @@ const STRATEGY_MODIFIERS = {
 export default function DevisPage() {
   const [step, setStep] = useState(0);
   const [devisType, setDevisType] = useState<"unitaire" | "flotte" | null>(null);
-  
+
   // State for Flotte (Bulk)
-  const [bulkItems, setBulkItems] = useState<{model: string, grade: DeviceGrade, quantity: number}[]>([
+  const [bulkItems, setBulkItems] = useState<{ model: string, grade: DeviceGrade, quantity: number }[]>([
     { model: "iPhone 14 Pro", grade: "B", quantity: 5 }
   ]);
 
   // State for Unitaire
   const [selectedModel, setSelectedModel] = useState("");
   const [unitGrade, setUnitGrade] = useState<DeviceGrade>("A");
-  const [repairs, setRepairs] = useState<{name: string, price: number}[]>([]);
+  const [repairs, setRepairs] = useState<{ name: string, price: number }[]>([]);
   const [pricingStrategy, setPricingStrategy] = useState<"safe" | "market" | "aggressive">("market");
 
   // Calculations for Unitaire Pricing Step
   const unitairePricing = useMemo(() => {
     if (devisType !== "unitaire" || !selectedModel) return null;
-    
+
     const cat = CATALOG.find(c => c.model === selectedModel);
     const base = cat ? cat.basePrice : 0;
     const gradePrice = Math.round(base * (1 - GRADE_DISCOUNTS[unitGrade]));
@@ -68,8 +68,8 @@ export default function DevisPage() {
     // Mock Depreciation Data (6 months)
     const currentMonth = new Date().getMonth();
     const months = ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Aoû", "Sep", "Oct", "Nov", "Déc"];
-    
-    const chartData = Array.from({length: 7}).map((_, i) => {
+
+    const chartData = Array.from({ length: 7 }).map((_, i) => {
       const m = (currentMonth + i) % 12;
       // depreciates by ~2.5% per month exponentially
       const predictedVal = Math.round(valNet * Math.pow(0.975, i));
@@ -96,7 +96,7 @@ export default function DevisPage() {
   // Calculate final Expertise object
   const expertise: Expertise = useMemo(() => {
     let items: DevisItem[] = [];
-    
+
     if (devisType === "flotte") {
       items = bulkItems.map((bi, i) => {
         const cat = CATALOG.find(c => c.model === bi.model);
@@ -113,7 +113,7 @@ export default function DevisPage() {
     } else {
       const cat = CATALOG.find(c => c.model === selectedModel);
       const base = cat ? cat.basePrice : 0;
-      
+
       let unitPrice = 0;
       if (unitairePricing) {
         if (pricingStrategy === "safe") unitPrice = unitairePricing.safePrice;
@@ -160,7 +160,7 @@ export default function DevisPage() {
   const removeBulkItem = (index: number) => setBulkItems(bulkItems.filter((_, i) => i !== index));
 
   const maxSteps = devisType === "flotte" ? 2 : 5;
-  const currentStepLabel = devisType === "flotte" && step === 2 ? 5 : step; 
+  const currentStepLabel = devisType === "flotte" && step === 2 ? 5 : step;
 
   return (
     <div className="flex flex-col gap-10 max-w-5xl mx-auto pb-12">
@@ -173,7 +173,7 @@ export default function DevisPage() {
       {devisType && (
         <div className="flex items-center justify-between relative px-2 sm:px-8">
           <div className="absolute left-6 right-6 sm:left-8 sm:right-8 top-1/2 -translate-y-1/2 h-1 bg-[#E8E1D9] -z-10 rounded-full" />
-          
+
           <div className="flex flex-col items-center gap-2 sm:gap-3 bg-[var(--color-brand-light)] px-2 sm:px-4">
             <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 1 ? "bg-[var(--color-brand-terracotta)] text-white shadow-soft" : "bg-[var(--color-brand-light)] text-gray-400 shadow-inner-soft"}`}>
               <Smartphone className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -221,9 +221,9 @@ export default function DevisPage() {
               <h2 className="text-2xl font-bold mb-2">Type de reprise</h2>
               <p className="text-sm text-gray-500">S'agit-il d'un client particulier (1 appareil) ou d'une flotte d'entreprise (plusieurs appareils) ?</p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-              <button 
+              <button
                 onClick={() => { setDevisType("unitaire"); setStep(1); }}
                 className="flex flex-col items-center gap-4 p-8 bg-[var(--color-brand-light)] rounded-[2rem] shadow-soft-active hover:shadow-soft transition-all text-[var(--color-brand-dark)] group"
               >
@@ -233,7 +233,7 @@ export default function DevisPage() {
                 <span className="font-bold text-xl">Reprise Unitaire</span>
               </button>
 
-              <button 
+              <button
                 onClick={() => { setDevisType("flotte"); setStep(1); }}
                 className="flex flex-col items-center gap-4 p-8 bg-[var(--color-brand-light)] rounded-[2rem] shadow-soft-active hover:shadow-soft transition-all text-[var(--color-brand-dark)] group"
               >
@@ -258,20 +258,20 @@ export default function DevisPage() {
                 <Plus className="w-4 h-4" /> Ajouter Ligne
               </button>
             </div>
-            
+
             <div className="flex flex-col gap-4">
               {bulkItems.map((item, index) => (
                 <div key={index} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 bg-white p-4 rounded-2xl shadow-sm">
-                  <select 
-                    value={item.model} 
+                  <select
+                    value={item.model}
                     onChange={e => updateBulkItem(index, 'model', e.target.value)}
                     className="flex-1 p-2 bg-[var(--color-brand-light)] rounded-xl outline-none font-medium"
                   >
                     {CATALOG.map(c => <option key={c.model} value={c.model}>{c.brand} {c.model}</option>)}
                   </select>
-                  
-                  <select 
-                    value={item.grade} 
+
+                  <select
+                    value={item.grade}
                     onChange={e => updateBulkItem(index, 'grade', e.target.value)}
                     className="w-24 p-2 bg-[var(--color-brand-light)] rounded-xl outline-none font-medium text-center"
                   >
@@ -280,15 +280,15 @@ export default function DevisPage() {
                     <option value="C">Grade C</option>
                     <option value="D">Grade D</option>
                   </select>
-                  
-                  <input 
-                    type="number" 
-                    value={item.quantity} 
+
+                  <input
+                    type="number"
+                    value={item.quantity}
                     onChange={e => updateBulkItem(index, 'quantity', parseInt(e.target.value) || 1)}
                     min={1}
                     className="w-20 p-2 bg-[var(--color-brand-light)] rounded-xl outline-none font-medium text-center"
                   />
-                  
+
                   <button onClick={() => removeBulkItem(index)} className="p-3 sm:p-2 bg-red-50 sm:bg-transparent text-red-500 hover:bg-red-100 sm:hover:bg-red-50 rounded-xl flex items-center justify-center">
                     <Trash2 className="w-5 h-5" />
                   </button>
@@ -305,17 +305,16 @@ export default function DevisPage() {
               <h2 className="text-xl font-bold mb-1">Quel appareil souhaitez-vous reprendre ?</h2>
               <p className="text-sm text-gray-500">Sélectionnez le modèle.</p>
             </div>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {CATALOG.map((cat, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   onClick={() => setSelectedModel(cat.model)}
-                  className={`p-4 rounded-2xl border-2 cursor-pointer text-center font-medium transition-all ${
-                    selectedModel === cat.model 
-                    ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)] text-[var(--color-brand-terracotta)]" 
-                    : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent text-[var(--color-brand-dark)]"
-                  }`}
+                  className={`p-4 rounded-2xl border-2 cursor-pointer text-center font-medium transition-all ${selectedModel === cat.model
+                      ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)] text-[var(--color-brand-terracotta)]"
+                      : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent text-[var(--color-brand-dark)]"
+                    }`}
                 >
                   {cat.model}
                 </div>
@@ -331,7 +330,7 @@ export default function DevisPage() {
               <h2 className="text-xl font-bold mb-1">Diagnostic Global (Grade)</h2>
               <p className="text-sm text-gray-500">Évaluez l'état général de l'appareil (impacte le prix de base).</p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { grade: "A", desc: "Comme neuf (0%)" },
@@ -339,14 +338,13 @@ export default function DevisPage() {
                 { grade: "C", desc: "Rayures marquées (-30%)" },
                 { grade: "D", desc: "Cassé (-50%)" },
               ].map((g, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   onClick={() => setUnitGrade(g.grade as DeviceGrade)}
-                  className={`p-6 rounded-2xl border-2 cursor-pointer transition-all ${
-                    unitGrade === g.grade 
-                    ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)]" 
-                    : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
-                  }`}
+                  className={`p-6 rounded-2xl border-2 cursor-pointer transition-all ${unitGrade === g.grade
+                      ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)]"
+                      : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
+                    }`}
                 >
                   <h3 className="font-bold text-lg text-[var(--color-brand-dark)]">Grade {g.grade}</h3>
                   <p className="text-sm text-gray-500">{g.desc}</p>
@@ -363,7 +361,7 @@ export default function DevisPage() {
               <h2 className="text-xl font-bold mb-1">Prestations & Main d'œuvre</h2>
               <p className="text-sm text-gray-500">Ajoutez des réparations nécessaires avant revente.</p>
             </div>
-            
+
             <div className="flex flex-col gap-4">
               {[
                 { name: "Remplacement Batterie", price: 45 },
@@ -374,14 +372,14 @@ export default function DevisPage() {
                 return (
                   <label key={i} className={`flex items-center justify-between p-5 bg-[var(--color-brand-light)] rounded-2xl shadow-soft-active cursor-pointer transition-all border-2 ${isSelected ? "border-[var(--color-brand-terracotta)] shadow-inner-soft" : "border-transparent hover:shadow-soft"}`}>
                     <div className="flex items-center gap-4">
-                      <input 
-                        type="checkbox" 
+                      <input
+                        type="checkbox"
                         checked={isSelected}
                         onChange={(e) => {
-                          if(e.target.checked) setRepairs([...repairs, opt]);
+                          if (e.target.checked) setRepairs([...repairs, opt]);
                           else setRepairs(repairs.filter(r => r.name !== opt.name));
                         }}
-                        className="w-5 h-5 accent-[var(--color-brand-terracotta)]" 
+                        className="w-5 h-5 accent-[var(--color-brand-terracotta)]"
                       />
                       <span className="font-semibold">{opt.name}</span>
                     </div>
@@ -411,10 +409,10 @@ export default function DevisPage() {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {unitairePricing.marketSources.map((source, i) => (
-                  <a 
-                    key={i} 
-                    href={source.url} 
-                    target="_blank" 
+                  <a
+                    key={i}
+                    href={source.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white p-4 rounded-xl shadow-sm border-2 border-transparent hover:border-[var(--color-brand-terracotta)] hover:shadow-soft flex flex-col items-center justify-center text-center gap-2 transition-all cursor-pointer group"
                   >
@@ -424,15 +422,14 @@ export default function DevisPage() {
                 ))}
               </div>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <button 
+              <button
                 onClick={() => setPricingStrategy("safe")}
-                className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${
-                  pricingStrategy === "safe" 
-                  ? "bg-[var(--color-brand-light)] shadow-inner-soft border-blue-400" 
-                  : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
-                }`}
+                className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${pricingStrategy === "safe"
+                    ? "bg-[var(--color-brand-light)] shadow-inner-soft border-blue-400"
+                    : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
+                  }`}
               >
                 <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner-soft">
                   <Shield className="w-5 h-5" />
@@ -444,13 +441,12 @@ export default function DevisPage() {
                 </div>
               </button>
 
-              <button 
+              <button
                 onClick={() => setPricingStrategy("market")}
-                className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${
-                  pricingStrategy === "market" 
-                  ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)]" 
-                  : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
-                }`}
+                className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${pricingStrategy === "market"
+                    ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)]"
+                    : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
+                  }`}
               >
                 <div className="w-10 h-10 rounded-full bg-[var(--color-brand-terracotta)]/20 flex items-center justify-center text-[var(--color-brand-terracotta)] shadow-inner-soft">
                   <TrendingDown className="w-5 h-5" />
@@ -462,13 +458,12 @@ export default function DevisPage() {
                 </div>
               </button>
 
-              <button 
+              <button
                 onClick={() => setPricingStrategy("aggressive")}
-                className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${
-                  pricingStrategy === "aggressive" 
-                  ? "bg-[var(--color-brand-light)] shadow-inner-soft border-orange-400" 
-                  : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
-                }`}
+                className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${pricingStrategy === "aggressive"
+                    ? "bg-[var(--color-brand-light)] shadow-inner-soft border-orange-400"
+                    : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
+                  }`}
               >
                 <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 shadow-inner-soft">
                   <Zap className="w-5 h-5" />
@@ -483,21 +478,21 @@ export default function DevisPage() {
 
             <div className="p-8 rounded-[2rem] bg-[var(--color-brand-light)] shadow-inner-soft mt-4">
               <h3 className="font-bold text-[var(--color-brand-dark)] mb-6 flex items-center gap-2">
-                <BarChart2 className="w-5 h-5 text-[var(--color-brand-terracotta)]" /> 
+                <BarChart2 className="w-5 h-5 text-[var(--color-brand-terracotta)]" />
                 Prédiction de Dépréciation (Prochains 6 mois)
               </h3>
               <ResponsiveContainer width="100%" height={250}>
                 <AreaChart data={unitairePricing.chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                   <defs>
                     <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#E07A5F" stopOpacity={0.3}/>
-                      <stop offset="95%" stopColor="#E07A5F" stopOpacity={0}/>
+                      <stop offset="5%" stopColor="#E07A5F" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#E07A5F" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E8E1D9" />
-                  <XAxis dataKey="name" tick={{fontSize: 12, fill: '#888'}} axisLine={false} tickLine={false} />
-                  <YAxis tick={{fontSize: 12, fill: '#888'}} axisLine={false} tickLine={false} />
-                  <Tooltip 
+                  <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#888' }} axisLine={false} tickLine={false} />
+                  <YAxis tick={{ fontSize: 12, fill: '#888' }} axisLine={false} tickLine={false} />
+                  <Tooltip
                     contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '8px 8px 16px #d4d4dc, -8px -8px 16px #ffffff' }}
                     itemStyle={{ color: '#1E1E24', fontWeight: 'bold' }}
                     formatter={(val: number) => [`${val} €`, 'Valeur estimée']}
@@ -527,7 +522,7 @@ export default function DevisPage() {
                 )}
               </PDFDownloadLink>
             </div>
-            
+
             <div className="bg-white rounded-3xl shadow-inner-soft overflow-hidden h-[600px] p-4">
               <PDFViewer width="100%" height="100%" className="border-0 rounded-2xl">
                 <DevisPDF expertise={expertise} />
@@ -539,18 +534,18 @@ export default function DevisPage() {
         {/* Navigation buttons */}
         {step > 0 && (
           <div className="flex flex-col-reverse sm:flex-row justify-between gap-4 mt-8 md:mt-12 pt-6 border-t border-[#E8E1D9]">
-            <button 
+            <button
               onClick={() => {
-                if(step === 1) setStep(0);
+                if (step === 1) setStep(0);
                 else setStep(s => Math.max(1, s - 1));
               }}
               className="w-full sm:w-auto px-6 py-4 sm:py-3 font-semibold text-gray-500 hover:bg-[#E8E1D9]/50 rounded-2xl sm:rounded-full transition-all text-center"
             >
               Retour
             </button>
-            
+
             {step < maxSteps && (
-              <button 
+              <button
                 onClick={() => setStep(s => s + 1)}
                 disabled={(devisType === "unitaire" && step === 1 && !selectedModel) || (devisType === "flotte" && bulkItems.length === 0)}
                 className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[var(--color-brand-dark)] text-white px-8 py-4 sm:py-3 rounded-2xl sm:rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity disabled:opacity-50"

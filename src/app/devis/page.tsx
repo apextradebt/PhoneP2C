@@ -495,7 +495,7 @@ export default function DevisPage() {
                   <Tooltip
                     contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '8px 8px 16px #d4d4dc, -8px -8px 16px #ffffff' }}
                     itemStyle={{ color: '#1E1E24', fontWeight: 'bold' }}
-                    formatter={(val: number) => [`${val} €`, 'Valeur estimée']}
+                    formatter={(val: any) => [`${val} €`, 'Valeur estimée']}
                   />
                   <ReferenceLine y={unitairePricing.marketPrice} stroke="#E07A5F" strokeDasharray="3 3" label={{ position: 'top', value: 'Votre offre', fill: '#E07A5F', fontSize: 10 }} />
                   <Area type="monotone" dataKey="Valeur" stroke="#E07A5F" strokeWidth={3} fillOpacity={1} fill="url(#colorValue)" />

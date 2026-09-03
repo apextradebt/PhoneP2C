@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Lock } from "lucide-react";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -11,12 +10,10 @@ export default function ConnexionPage() {
     <div className="relative w-screen h-screen flex flex-col items-center justify-center overflow-hidden bg-[var(--color-brand-dark)]">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <Image 
+        <img 
           src="/images/connexion-bg.jpg" 
           alt="Connexion background" 
-          fill
-          className="object-cover opacity-60 mix-blend-overlay"
-          priority
+          className="object-cover opacity-60 mix-blend-overlay w-full h-full absolute inset-0"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-dark)]/80 via-[var(--color-brand-dark)]/95 to-[var(--color-brand-dark)]" />
       </div>

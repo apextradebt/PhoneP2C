@@ -1,7 +1,7 @@
 "use client";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Smartphone, CheckCircle, Clock, Search, Plus, X, User, Tag, Calendar, PenTool } from "lucide-react";
 import { mockExpertises } from "@/lib/mockData";
 import { mockActivities } from "@/lib/mockActivities";
@@ -40,13 +40,10 @@ export default function Home() {
               className="w-full pl-10 pr-4 py-3 bg-[var(--color-brand-light)] rounded-full shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
             />
           </div>
-          <button
-            onClick={() => setIsNewDevisDrawerOpen(true)}
-            className="flex items-center justify-center gap-2 bg-[var(--color-brand-terracotta)] text-white px-6 py-3 rounded-full font-medium shadow-soft hover:opacity-90 transition-opacity whitespace-nowrap"
-          >
+          <Link to="/devis" className="flex items-center justify-center gap-2 bg-[var(--color-brand-terracotta)] text-white px-6 py-3 rounded-full font-medium shadow-soft hover:opacity-90 transition-opacity whitespace-nowrap">
             <Plus className="w-5 h-5" />
             Nouveau Devis
-          </button>
+          </Link>
         </div>
       </header>
 
@@ -121,7 +118,7 @@ export default function Home() {
         <section className="flex flex-col gap-6">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold">Activités Récentes</h2>
-            <Link href="/logistique/notifications" className="text-[var(--color-brand-terracotta)] text-sm font-medium hover:underline">Voir tout</Link>
+            <Link to="/logistique/notifications" className="text-[var(--color-brand-terracotta)] text-sm font-medium hover:underline">Voir tout</Link>
           </div>
 
           <div className="bg-[var(--color-brand-light)] p-4 rounded-[2rem] shadow-soft flex flex-col gap-2 h-full">

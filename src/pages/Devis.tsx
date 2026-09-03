@@ -2,18 +2,11 @@
 
 import { useState, useMemo } from "react";
 import { ChevronRight, Smartphone, Wrench, FileText, CheckCircle, Search, Users, Plus, Trash2, Download, TrendingDown, Shield, Zap, BarChart2 } from "lucide-react";
-import dynamic from 'next/dynamic';
 import { DevisPDF } from "../components/DevisPDF";
 import { DeviceGrade, DevisItem, Expertise } from "@/types";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine } from 'recharts';
 
-// Dynamic import to avoid SSR issues with React-PDF
-const PDFViewer = dynamic(() => import('@react-pdf/renderer').then(mod => mod.PDFViewer), {
-  ssr: false,
-  loading: () => <div className="h-[500px] bg-white rounded-2xl flex items-center justify-center animate-pulse">Chargement de la prévisualisation PDF...</div>
-});
-
-const PDFDownloadLink = dynamic(() => import('@react-pdf/renderer').then(mod => mod.PDFDownloadLink), { ssr: false });
+import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
 
 // Mock catalog for pricing
 const CATALOG = [

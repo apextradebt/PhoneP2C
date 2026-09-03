@@ -2,8 +2,7 @@
 
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect } from 'react';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useNavigate } from 'react-router-dom';
 
 export default function AuthWrapper({
   children,
@@ -11,25 +10,23 @@ export default function AuthWrapper({
   children: React.ReactNode;
 }) {
   const { user, error, isLoading, isAuthenticated } = useAuth0();
-  const router = useRouter();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
-      router.push('/connexion');
+      navigate('/connexion');
     }
-  }, [isLoading, isAuthenticated, router]);
+  }, [isLoading, isAuthenticated, navigate]);
 
   if (isLoading || (!user && !error)) {
     return (
       <div className="relative w-screen h-screen flex items-center justify-center bg-[var(--color-brand-dark)] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image 
+          <img 
             src="/images/auth-bg.jpg" 
             alt="Loading background" 
-            fill
-            className="object-cover opacity-60"
-            priority
+            className="object-cover opacity-60 w-full h-full absolute inset-0"
           />
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)] via-transparent to-[var(--color-brand-dark)]/50 mix-blend-multiply" />

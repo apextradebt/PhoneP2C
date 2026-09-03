@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { ArrowLeft, Search, Filter, X } from "lucide-react";
 import { mockActivities } from "@/lib/mockActivities";
 
@@ -36,8 +36,9 @@ export default function NotificationsPage() {
       <div className="bg-[var(--color-brand-light)] p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
         {filteredActivities.length > 0 ? (
           filteredActivities.map((activity, i) => (
-            <div
+            <Link
               key={activity.id}
+              to="/logistique"
               onClick={() => setSelectedActivity(activity)}
               className="flex items-center gap-4 p-4 hover:bg-white/60 rounded-2xl transition-all cursor-pointer w-full overflow-hidden border border-transparent hover:border-[#E8E1D9]"
             >
@@ -51,7 +52,7 @@ export default function NotificationsPage() {
                 </div>
                 <span className="text-sm text-gray-500 truncate mt-1">{activity.desc}</span>
               </div>
-            </div>
+            </Link>
           ))
         ) : (
           <div className="text-center py-12 text-gray-500 font-medium">

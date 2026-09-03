@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import { LayoutDashboard, Smartphone, ClipboardList, Truck, LineChart, Settings, Menu, X } from "lucide-react";
 
 const navigation = [
@@ -15,7 +14,8 @@ const navigation = [
 ];
 
 export default function Sidebar() {
-  const pathname = usePathname();
+  const location = useLocation();
+  const pathname = location.pathname;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -86,7 +86,7 @@ export default function Sidebar() {
             return (
               <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center px-4 py-3 rounded-[1rem] transition-all duration-300 ${isActive
                   ? "bg-[var(--color-brand-light)] shadow-soft-active text-[var(--color-brand-terracotta)] font-medium"

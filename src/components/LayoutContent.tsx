@@ -1,11 +1,12 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import AuthWrapper from "./AuthWrapper";
 
 export default function LayoutContent({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  const location = useLocation();
+  const pathname = location.pathname;
   const isConnexionPage = pathname === "/connexion";
 
   if (isConnexionPage) {

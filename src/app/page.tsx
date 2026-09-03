@@ -1,5 +1,5 @@
 "use client";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 import Link from "next/link";
 import { Smartphone, CheckCircle, Clock, Search, Plus, X, User, Tag, Calendar, PenTool } from "lucide-react";
@@ -12,7 +12,7 @@ export default function Home() {
   const [isNewDevisDrawerOpen, setIsNewDevisDrawerOpen] = useState(false);
   const [selectedExpertise, setSelectedExpertise] = useState<Expertise | null>(null);
   const [selectedActivity, setSelectedActivity] = useState<any | null>(null);
-  const { user } = useUser();
+  const { user } = useAuth0();
   const filteredExpertises = mockExpertises.filter(exp =>
     exp.items.some(item => item.device.model.toLowerCase().includes(searchQuery.toLowerCase())) ||
     exp.items.some(item => item.device.imei?.includes(searchQuery)) ||

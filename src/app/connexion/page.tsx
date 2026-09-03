@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Lock } from "lucide-react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function ConnexionPage() {
+  const { loginWithRedirect } = useAuth0();
+
   return (
     <div className="relative w-screen h-screen flex flex-col items-center justify-center overflow-hidden bg-[var(--color-brand-dark)]">
       {/* Background */}
@@ -33,12 +35,12 @@ export default function ConnexionPage() {
           Vous devez être connecté pour accéder à cette ressource.
         </p>
 
-        <Link 
-          href="/auth/login"
+        <button 
+          onClick={() => loginWithRedirect()}
           className="w-full flex items-center justify-center gap-3 bg-[var(--color-brand-terracotta)] text-white px-8 py-4 rounded-full font-bold shadow-soft hover:shadow-soft-hover hover:-translate-y-0.5 transition-all duration-300 text-lg"
         >
           Se connecter
-        </Link>
+        </button>
 
         <div className="mt-8 text-xs text-white/50 font-medium uppercase tracking-widest">
           B2C Reprise App

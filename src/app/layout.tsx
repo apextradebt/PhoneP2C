@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Auth0Provider } from "@auth0/nextjs-auth0/client";
+import ClientAuth0Provider from "./components/ClientAuth0Provider";
 import LayoutContent from "./components/LayoutContent";
 
 const poppins = Poppins({
@@ -23,11 +23,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${poppins.variable} antialiased h-full`}>
       <body className="flex flex-col md:flex-row h-full min-h-screen bg-[var(--color-brand-light)] text-[var(--color-brand-dark)]">
-        <Auth0Provider>
+        <ClientAuth0Provider>
           <LayoutContent>
             {children}
           </LayoutContent>
-        </Auth0Provider>
+        </ClientAuth0Provider>
       </body>
     </html>
   );

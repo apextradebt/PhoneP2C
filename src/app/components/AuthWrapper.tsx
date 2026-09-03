@@ -1,6 +1,6 @@
 "use client";
 
-import { useUser } from '@auth0/nextjs-auth0/client';
+import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -10,14 +10,14 @@ export default function AuthWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const { user, error, isLoading } = useUser();
+  const { user, error, isLoading, isAuthenticated } = useAuth0();
   const router = useRouter();
 
   useEffect(() => {
-    if (!isLoading && !user) {
+    if (!isLoading && !isAuthenticated) {
       router.push('/connexion');
     }
-  }, [isLoading, user, router]);
+  }, [isLoading, isAuthenticated, router]);
 
   if (isLoading || (!user && !error)) {
     return (

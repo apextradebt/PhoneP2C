@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans-app);
+  
+  --color-brand-light: #F4F4F9;
+  --color-brand-dark: #1E1E24;
+  --color-brand-terracotta: #E07A5F;
+  --color-brand-lin: #E8E1D9;
+  --color-brand-bois: #D4A373;
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+:root {
+  --background: #F4F4F9;
+  --foreground: #1E1E24;
+  --font-sans-app: 'Inter', 'Poppins', sans-serif;
+}
+
+/* Force light mode to preserve the "Blanc cassé" neumorphism design */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans-app);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom utilities for neumorphism/soft ui based on #F4F4F9 base */
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 8px 8px 16px #d4d4dc, -8px -8px 16px #ffffff;
+  }
+  .shadow-inner-soft {
+    box-shadow: inset 8px 8px 16px #d4d4dc, inset -8px -8px 16px #ffffff;
+  }
+  .shadow-soft-hover {
+    box-shadow: 12px 12px 20px #d4d4dc, -12px -12px 20px #ffffff;
+  }
+  .shadow-soft-active {
+    box-shadow: inset 4px 4px 8px #d4d4dc, inset -4px -4px 8px #ffffff;
+  }
+}

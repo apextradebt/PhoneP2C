@@ -1,5 +1,5 @@
 "use client";
-
+import { useUser } from "@auth0/nextjs-auth0/client";
 import { useState } from "react";
 import Link from "next/link";
 import { Smartphone, CheckCircle, Clock, Search, Plus, X, User, Tag, Calendar, PenTool } from "lucide-react";
@@ -12,8 +12,8 @@ export default function Home() {
   const [isNewDevisDrawerOpen, setIsNewDevisDrawerOpen] = useState(false);
   const [selectedExpertise, setSelectedExpertise] = useState<Expertise | null>(null);
   const [selectedActivity, setSelectedActivity] = useState<any | null>(null);
-
-  const filteredExpertises = mockExpertises.filter(exp => 
+  const { user } = useUser();
+  const filteredExpertises = mockExpertises.filter(exp =>
     exp.items.some(item => item.device.model.toLowerCase().includes(searchQuery.toLowerCase())) ||
     exp.items.some(item => item.device.imei?.includes(searchQuery)) ||
     exp.client.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -28,19 +28,19 @@ export default function Home() {
           <h1 className="text-3xl font-bold tracking-tight mb-2">Vue d'ensemble</h1>
           <p className="text-gray-500 font-medium text-sm">Bienvenue sur votre espace de gestion des reprises.</p>
         </div>
-        
+
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
           <div className="relative flex-1 sm:w-80">
             <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
-            <input 
-              type="text" 
+            <input
+              type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Rechercher..." 
+              placeholder="Rechercher..."
               className="w-full pl-10 pr-4 py-3 bg-[var(--color-brand-light)] rounded-full shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
             />
           </div>
-          <button 
+          <button
             onClick={() => setIsNewDevisDrawerOpen(true)}
             className="flex items-center justify-center gap-2 bg-[var(--color-brand-terracotta)] text-white px-6 py-3 rounded-full font-medium shadow-soft hover:opacity-90 transition-opacity whitespace-nowrap"
           >
@@ -74,18 +74,18 @@ export default function Home() {
             </h2>
             {!searchQuery && <button className="text-[var(--color-brand-terracotta)] text-sm font-medium hover:underline">Voir tout</button>}
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {filteredExpertises.map((exp) => {
-              const statusColor = 
+              const statusColor =
                 exp.status === "Terminé" ? "bg-green-100 text-green-700" :
-                exp.status === "En attente" ? "bg-orange-100 text-orange-700" :
-                exp.status === "Reçu" ? "bg-blue-100 text-blue-700" :
-                "bg-purple-100 text-purple-700";
+                  exp.status === "En attente" ? "bg-orange-100 text-orange-700" :
+                    exp.status === "Reçu" ? "bg-blue-100 text-blue-700" :
+                      "bg-purple-100 text-purple-700";
 
               return (
-                <div 
-                  key={exp.id} 
+                <div
+                  key={exp.id}
                   onClick={() => setSelectedExpertise(exp)}
                   className="bg-[var(--color-brand-light)] p-6 rounded-[2rem] shadow-soft flex flex-col gap-4 group hover:shadow-soft-hover transition-all cursor-pointer"
                 >
@@ -108,7 +108,7 @@ export default function Home() {
                 </div>
               )
             })}
-            
+
             {filteredExpertises.length === 0 && (
               <div className="col-span-1 sm:col-span-2 text-center py-10 text-gray-500 font-medium">
                 Aucun résultat pour "{searchQuery}"
@@ -123,11 +123,11 @@ export default function Home() {
             <h2 className="text-xl font-bold">Activités Récentes</h2>
             <Link href="/logistique/notifications" className="text-[var(--color-brand-terracotta)] text-sm font-medium hover:underline">Voir tout</Link>
           </div>
-          
+
           <div className="bg-[var(--color-brand-light)] p-4 rounded-[2rem] shadow-soft flex flex-col gap-2 h-full">
             {mockActivities.slice(0, 4).map((activity, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 onClick={() => setSelectedActivity(activity)}
                 className="flex items-center gap-4 p-4 hover:bg-white/60 rounded-2xl transition-all cursor-pointer w-full overflow-hidden border border-transparent hover:border-[#E8E1D9]"
               >
@@ -147,11 +147,11 @@ export default function Home() {
       </div>
 
       {/* Nouveau Devis Drawer (Slide-up on mobile, Slide-over on desktop) */}
-      <div 
+      <div
         className={`fixed inset-0 z-50 transition-opacity duration-300 ${isNewDevisDrawerOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="absolute inset-0 bg-[var(--color-brand-dark)]/40 backdrop-blur-sm" onClick={() => setIsNewDevisDrawerOpen(false)} />
-        <div 
+        <div
           className={`absolute bottom-0 md:bottom-auto md:top-0 right-0 w-full md:w-[600px] 
             h-[85vh] md:h-full rounded-t-[2rem] md:rounded-none
             bg-[var(--color-brand-light)] shadow-[0_-8px_24px_rgba(0,0,0,0.1)] md:shadow-[-8px_0_24px_rgba(0,0,0,0.1)] 
@@ -169,14 +169,14 @@ export default function Home() {
               <h2 className="text-xl md:text-2xl font-bold">Nouveau Devis Rapide</h2>
               <p className="text-xs md:text-sm text-gray-500 mt-1">Saisissez les premières informations.</p>
             </div>
-            <button 
+            <button
               onClick={() => setIsNewDevisDrawerOpen(false)}
               className="w-10 h-10 rounded-full bg-white shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors shrink-0"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
-          
+
           <div className="p-6 md:p-8 flex flex-col gap-6 md:gap-8 overflow-y-auto flex-1">
             <div className="flex flex-col gap-3">
               <label className="font-semibold text-sm">Modèle de l'appareil</label>
@@ -191,9 +191,9 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            
+
             <div className="mt-auto pt-4 pb-safe">
-              <button 
+              <button
                 onClick={() => window.location.href = '/devis'}
                 className="w-full bg-[var(--color-brand-dark)] text-white px-6 py-4 rounded-2xl font-bold shadow-soft hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
               >
@@ -206,11 +206,11 @@ export default function Home() {
       </div>
 
       {/* Expertise Details Modal (Centered) */}
-      <div 
+      <div
         className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300 ${selectedExpertise ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="absolute inset-0 bg-[var(--color-brand-dark)]/40 backdrop-blur-sm" onClick={() => setSelectedExpertise(null)} />
-        
+
         {selectedExpertise && (
           <div className="bg-[var(--color-brand-light)] rounded-[2rem] w-full max-w-2xl shadow-2xl relative z-10 flex flex-col max-h-full overflow-hidden animate-in zoom-in-95 duration-300">
             <div className="p-6 sm:p-8 flex flex-col gap-6 overflow-y-auto">
@@ -228,7 +228,7 @@ export default function Home() {
                     <p className="text-gray-500 font-medium mt-1">{selectedExpertise.items[0].device.storage} • {selectedExpertise.items[0].device.color}</p>
                   )}
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedExpertise(null)}
                   className="w-10 h-10 rounded-full bg-[var(--color-brand-light)] shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)]"
                 >
@@ -245,7 +245,7 @@ export default function Home() {
                     <p>{selectedExpertise.client.phone}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col gap-4 bg-[var(--color-brand-light)] p-5 rounded-2xl shadow-inner-soft">
                   <h3 className="flex items-center gap-2 font-bold text-[var(--color-brand-dark)]"><Tag className="w-4 h-4 text-[var(--color-brand-terracotta)]" /> {selectedExpertise.type === "flotte" ? "Appareils" : "Identification"}</h3>
                   <div className="text-sm flex flex-col gap-1 text-gray-600">
@@ -283,7 +283,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             <div className="p-6 bg-white/40 border-t border-[#E8E1D9] flex justify-end gap-4">
               <button className="px-6 py-2 font-semibold text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors">Imprimer Devis</button>
               <button className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90">Envoyer Étiquette</button>
@@ -293,17 +293,17 @@ export default function Home() {
       </div>
 
       {/* Activity Details Modal */}
-      <div 
+      <div
         className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300 ${selectedActivity ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="absolute inset-0 bg-[var(--color-brand-dark)]/40 backdrop-blur-sm" onClick={() => setSelectedActivity(null)} />
-        
+
         {selectedActivity && (
           <div className="bg-[var(--color-brand-light)] rounded-[2rem] w-full max-w-md shadow-2xl relative z-10 flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
             <div className="p-6 sm:p-8 flex flex-col gap-6">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-4">
-                   <div className="w-12 h-12 rounded-[1.2rem] bg-white shadow-soft flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-[1.2rem] bg-white shadow-soft flex items-center justify-center shrink-0">
                     <selectedActivity.icon className={`w-6 h-6 ${selectedActivity.color}`} />
                   </div>
                   <div>
@@ -311,7 +311,7 @@ export default function Home() {
                     <span className="text-sm text-gray-500 font-medium">{selectedActivity.time}</span>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedActivity(null)}
                   className="w-10 h-10 rounded-full bg-white shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors"
                 >
@@ -325,9 +325,9 @@ export default function Home() {
                 <p className="text-sm text-gray-600 leading-relaxed">{selectedActivity.details}</p>
               </div>
             </div>
-            
+
             <div className="p-6 bg-white/40 border-t border-[#E8E1D9] flex justify-end">
-              <button 
+              <button
                 onClick={() => setSelectedActivity(null)}
                 className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity"
               >

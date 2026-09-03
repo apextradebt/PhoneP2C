@@ -30,8 +30,8 @@ export default function Sidebar() {
             RepriseApp
           </span>
         </div>
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
+        <button
+          onClick={() => setIsOpen(!isOpen)}
           className="p-2 -mr-2 text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -40,7 +40,7 @@ export default function Sidebar() {
 
       {/* Mobile Overlay */}
       {isOpen && (
-        <div 
+        <div
           className="md:hidden fixed inset-0 bg-[var(--color-brand-dark)]/40 backdrop-blur-sm z-40 transition-opacity"
           onClick={() => setIsOpen(false)}
         />
@@ -82,7 +82,7 @@ export default function Sidebar() {
         <nav className="flex-1 flex flex-col gap-3 mt-4 md:mt-0 overflow-y-auto">
           {navigation.map((item) => {
             const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
-            
+
             return (
               <Link
                 key={item.name}
@@ -96,7 +96,7 @@ export default function Sidebar() {
                 <div className="flex items-center justify-center min-w-[20px]">
                   <item.icon
                     strokeWidth={isActive ? 2.5 : 1.5}
-                    className={`relative right-1 w-5 h-5 ${isActive ? "text-[var(--color-brand-terracotta)]" : ""}`}
+                    className={`relative right-1.5 w-5 h-5 ${isActive ? "text-[var(--color-brand-terracotta)]" : ""}`}
                   />
                 </div>
                 <span className={`opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap`}>

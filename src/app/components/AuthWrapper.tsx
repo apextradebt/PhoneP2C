@@ -3,6 +3,7 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useEffect } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function AuthWrapper({
   children,
@@ -10,12 +11,13 @@ export default function AuthWrapper({
   children: React.ReactNode;
 }) {
   const { user, error, isLoading } = useUser();
+  const router = useRouter();
 
   useEffect(() => {
     if (!isLoading && !user) {
-      window.location.assign('/api/auth/login');
+      router.push('/connexion');
     }
-  }, [isLoading, user]);
+  }, [isLoading, user, router]);
 
   if (isLoading || (!user && !error)) {
     return (

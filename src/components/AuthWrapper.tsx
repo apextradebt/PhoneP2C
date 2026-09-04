@@ -39,7 +39,7 @@ export default function AuthWrapper({
             <div className="absolute inset-0 rounded-full border-t-2 border-[var(--color-brand-terracotta)] animate-spin" />
             <div className="absolute inset-2 rounded-full border-r-2 border-[#E8E1D9] animate-spin-reverse" />
             <div className="absolute inset-4 rounded-full bg-[var(--color-brand-terracotta)]/10 pulse-slow flex items-center justify-center">
-              <img src="/NexusLogo.webp" alt="Nexus Logo" className="w-10 h-10 object-contain" />
+              <img src="/PhoneP2C/NexusLogo.svg" alt="Nexus Logo" className="w-10 h-10 object-contain" />
             </div>
           </div>
 

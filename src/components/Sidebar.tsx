@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, Smartphone, ClipboardList, Truck, LineChart, Settings, Menu, X } from "lucide-react";
+import { LayoutDashboard, Smartphone, ClipboardList, Truck, LineChart, Settings, Menu, X, LogOut } from "lucide-react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const navigation = [
   { name: "Vue d'ensemble", href: "/", icon: LayoutDashboard },
@@ -17,6 +18,7 @@ export default function Sidebar() {
   const location = useLocation();
   const pathname = location.pathname;
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logout } = useAuth0();
 
   return (
     <>
@@ -25,7 +27,7 @@ export default function Sidebar() {
         <div className="flex items-center gap-3">
           <img src="/PhoneP2C/NexusLogo.svg" alt="NexusLogo" className="w-10 h-10" />
           <span className="font-bold text-lg tracking-tight text-[var(--color-brand-dark)]">
-            RepriseApp
+            Nexus Back
           </span>
         </div>
         <button
@@ -56,7 +58,7 @@ export default function Sidebar() {
         <div className="hidden md:flex items-center gap-4">
           <img src="/PhoneP2C/NexusLogo.svg" alt="NexusLogo" className="w-10 h-10" />
           <span className="font-bold text-xl tracking-tight text-[var(--color-brand-dark)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-            RepriseApp
+            Nexus Back
           </span>
         </div>
 
@@ -65,7 +67,7 @@ export default function Sidebar() {
           <div className="flex items-center gap-4">
             <img src="/PhoneP2C/NexusLogo.svg" alt="NexusLogo" className="w-10 h-10" />
             <span className="font-bold text-xl tracking-tight text-[var(--color-brand-dark)] whitespace-nowrap">
-              RepriseApp
+              Nexus Back
             </span>
           </div>
           <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-[var(--color-brand-dark)]">
@@ -101,15 +103,33 @@ export default function Sidebar() {
           })}
         </nav>
 
-        <div className="mt-auto pt-6 border-t border-[#E8E1D9] flex items-center overflow-hidden">
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 min-w-[40px] rounded-full bg-[#E8E1D9] shadow-inner-soft shrink-0 flex items-center justify-center overflow-hidden">
-              <span className="text-[var(--color-brand-dark)] font-bold text-sm">M</span>
+        <div className="mt-auto pt-6 border-t border-[#E8E1D9] flex items-center overflow-hidden p-2 -mx-2 rounded-xl group/profile">
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 min-w-[40px] rounded-full bg-[#E8E1D9] shadow-inner-soft shrink-0 flex items-center justify-center overflow-hidden">
+                {user?.picture ? (
+                  <img src={user.picture} alt={user.name || "Profile"} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-[var(--color-brand-dark)] font-bold text-sm">
+                    {user?.name?.charAt(0).toUpperCase() || "M"}
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-col opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                <span className="text-sm font-medium text-[var(--color-brand-dark)] capitalize">
+                  {user?.email ? user.email.split('@')[0].replace('.', ' ') : (user?.name || "Manager")}
+                </span>
+                <span className="mt-1 bg-[var(--color-brand-terracotta)]/10 text-[var(--color-brand-terracotta)] text-[10px] font-bold px-2 py-0.5 rounded-full w-max uppercase tracking-wider">
+                  Admin
+                </span>
+              </div>
             </div>
-            <div className="flex flex-col opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-              <span className="text-sm font-medium text-[var(--color-brand-dark)]">Manager</span>
-              <span className="text-xs text-gray-500">Boutique Paris</span>
-            </div>
+            <button 
+              onClick={() => logout({ logoutParams: { returnTo: window.location.origin + import.meta.env.BASE_URL } })}
+              className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ml-2 p-1.5 hover:bg-[var(--color-brand-terracotta)]/10 rounded-full group-hover/profile:text-[var(--color-brand-terracotta)] outline-none"
+            >
+              <LogOut className="w-5 h-5 text-gray-400 group-hover/profile:text-[var(--color-brand-terracotta)] transition-colors" />
+            </button>
           </div>
         </div>
       </aside>

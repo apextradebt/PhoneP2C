@@ -21,6 +21,8 @@ export default function App() {
       authorizationParams={{
         redirect_uri: window.location.origin + import.meta.env.BASE_URL,
       }}
+      useRefreshTokens={true}
+      cacheLocation="localstorage"
     >
       <CatalogProvider>
         <HashRouter>

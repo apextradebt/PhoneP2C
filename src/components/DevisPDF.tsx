@@ -144,12 +144,13 @@ export const DevisPDF: React.FC<Props> = ({ expertise }) => (
         
         {expertise.items.map((item, index) => (
           <View key={index} style={styles.tableRow}>
-            <Text style={styles.colModel}>
-              {item.device.brand} {item.device.model} {item.device.storage ? `- ${item.device.storage}` : ''}
-              {item.device.imei ? `\nIMEI: ${item.device.imei}` : ''}
-              {item.repairs && item.repairs.length > 0 ? `\nRéparations: ${item.repairs.join(', ')}` : ''}
-            </Text>
-            <Text style={styles.colGrade}>{item.grade}</Text>
+            <View style={styles.colModel}>
+              <Text>
+                {item.device.brand !== "Prestation" ? `${item.device.brand} ` : ""}{item.device.model} {item.device.storage ? `- ${item.device.storage}` : ''}
+                {item.device.imei ? `\nIMEI: ${item.device.imei}` : ''}
+              </Text>
+            </View>
+            <Text style={styles.colGrade}>{item.device.brand === "Prestation" ? "-" : item.grade}</Text>
             <Text style={styles.colQty}>{item.quantity}</Text>
             <Text style={styles.colPrice}>{item.unitPrice} €</Text>
             <Text style={styles.colTotal}>{item.unitPrice * item.quantity} €</Text>

@@ -9,7 +9,7 @@ export default function CommandesPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedExpertise, setSelectedExpertise] = useState<Expertise | null>(null);
 
-  const filteredExpertises = mockExpertises.filter(exp => 
+  const filteredExpertises = mockExpertises.filter(exp =>
     exp.items.some(item => item.device.model.toLowerCase().includes(searchQuery.toLowerCase())) ||
     exp.items.some(item => item.device.imei?.includes(searchQuery)) ||
     exp.client.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -18,36 +18,36 @@ export default function CommandesPage() {
   );
 
   return (
-    <div className="flex flex-col gap-6 h-full pb-4">
+    <div className="flex flex-col gap-6 h-full pb-4 ">
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-2">
         <div className="relative flex-1">
           <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
-          <input 
-            type="text" 
+          <input
+            type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Rechercher une commande, un client..." 
-            className="w-full pl-10 pr-4 py-3 bg-[var(--color-brand-light)] rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
+            placeholder="Rechercher une commande, un client..."
+            className="w-full pl-10 pr-4 py-3 bg-white/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
           />
         </div>
-        <button className="flex items-center justify-center gap-2 bg-[var(--color-brand-light)] text-[var(--color-brand-dark)] px-6 py-3 rounded-2xl font-medium shadow-soft hover:shadow-soft-hover transition-all">
+        <button className="flex items-center justify-center gap-2 bg-white/40 text-[var(--color-brand-dark)] px-6 py-3 rounded-2xl font-medium shadow-soft hover:shadow-soft-hover transition-all">
           <Filter className="w-4 h-4" />
           Filtrer
         </button>
       </div>
 
-      <div className="bg-[var(--color-brand-light)] p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-4 flex-1 overflow-y-auto">
+      <div className="bg-white/40 p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-4 flex-1 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredExpertises.map((exp) => {
-            const statusColor = 
+            const statusColor =
               exp.status === "Terminé" ? "bg-green-100 text-green-700" :
-              exp.status === "En attente" ? "bg-orange-100 text-orange-700" :
-              exp.status === "Reçu" ? "bg-blue-100 text-blue-700" :
-              "bg-purple-100 text-purple-700";
+                exp.status === "En attente" ? "bg-orange-100 text-orange-700" :
+                  exp.status === "Reçu" ? "bg-blue-100 text-blue-700" :
+                    "bg-purple-100 text-purple-700";
 
             return (
-              <div 
-                key={exp.id} 
+              <div
+                key={exp.id}
                 onClick={() => setSelectedExpertise(exp)}
                 className="bg-white p-6 rounded-[2rem] shadow-sm flex flex-col gap-4 group hover:shadow-soft transition-all cursor-pointer border border-transparent hover:border-[#E8E1D9]"
               >
@@ -70,7 +70,7 @@ export default function CommandesPage() {
               </div>
             )
           })}
-          
+
           {filteredExpertises.length === 0 && (
             <div className="col-span-full text-center py-10 text-gray-500 font-medium">
               Aucun résultat pour "{searchQuery}"
@@ -80,11 +80,11 @@ export default function CommandesPage() {
       </div>
 
       {/* Expertise Details Modal */}
-      <div 
+      <div
         className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300 ${selectedExpertise ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         <div className="absolute inset-0 bg-[var(--color-brand-dark)]/40 backdrop-blur-sm" onClick={() => setSelectedExpertise(null)} />
-        
+
         {selectedExpertise && (
           <div className="bg-[var(--color-brand-light)] rounded-[2rem] w-full max-w-2xl shadow-2xl relative z-10 flex flex-col max-h-[90vh] overflow-hidden animate-in zoom-in-95 duration-300">
             <div className="p-6 sm:p-8 flex flex-col gap-6 overflow-y-auto">
@@ -102,7 +102,7 @@ export default function CommandesPage() {
                     <p className="text-gray-500 font-medium mt-1">{selectedExpertise.items[0].device.storage} • {selectedExpertise.items[0].device.color}</p>
                   )}
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedExpertise(null)}
                   className="w-10 h-10 rounded-full bg-[var(--color-brand-light)] shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)]"
                 >
@@ -119,11 +119,11 @@ export default function CommandesPage() {
                     <p>{selectedExpertise.client.phone}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col gap-4 bg-[var(--color-brand-light)] p-5 rounded-2xl shadow-inner-soft">
                   <h3 className="flex items-center gap-2 font-bold text-[var(--color-brand-dark)]"><Tag className="w-4 h-4 text-[var(--color-brand-terracotta)]" /> {selectedExpertise.type === "flotte" ? "Appareils" : "Identification"}</h3>
                   <div className="text-sm flex flex-col gap-1 text-gray-600">
-                    {selectedExpertise.items.map((item, i) => (
+                    {selectedExpertise.items.filter(item => item.device.brand !== "Prestation").map((item, i) => (
                       <p key={i}><span className="font-medium">{item.quantity}x {item.device.model}</span> (Grade {item.grade})</p>
                     ))}
                     {selectedExpertise.type === "unitaire" && selectedExpertise.items[0].device.imei && (
@@ -138,7 +138,7 @@ export default function CommandesPage() {
                 {selectedExpertise.items.some(i => i.repairs && i.repairs.length > 0) ? (
                   <div className="flex gap-2 flex-wrap">
                     {selectedExpertise.items.flatMap(i => i.repairs || []).map((rep, i) => (
-                      <span key={i} className="bg-[var(--color-brand-light)] px-3 py-1 rounded-full text-xs font-semibold text-[var(--color-brand-terracotta)] shadow-soft">{rep}</span>
+                      <span key={i} className="bg-[var(--color-brand-light)] px-3 py-1 rounded-full text-xs font-semibold text-[var(--color-brand-terracotta)] shadow-soft">{rep.name}</span>
                     ))}
                   </div>
                 ) : (
@@ -157,7 +157,7 @@ export default function CommandesPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="p-6 bg-white/40 border-t border-[#E8E1D9] flex justify-end gap-4">
               <button className="px-6 py-2 font-semibold text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors">Imprimer Devis</button>
               <button className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90">Envoyer Étiquette</button>

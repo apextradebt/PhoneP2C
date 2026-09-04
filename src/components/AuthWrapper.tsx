@@ -23,9 +23,9 @@ export default function AuthWrapper({
       <div className="relative w-screen h-screen flex items-center justify-center bg-[var(--color-brand-dark)] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/auth-bg.jpg" 
-            alt="Loading background" 
+          <img
+            src="PhoneP2C/auth-bg.jpg"
+            alt="Loading background"
             className="object-cover opacity-60 w-full h-full absolute inset-0"
           />
           {/* Dark Overlay */}
@@ -35,12 +35,14 @@ export default function AuthWrapper({
         {/* Loading Content */}
         <div className="relative z-10 flex flex-col items-center gap-6 animate-in fade-in duration-700">
           {/* A pulsing elegant loader */}
-          <div className="relative w-20 h-20">
+          <div className="relative w-24 h-24">
             <div className="absolute inset-0 rounded-full border-t-2 border-[var(--color-brand-terracotta)] animate-spin" />
             <div className="absolute inset-2 rounded-full border-r-2 border-[#E8E1D9] animate-spin-reverse" />
-            <div className="absolute inset-4 rounded-full bg-[var(--color-brand-terracotta)]/20 pulse-slow" />
+            <div className="absolute inset-4 rounded-full bg-[var(--color-brand-terracotta)]/10 pulse-slow flex items-center justify-center">
+              <img src="/NexusLogo.webp" alt="Nexus Logo" className="w-10 h-10 object-contain" />
+            </div>
           </div>
-          
+
           <div className="flex flex-col items-center gap-2">
             <h2 className="text-2xl font-bold text-white tracking-widest uppercase">
               B2C Reprise

@@ -27,7 +27,7 @@ export type DevisItem = {
   grade: DeviceGrade;
   quantity: number;
   unitPrice: number; // After grade deduction
-  repairs?: string[];
+  repairs?: { name: string, price: number }[];
 };
 
 export type Expertise = {

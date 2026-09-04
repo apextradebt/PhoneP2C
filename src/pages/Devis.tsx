@@ -5,16 +5,9 @@ import { ChevronRight, Smartphone, Wrench, FileText, CheckCircle, Search, Users,
 import { DevisPDF } from "../components/DevisPDF";
 import { DeviceGrade, DevisItem, Expertise } from "@/types";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine } from 'recharts';
+import { useCatalog } from "@/lib/CatalogContext";
 
 import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
-
-// Mock catalog for pricing
-const CATALOG = [
-  { brand: "Apple", model: "iPhone 14 Pro", basePrice: 800 },
-  { brand: "Apple", model: "iPhone 13", basePrice: 450 },
-  { brand: "Samsung", model: "Galaxy S22", basePrice: 400 },
-  { brand: "Google", model: "Pixel 7", basePrice: 350 },
-];
 
 const GRADE_DISCOUNTS: Record<DeviceGrade, number> = {
   "A": 0,    // 0% discount
@@ -30,12 +23,14 @@ const STRATEGY_MODIFIERS = {
 };
 
 export default function DevisPage() {
+  const { allModels, getModel, getRepairOptions } = useCatalog();
   const [step, setStep] = useState(0);
   const [devisType, setDevisType] = useState<"unitaire" | "flotte" | null>(null);
 
   // State for Flotte (Bulk)
+  const firstModel = allModels[0]?.model || "";
   const [bulkItems, setBulkItems] = useState<{ model: string, grade: DeviceGrade, quantity: number }[]>([
-    { model: "iPhone 14 Pro", grade: "B", quantity: 5 }
+    { model: firstModel, grade: "B", quantity: 5 }
   ]);
 
   // State for Unitaire
@@ -43,13 +38,20 @@ export default function DevisPage() {
   const [unitGrade, setUnitGrade] = useState<DeviceGrade>("A");
   const [repairs, setRepairs] = useState<{ name: string, price: number }[]>([]);
   const [pricingStrategy, setPricingStrategy] = useState<"safe" | "market" | "aggressive">("market");
+  const [deviceSearch, setDeviceSearch] = useState("");
+
+  const filteredModels = useMemo(() => {
+    if (!deviceSearch.trim()) return allModels;
+    const q = deviceSearch.toLowerCase();
+    return allModels.filter(m => m.model.toLowerCase().includes(q) || m.brand.toLowerCase().includes(q));
+  }, [allModels, deviceSearch]);
 
   // Calculations for Unitaire Pricing Step
   const unitairePricing = useMemo(() => {
     if (devisType !== "unitaire" || !selectedModel) return null;
 
-    const cat = CATALOG.find(c => c.model === selectedModel);
-    const base = cat ? cat.basePrice : 0;
+    const catModel = getModel(selectedModel);
+    const base = catModel ? catModel.basePrice : 0;
     const gradePrice = Math.round(base * (1 - GRADE_DISCOUNTS[unitGrade]));
     const repairsTotal = repairs.reduce((acc, r) => acc + r.price, 0);
     const valNet = Math.max(0, gradePrice - repairsTotal);
@@ -84,7 +86,7 @@ export default function DevisPage() {
     ];
 
     return { valNet, safePrice, marketPrice, aggressivePrice, chartData, marketSources };
-  }, [devisType, selectedModel, unitGrade, repairs]);
+  }, [devisType, selectedModel, unitGrade, repairs, getModel]);
 
   // Calculate final Expertise object
   const expertise: Expertise = useMemo(() => {
@@ -92,36 +94,50 @@ export default function DevisPage() {
 
     if (devisType === "flotte") {
       items = bulkItems.map((bi, i) => {
-        const cat = CATALOG.find(c => c.model === bi.model);
-        const base = cat ? cat.basePrice : 0;
+        const catModel = getModel(bi.model);
+        const base = catModel ? catModel.basePrice : 0;
         const unitPrice = Math.round(base * (1 - GRADE_DISCOUNTS[bi.grade]));
         return {
           id: `item-${i}`,
           grade: bi.grade,
           quantity: bi.quantity,
           unitPrice,
-          device: { id: `d-${i}`, model: bi.model, brand: cat?.brand || "Inconnu", basePrice: base }
+          device: { id: `d-${i}`, model: bi.model, brand: catModel?.brand || "Inconnu", basePrice: base }
         };
       });
     } else {
-      const cat = CATALOG.find(c => c.model === selectedModel);
-      const base = cat ? cat.basePrice : 0;
+      const catModel = getModel(selectedModel);
+      const base = catModel ? catModel.basePrice : 0;
+      const gradePrice = Math.round(base * (1 - GRADE_DISCOUNTS[unitGrade]));
 
-      let unitPrice = 0;
-      if (unitairePricing) {
-        if (pricingStrategy === "safe") unitPrice = unitairePricing.safePrice;
-        if (pricingStrategy === "market") unitPrice = unitairePricing.marketPrice;
-        if (pricingStrategy === "aggressive") unitPrice = unitairePricing.aggressivePrice;
-      }
+      let baseDevicePrice = gradePrice;
+      if (pricingStrategy === "safe") baseDevicePrice = Math.round(gradePrice * STRATEGY_MODIFIERS.safe);
+      if (pricingStrategy === "market") baseDevicePrice = Math.round(gradePrice * STRATEGY_MODIFIERS.market);
+      if (pricingStrategy === "aggressive") baseDevicePrice = Math.round(gradePrice * STRATEGY_MODIFIERS.aggressive);
 
       items = [{
         id: "item-unit",
         grade: unitGrade,
         quantity: 1,
-        unitPrice,
-        repairs: repairs.map(r => r.name),
-        device: { id: "d-u", model: selectedModel, brand: cat?.brand || "Inconnu", basePrice: base }
+        unitPrice: baseDevicePrice,
+        repairs: repairs,
+        device: { id: "d-u", model: selectedModel, brand: catModel?.brand || "Inconnu", basePrice: base }
       }];
+
+      repairs.forEach((r, i) => {
+        let repairPrice = -r.price;
+        if (pricingStrategy === "safe") repairPrice = Math.round(-r.price * STRATEGY_MODIFIERS.safe);
+        if (pricingStrategy === "market") repairPrice = Math.round(-r.price * STRATEGY_MODIFIERS.market);
+        if (pricingStrategy === "aggressive") repairPrice = Math.round(-r.price * STRATEGY_MODIFIERS.aggressive);
+
+        items.push({
+          id: `rep-${i}`,
+          grade: "A" as DeviceGrade,
+          quantity: 1,
+          unitPrice: repairPrice,
+          device: { id: `r-${i}`, model: r.name, brand: "Prestation", basePrice: r.price }
+        });
+      });
     }
 
     const totalProposedPrice = items.reduce((acc, item) => acc + (item.unitPrice * item.quantity), 0);
@@ -142,9 +158,9 @@ export default function DevisPage() {
         company: devisType === "flotte" ? "Entreprise XYZ" : undefined
       }
     };
-  }, [devisType, bulkItems, selectedModel, unitGrade, repairs, pricingStrategy, unitairePricing]);
+  }, [devisType, bulkItems, selectedModel, unitGrade, repairs, pricingStrategy, unitairePricing, getModel]);
 
-  const addBulkItem = () => setBulkItems([...bulkItems, { model: "iPhone 13", grade: "B", quantity: 1 }]);
+  const addBulkItem = () => setBulkItems([...bulkItems, { model: firstModel, grade: "B", quantity: 1 }]);
   const updateBulkItem = (index: number, field: string, value: any) => {
     const newItems = [...bulkItems];
     newItems[index] = { ...newItems[index], [field]: value };
@@ -260,7 +276,7 @@ export default function DevisPage() {
                     onChange={e => updateBulkItem(index, 'model', e.target.value)}
                     className="flex-1 p-2 bg-[var(--color-brand-light)] rounded-xl outline-none font-medium"
                   >
-                    {CATALOG.map(c => <option key={c.model} value={c.model}>{c.brand} {c.model}</option>)}
+                    {allModels.map(c => <option key={c.model} value={c.model}>{c.brand} {c.model}</option>)}
                   </select>
 
                   <select
@@ -299,19 +315,36 @@ export default function DevisPage() {
               <p className="text-sm text-gray-500">Sélectionnez le modèle.</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {CATALOG.map((cat, i) => (
+            <div className="relative max-w-md">
+              <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                value={deviceSearch}
+                onChange={(e) => setDeviceSearch(e.target.value)}
+                placeholder="Rechercher un modèle..."
+                className="w-full pl-10 pr-4 py-3 bg-white/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
+              />
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-h-[500px] overflow-y-auto pr-2">
+              {filteredModels.map((cat, i) => (
                 <div
                   key={i}
-                  onClick={() => setSelectedModel(cat.model)}
+                  onClick={() => { setSelectedModel(cat.model); setRepairs([]); }}
                   className={`p-4 rounded-2xl border-2 cursor-pointer text-center font-medium transition-all ${selectedModel === cat.model
                       ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)] text-[var(--color-brand-terracotta)]"
                       : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent text-[var(--color-brand-dark)]"
                     }`}
                 >
+                  <span className="text-xs text-gray-400 block mb-1">{cat.brand}</span>
                   {cat.model}
                 </div>
               ))}
+              {filteredModels.length === 0 && (
+                <div className="col-span-full text-center py-10 text-gray-500 font-medium">
+                  Aucun modèle trouvé pour "{deviceSearch}"
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -352,15 +385,11 @@ export default function DevisPage() {
           <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4">
             <div>
               <h2 className="text-xl font-bold mb-1">Prestations & Main d'œuvre</h2>
-              <p className="text-sm text-gray-500">Ajoutez des réparations nécessaires avant revente.</p>
+              <p className="text-sm text-gray-500">Coûts de réparation issus du catalogue pour <span className="font-bold text-[var(--color-brand-dark)]">{selectedModel}</span>.</p>
             </div>
 
             <div className="flex flex-col gap-4">
-              {[
-                { name: "Remplacement Batterie", price: 45 },
-                { name: "Changement Écran", price: 120 },
-                { name: "Nettoyage Connecteurs", price: 15 },
-              ].map((opt, i) => {
+              {getRepairOptions(selectedModel).map((opt, i) => {
                 const isSelected = repairs.some(r => r.name === opt.name);
                 return (
                   <label key={i} className={`flex items-center justify-between p-5 bg-[var(--color-brand-light)] rounded-2xl shadow-soft-active cursor-pointer transition-all border-2 ${isSelected ? "border-[var(--color-brand-terracotta)] shadow-inner-soft" : "border-transparent hover:shadow-soft"}`}>

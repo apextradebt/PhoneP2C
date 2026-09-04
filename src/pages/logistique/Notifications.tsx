@@ -17,30 +17,38 @@ export default function NotificationsPage() {
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-        <div className="relative flex-1">
-          <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Rechercher une notification, un devis..."
-            className="w-full pl-10 pr-4 py-3 bg-[var(--color-brand-light)] rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
-          />
+      <header className="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-6 md:gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">Notifications</h1>
+          <p className="text-gray-500 font-medium text-sm">Ici, les nouveautés et mises à jour de vos commandes.</p>
         </div>
-        <button className="flex items-center justify-center gap-2 bg-[var(--color-brand-light)] text-[var(--color-brand-dark)] px-6 py-3 rounded-2xl font-medium shadow-soft hover:shadow-soft-hover transition-all">
-          <Filter className="w-4 h-4" />
-          Filtrer
-        </button>
-      </div>
-      <div className="bg-[var(--color-brand-light)] p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
+
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div className="relative flex-1 sm:w-80">
+            <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Rechercher une notification, un devis..."
+              className="w-full pl-10 pr-4 py-3 bg-[var(--color-brand-light)] rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
+            />
+          </div>
+          <button className="flex items-center justify-center gap-2 bg-[var(--color-brand-light)] text-[var(--color-brand-dark)] px-6 py-3 rounded-2xl font-medium shadow-soft hover:shadow-soft-hover transition-all">
+            <Filter className="w-4 h-4" />
+            Filtrer
+          </button>
+        </div>
+      </header>
+
+      <div className="bg-white/40 p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
         {filteredActivities.length > 0 ? (
           filteredActivities.map((activity, i) => (
             <Link
               key={activity.id}
               to="/logistique"
               onClick={() => setSelectedActivity(activity)}
-              className="flex items-center gap-4 p-4 hover:bg-white/60 rounded-2xl transition-all cursor-pointer w-full overflow-hidden border border-transparent hover:border-[#E8E1D9]"
+              className="flex items-center gap-4 p-4 hover:bg-white/60 rounded-2xl transition-all cursor-pointer w-full border border-transparent hover:border-[#E8E1D9]"
             >
               <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
                 <activity.icon className={`w-6 h-6 ${activity.color}`} />
@@ -67,7 +75,7 @@ export default function NotificationsPage() {
         <div className="absolute inset-0 bg-[var(--color-brand-dark)]/40 backdrop-blur-sm" onClick={() => setSelectedActivity(null)} />
 
         {selectedActivity && (
-          <div className="bg-[var(--color-brand-light)] rounded-[2rem] w-full max-w-md shadow-2xl relative z-10 flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+          <div className="bg-[var(--color-brand-light)] rounded-[2rem] w-full shadow-2xl max-w-md relative z-10 flex flex-col animate-in zoom-in-95 duration-300">
             <div className="p-6 sm:p-8 flex flex-col gap-6">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-4">

@@ -13,7 +13,7 @@ export const mockExpertises: Expertise[] = [
         quantity: 1,
         grade: "B",
         unitPrice: 450,
-        repairs: ["Batterie", "Écran"],
+        repairs: [{ name: "Batterie", price: 45 }, { name: "Écran", price: 120 }],
         device: {
           id: "d1",
           brand: "Apple",

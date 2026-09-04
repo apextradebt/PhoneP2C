@@ -23,9 +23,7 @@ export default function Sidebar() {
       {/* Mobile Top Bar */}
       <div className="md:hidden flex items-center justify-between bg-[var(--color-brand-light)] p-4 border-b border-[#E8E1D9] sticky top-0 z-40 shadow-sm w-full">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-[0.8rem] bg-[var(--color-brand-terracotta)] shadow-soft flex items-center justify-center text-white font-bold text-sm shrink-0">
-            R
-          </div>
+          <img src="/PhoneP2C/NexusLogo.svg" alt="NexusLogo" className="w-10 h-10" />
           <span className="font-bold text-lg tracking-tight text-[var(--color-brand-dark)]">
             RepriseApp
           </span>
@@ -56,9 +54,7 @@ export default function Sidebar() {
       `}>
         {/* Desktop Logo */}
         <div className="hidden md:flex items-center gap-4">
-          <div className="w-10 h-10 min-w-[40px] rounded-[1rem] bg-[var(--color-brand-terracotta)] shadow-soft flex items-center justify-center text-white font-bold text-xl shrink-0">
-            R
-          </div>
+          <img src="/PhoneP2C/NexusLogo.svg" alt="NexusLogo" className="w-10 h-10" />
           <span className="font-bold text-xl tracking-tight text-[var(--color-brand-dark)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
             RepriseApp
           </span>
@@ -67,9 +63,7 @@ export default function Sidebar() {
         {/* Mobile Logo inside Sidebar */}
         <div className="md:hidden flex items-center justify-between mb-2">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 min-w-[40px] rounded-[1rem] bg-[var(--color-brand-terracotta)] shadow-soft flex items-center justify-center text-white font-bold text-xl shrink-0">
-              R
-            </div>
+            <img src="/PhoneP2C/NexusLogo.svg" alt="NexusLogo" className="w-10 h-10" />
             <span className="font-bold text-xl tracking-tight text-[var(--color-brand-dark)] whitespace-nowrap">
               RepriseApp
             </span>

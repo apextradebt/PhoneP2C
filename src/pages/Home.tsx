@@ -22,7 +22,7 @@ export default function Home() {
   );
 
   return (
-    <div className="flex flex-col gap-10 max-w-7xl mx-auto pb-12 relative overflow-hidden h-full">
+    <div className="flex flex-col gap-10 pb-12 relative h-full">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight mb-2">Vue d'ensemble</h1>
@@ -54,7 +54,7 @@ export default function Home() {
           { title: "Valeur de Reprise", value: "24,500 €", label: "Marge moy: 28%" },
           { title: "En attente de réception", value: "18", label: "Colis en transit" }
         ].map((kpi, i) => (
-          <div key={i} className="bg-[var(--color-brand-light)] p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
+          <div key={i} className="p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
             <h3 className="text-gray-500 font-medium text-sm uppercase tracking-wider">{kpi.title}</h3>
             <span className="text-4xl font-bold text-[var(--color-brand-dark)]">{kpi.value}</span>
             <span className="text-xs text-[var(--color-brand-bois)] font-medium mt-2">{kpi.label}</span>

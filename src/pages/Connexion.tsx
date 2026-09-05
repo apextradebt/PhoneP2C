@@ -20,7 +20,7 @@ export default function ConnexionPage() {
       </div>
 
       {/* Content Box */}
-      <div className="relative z-10 w-full max-w-md p-8 sm:p-12 mx-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] shadow-2xl flex flex-col items-center text-center animate-in zoom-in-95 duration-700 ease-out">
+      <div className="relative z-10 w-full max-w-md p-8 sm:p-12 mx-4 bg-[var(--brand-surface)]/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] shadow-2xl flex flex-col items-center text-center animate-in zoom-in-95 duration-700 ease-out">
         <div className="w-24 h-24 rounded-full flex items-center justify-center mb-6 shadow-inner-soft p-2">
           <img src="/PhoneP2C/NexusLogo.svg" alt="Nexus Logo" className="w-full h-full object-contain" />
         </div>

@@ -89,7 +89,7 @@ export default function UsersPage() {
             </thead>
             <tbody>
               {filteredUsers.map((u, idx) => (
-                <tr key={idx} className="border-b border-[#E8E1D9]/50 hover:bg-white/40 transition-colors group">
+                <tr key={idx} className="border-b border-[#E8E1D9]/50 hover:bg-[var(--brand-surface)]/40 transition-colors group">
                   <td className="py-4 px-4 font-semibold text-[var(--color-brand-dark)]">
                     {u.prenom} {u.nom}
                   </td>
@@ -100,7 +100,7 @@ export default function UsersPage() {
                       <select 
                         value={newRole} 
                         onChange={(e) => setNewRole(e.target.value)}
-                        className="bg-white border border-[#E8E1D9] rounded-lg px-3 py-1.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50"
+                        className="bg-[var(--brand-surface)] border border-[#E8E1D9] rounded-lg px-3 py-1.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50"
                       >
                         <option value="admin">Admin</option>
                         <option value="manager">Manager</option>

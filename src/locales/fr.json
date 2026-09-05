@@ -59,7 +59,11 @@
   },
   "settings": {
     "title": "Paramètres",
-    "desc": "Gérez la configuration de votre boutique et vos règles de marge."
+    "desc": "Gérez la configuration de votre boutique et vos règles de marge.",
+    "appearance": "Apparence",
+    "theme_light": "Clair",
+    "theme_dark": "Sombre",
+    "theme_system": "Système"
   },
   "logistics": {
     "tab_expertises": "Expertises",

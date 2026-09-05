@@ -5,8 +5,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans-app);
   
-  --color-brand-light: #F4F4F9;
-  --color-brand-dark: #1E1E24;
+  --color-brand-light: var(--brand-light);
+  --color-brand-dark: var(--brand-dark);
   --color-brand-terracotta: #E07A5F;
   --color-brand-lin: #E8E1D9;
   --color-brand-bois: #D4A373;
@@ -18,7 +18,22 @@
 :root {
   --background: #F4F4F9;
   --foreground: #1E1E24;
+  --brand-light: #F4F4F9;
+  --brand-dark: #1E1E24;
+  --brand-surface: #ffffff;
+  --shadow-light: #ffffff;
+  --shadow-dark: #d4d4dc;
   --font-sans-app: 'Inter', 'Poppins', sans-serif;
+}
+
+.dark {
+  --background: #1E1E24;
+  --foreground: #F4F4F9;
+  --brand-light: #2A2A35;
+  --brand-dark: #F4F4F9;
+  --brand-surface: #202028;
+  --shadow-light: #333340;
+  --shadow-dark: #15151a;
 }
 
 html, body, #root {
@@ -37,16 +52,16 @@ body {
 /* Custom utilities for neumorphism/soft ui based on #F4F4F9 base */
 @layer utilities {
   .shadow-soft {
-    box-shadow: 8px 8px 16px #d4d4dc, -8px -8px 16px #ffffff;
+    box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
   }
   .shadow-inner-soft {
-    box-shadow: inset 8px 8px 16px #d4d4dc, inset -8px -8px 16px #ffffff;
+    box-shadow: inset 8px 8px 16px var(--shadow-dark), inset -8px -8px 16px var(--shadow-light);
   }
   .shadow-soft-hover {
-    box-shadow: 12px 12px 20px #d4d4dc, -12px -12px 20px #ffffff;
+    box-shadow: 12px 12px 20px var(--shadow-dark), -12px -12px 20px var(--shadow-light);
   }
   .shadow-soft-active {
-    box-shadow: inset 4px 4px 8px #d4d4dc, inset -4px -4px 8px #ffffff;
+    box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
   }
 }
 

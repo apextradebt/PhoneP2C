@@ -101,7 +101,7 @@ export default function LogistiquePage() {
             {columns.map((col) => (
               <div
                 key={col.id}
-                className="flex-shrink-0 w-80 bg-white/40 p-6 rounded-[2rem] shadow-soft flex flex-col gap-4 min-h-[500px]"
+                className="flex-shrink-0 w-80 bg-[var(--brand-surface)]/40 p-6 rounded-[2rem] shadow-soft flex flex-col gap-4 min-h-[500px]"
                 onDragOver={handleDragOver}
                 onDrop={(e) => handleDrop(e, col.id)}
               >
@@ -220,7 +220,7 @@ export default function LogistiquePage() {
               </div>
             </div>
 
-            <div className="p-6 bg-white/40 border-t border-[#E8E1D9] flex justify-end gap-4">
+            <div className="p-6 bg-[var(--brand-surface)]/40 border-t border-[#E8E1D9] flex justify-end gap-4">
               <button className="px-6 py-2 font-semibold text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors">Imprimer Devis</button>
               <button className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90">Envoyer Étiquette</button>
             </div>

@@ -27,16 +27,16 @@ export default function CommandesPage() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Rechercher une commande, un client..."
-            className="w-full pl-10 pr-4 py-3 bg-white/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
+            className="w-full pl-10 pr-4 py-3 bg-[var(--brand-surface)]/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
           />
         </div>
-        <button className="flex items-center justify-center gap-2 bg-white/40 text-[var(--color-brand-dark)] px-6 py-3 rounded-2xl font-medium shadow-soft hover:shadow-soft-hover transition-all">
+        <button className="flex items-center justify-center gap-2 bg-[var(--brand-surface)]/40 text-[var(--color-brand-dark)] px-6 py-3 rounded-2xl font-medium shadow-soft hover:shadow-soft-hover transition-all">
           <Filter className="w-4 h-4" />
           Filtrer
         </button>
       </div>
 
-      <div className="bg-white/40 p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-4 flex-1 ">
+      <div className="bg-[var(--brand-surface)]/40 p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-4 flex-1 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredExpertises.map((exp) => {
             const statusColor =
@@ -49,7 +49,7 @@ export default function CommandesPage() {
               <div
                 key={exp.id}
                 onClick={() => setSelectedExpertise(exp)}
-                className="bg-white p-6 rounded-[2rem] shadow-sm flex flex-col gap-4 group hover:shadow-soft transition-all cursor-pointer border border-transparent hover:border-[#E8E1D9]"
+                className="bg-[var(--brand-surface)] p-6 rounded-[2rem] shadow-sm flex flex-col gap-4 group hover:shadow-soft transition-all cursor-pointer border border-transparent hover:border-[#E8E1D9]"
               >
                 <div className="flex justify-between items-start">
                   <div className="w-12 h-12 rounded-[1.2rem] bg-[#E8E1D9] shadow-inner-soft flex items-center justify-center">
@@ -158,7 +158,7 @@ export default function CommandesPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-white/40 border-t border-[#E8E1D9] flex justify-end gap-4">
+            <div className="p-6 bg-[var(--brand-surface)]/40 border-t border-[#E8E1D9] flex justify-end gap-4">
               <button className="px-6 py-2 font-semibold text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors">Imprimer Devis</button>
               <button className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90">Envoyer Étiquette</button>
             </div>

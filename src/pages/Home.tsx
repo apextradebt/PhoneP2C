@@ -129,9 +129,9 @@ export default function Home() {
               <div
                 key={i}
                 onClick={() => setSelectedActivity(activity)}
-                className="flex items-center gap-4 p-4 hover:bg-white/60 rounded-2xl transition-all cursor-pointer w-full overflow-hidden border border-transparent hover:border-[#E8E1D9]"
+                className="flex items-center gap-4 p-4 hover:bg-[var(--brand-surface)]/60 rounded-2xl transition-all cursor-pointer w-full overflow-hidden border border-transparent hover:border-[#E8E1D9]"
               >
-                <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[var(--brand-surface)] shadow-sm flex items-center justify-center shrink-0">
                   <activity.icon className={`w-5 h-5 ${activity.color}`} />
                 </div>
                 <div className="flex items-center gap-3 flex-1 min-w-0">
@@ -139,7 +139,7 @@ export default function Home() {
                   <span className="text-gray-300 text-xs hidden sm:inline">-</span>
                   <span className="text-xs text-gray-500 truncate hidden sm:inline">{activity.desc}</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium whitespace-nowrap ml-2 bg-white/50 px-2 py-1 rounded-md">{activity.time}</span>
+                <span className="text-xs text-gray-400 font-medium whitespace-nowrap ml-2 bg-[var(--brand-surface)]/50 px-2 py-1 rounded-md">{activity.time}</span>
               </div>
             ))}
           </div>
@@ -171,7 +171,7 @@ export default function Home() {
             </div>
             <button
               onClick={() => setIsNewDevisDrawerOpen(false)}
-              className="w-10 h-10 rounded-full bg-white shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors shrink-0"
+              className="w-10 h-10 rounded-full bg-[var(--brand-surface)] shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors shrink-0"
             >
               <X className="w-5 h-5" />
             </button>
@@ -180,12 +180,12 @@ export default function Home() {
           <div className="p-6 md:p-8 flex flex-col gap-6 md:gap-8 overflow-y-auto flex-1">
             <div className="flex flex-col gap-3">
               <label className="font-semibold text-sm">Modèle de l'appareil</label>
-              <input type="text" placeholder="Ex: iPhone 13 Pro" className="p-4 bg-white rounded-2xl shadow-inner-soft focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 font-medium w-full text-base" />
+              <input type="text" placeholder="Ex: iPhone 13 Pro" className="p-4 bg-[var(--brand-surface)] rounded-2xl shadow-inner-soft focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 font-medium w-full text-base" />
             </div>
             <div className="flex flex-col gap-3">
               <label className="font-semibold text-sm">IMEI / Numéro de série</label>
               <div className="relative">
-                <input type="text" placeholder="Saisir ou scanner l'IMEI" className="p-4 bg-white rounded-2xl shadow-inner-soft focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 font-medium w-full text-base" />
+                <input type="text" placeholder="Saisir ou scanner l'IMEI" className="p-4 bg-[var(--brand-surface)] rounded-2xl shadow-inner-soft focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 font-medium w-full text-base" />
                 <button className="absolute right-3 top-1/2 -translate-y-1/2 bg-[#E8E1D9] text-[var(--color-brand-dark)] text-xs font-bold px-3 py-1.5 rounded-xl hover:bg-[var(--color-brand-terracotta)] hover:text-white transition-colors">
                   SCAN
                 </button>
@@ -284,7 +284,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="p-6 bg-white/40 border-t border-[#E8E1D9] flex justify-end gap-4">
+            <div className="p-6 bg-[var(--brand-surface)]/40 border-t border-[#E8E1D9] flex justify-end gap-4">
               <button className="px-6 py-2 font-semibold text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors">Imprimer Devis</button>
               <button className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90">Envoyer Étiquette</button>
             </div>
@@ -303,7 +303,7 @@ export default function Home() {
             <div className="p-6 sm:p-8 flex flex-col gap-6">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-[1.2rem] bg-white shadow-soft flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-[1.2rem] bg-[var(--brand-surface)] shadow-soft flex items-center justify-center shrink-0">
                     <selectedActivity.icon className={`w-6 h-6 ${selectedActivity.color}`} />
                   </div>
                   <div>
@@ -313,20 +313,20 @@ export default function Home() {
                 </div>
                 <button
                   onClick={() => setSelectedActivity(null)}
-                  className="w-10 h-10 rounded-full bg-white shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors"
+                  className="w-10 h-10 rounded-full bg-[var(--brand-surface)] shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="bg-white/60 p-5 rounded-2xl border border-[#E8E1D9] flex flex-col gap-2">
+              <div className="bg-[var(--brand-surface)]/60 p-5 rounded-2xl border border-[#E8E1D9] flex flex-col gap-2">
                 <p className="text-sm text-[var(--color-brand-dark)] font-medium leading-relaxed">{selectedActivity.desc}</p>
                 <div className="h-[1px] w-full bg-[#E8E1D9] my-1" />
                 <p className="text-sm text-gray-600 leading-relaxed">{selectedActivity.details}</p>
               </div>
             </div>
 
-            <div className="p-6 bg-white/40 border-t border-[#E8E1D9] flex justify-end">
+            <div className="p-6 bg-[var(--brand-surface)]/40 border-t border-[#E8E1D9] flex justify-end">
               <button
                 onClick={() => setSelectedActivity(null)}
                 className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity"

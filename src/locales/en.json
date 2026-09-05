@@ -59,7 +59,11 @@
   },
   "settings": {
     "title": "Settings",
-    "desc": "Manage your store configuration and margin rules."
+    "desc": "Manage your store configuration and margin rules.",
+    "appearance": "Appearance",
+    "theme_light": "Light",
+    "theme_dark": "Dark",
+    "theme_system": "System"
   },
   "logistics": {
     "tab_expertises": "Appraisals",

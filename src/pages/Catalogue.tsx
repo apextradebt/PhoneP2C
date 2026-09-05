@@ -97,7 +97,7 @@ export default function CataloguePage() {
             value={globalSearch}
             onChange={(e) => setGlobalSearch(e.target.value)}
             placeholder={t('catalogue.search')}
-            className="w-full pl-10 pr-4 py-3 bg-white/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
+            className="w-full pl-10 pr-4 py-3 bg-[var(--brand-surface)]/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
           />
         </div>
 
@@ -107,7 +107,7 @@ export default function CataloguePage() {
               <button
                 key={`${model.brandName}-${model.model}`}
                 onClick={() => handleSelectModel(model.model, model.brandName)}
-                className="bg-white/40 p-5 rounded-2xl shadow-soft flex items-center gap-4 text-left hover:bg-white hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
+                className="bg-[var(--brand-surface)]/40 p-5 rounded-2xl shadow-soft flex items-center gap-4 text-left hover:bg-[var(--brand-surface)] hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
               >
                 <div className="w-12 h-12 rounded-[1.2rem] bg-[#E8E1D9] shadow-inner-soft flex items-center justify-center shrink-0 group-hover:bg-[var(--color-brand-terracotta)] transition-colors">
                   <Smartphone className="w-5 h-5 text-[var(--color-brand-dark)]/70 group-hover:text-white transition-colors" />
@@ -129,7 +129,7 @@ export default function CataloguePage() {
               <button
                 key={brand.name}
                 onClick={() => { setSelectedBrand(brand.name); setSearchQuery(""); }}
-                className="bg-white/40 p-6 rounded-[2rem] shadow-soft flex flex-col items-center justify-center gap-3 h-36 cursor-pointer hover:bg-white hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
+                className="bg-[var(--brand-surface)]/40 p-6 rounded-[2rem] shadow-soft flex flex-col items-center justify-center gap-3 h-36 cursor-pointer hover:bg-[var(--brand-surface)] hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
               >
                 <div className="w-12 h-12 rounded-full bg-[#E8E1D9] flex items-center justify-center shadow-inner-soft group-hover:bg-[var(--color-brand-terracotta)] transition-colors">
                   <Smartphone className="w-6 h-6 text-[var(--color-brand-dark)] group-hover:text-white transition-colors" />
@@ -157,7 +157,7 @@ export default function CataloguePage() {
               setSelectedBrand(null);
             }
           }}
-          className="w-10 h-10 rounded-full bg-white/60 shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] hover:bg-white transition-all shrink-0"
+          className="w-10 h-10 rounded-full bg-[var(--brand-surface)]/60 shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] hover:bg-[var(--brand-surface)] transition-all shrink-0"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -179,7 +179,7 @@ export default function CataloguePage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Rechercher un modèle..."
-              className="w-full pl-10 pr-4 py-3 bg-white/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
+              className="w-full pl-10 pr-4 py-3 bg-[var(--brand-surface)]/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
             />
           </div>
 
@@ -188,7 +188,7 @@ export default function CataloguePage() {
               <button
                 key={model.model}
                 onClick={() => handleSelectModel(model.model)}
-                className="bg-white/40 p-5 rounded-2xl shadow-soft flex items-center gap-4 text-left hover:bg-white hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
+                className="bg-[var(--brand-surface)]/40 p-5 rounded-2xl shadow-soft flex items-center gap-4 text-left hover:bg-[var(--brand-surface)] hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
               >
                 <div className="w-12 h-12 rounded-[1.2rem] bg-[#E8E1D9] shadow-inner-soft flex items-center justify-center shrink-0 group-hover:bg-[var(--color-brand-terracotta)] transition-colors">
                   <Smartphone className="w-5 h-5 text-[var(--color-brand-dark)]/70 group-hover:text-white transition-colors" />
@@ -212,7 +212,7 @@ export default function CataloguePage() {
         currentModel && editedRepairs && (
           <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4">
             {/* Summary card */}
-            <div className="bg-white/40 p-6 sm:p-8 rounded-[2rem] shadow-soft flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="bg-[var(--brand-surface)]/40 p-6 sm:p-8 rounded-[2rem] shadow-soft flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <div className="w-16 h-16 rounded-[1.5rem] bg-[var(--color-brand-terracotta)]/10 flex items-center justify-center shrink-0">
                 <Smartphone className="w-8 h-8 text-[var(--color-brand-terracotta)]" />
               </div>
@@ -225,7 +225,7 @@ export default function CataloguePage() {
             </div>
 
             {/* Repair costs */}
-            <div className="bg-white/40 p-6 sm:p-8 rounded-[2rem] shadow-soft">
+            <div className="bg-[var(--brand-surface)]/40 p-6 sm:p-8 rounded-[2rem] shadow-soft">
               <h3 className="font-bold text-lg text-[var(--color-brand-dark)] mb-6 flex items-center gap-2">
                 <Wrench className="w-5 h-5 text-[var(--color-brand-terracotta)]" />
                 Coûts de réparation
@@ -239,7 +239,7 @@ export default function CataloguePage() {
                       key={key}
                       className="flex items-center gap-4 bg-[var(--color-brand-light)] p-4 rounded-2xl shadow-inner-soft"
                     >
-                      <div className="w-10 h-10 rounded-full bg-white shadow-soft flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-[var(--brand-surface)] shadow-soft flex items-center justify-center shrink-0">
                         <Icon className="w-5 h-5 text-[var(--color-brand-terracotta)]" />
                       </div>
                       <span className="flex-1 font-semibold text-[var(--color-brand-dark)] text-sm">
@@ -251,7 +251,7 @@ export default function CataloguePage() {
                           value={value}
                           onChange={(e) => handleRepairChange(key, parseInt(e.target.value) || 0)}
                           min={0}
-                          className="w-24 text-right p-2 bg-white rounded-xl outline-none font-bold text-[var(--color-brand-terracotta)] shadow-soft text-sm focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all"
+                          className="w-24 text-right p-2 bg-[var(--brand-surface)] rounded-xl outline-none font-bold text-[var(--color-brand-terracotta)] shadow-soft text-sm focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all"
                         />
                         <span className="text-sm font-bold text-gray-400">€</span>
                       </div>

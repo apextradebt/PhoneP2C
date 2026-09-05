@@ -18,7 +18,7 @@ export default function MarchePage() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white/40 p-6 rounded-[2rem] shadow-soft">
+        <div className="bg-[var(--brand-surface)]/40 p-6 rounded-[2rem] shadow-soft">
           <h3 className="font-bold mb-4">Top Baisses Récents</h3>
           <ul className="space-y-3">
             <li className="flex justify-between text-sm"><span className="text-gray-500">iPhone 13 Pro</span><span className="text-red-500 font-medium">-15 € (BackMarket)</span></li>
@@ -26,7 +26,7 @@ export default function MarchePage() {
           </ul>
         </div>
         
-        <div className="bg-white/40 p-6 rounded-[2rem] shadow-soft">
+        <div className="bg-[var(--brand-surface)]/40 p-6 rounded-[2rem] shadow-soft">
           <h3 className="font-bold mb-4">Sources Synchronisées</h3>
           <ul className="space-y-3">
             <li className="flex justify-between text-sm"><span className="text-gray-500">BackMarket API</span><span className="text-green-500 font-medium">À jour (il y a 2h)</span></li>

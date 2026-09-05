@@ -238,7 +238,7 @@ export default function DevisPage() {
                 onClick={() => { setDevisType("unitaire"); setStep(1); }}
                 className="flex flex-col items-center gap-4 p-8 bg-[var(--color-brand-light)] rounded-[2rem] shadow-soft-active hover:shadow-soft transition-all text-[var(--color-brand-dark)] group"
               >
-                <div className="w-16 h-16 rounded-full bg-white shadow-inner-soft flex items-center justify-center group-hover:bg-[var(--color-brand-terracotta)] group-hover:text-white transition-colors">
+                <div className="w-16 h-16 rounded-full bg-[var(--brand-surface)] shadow-inner-soft flex items-center justify-center group-hover:bg-[var(--color-brand-terracotta)] group-hover:text-white transition-colors">
                   <Smartphone className="w-8 h-8" />
                 </div>
                 <span className="font-bold text-xl">Reprise Unitaire</span>
@@ -248,7 +248,7 @@ export default function DevisPage() {
                 onClick={() => { setDevisType("flotte"); setStep(1); }}
                 className="flex flex-col items-center gap-4 p-8 bg-[var(--color-brand-light)] rounded-[2rem] shadow-soft-active hover:shadow-soft transition-all text-[var(--color-brand-dark)] group"
               >
-                <div className="w-16 h-16 rounded-full bg-white shadow-inner-soft flex items-center justify-center group-hover:bg-[var(--color-brand-terracotta)] group-hover:text-white transition-colors">
+                <div className="w-16 h-16 rounded-full bg-[var(--brand-surface)] shadow-inner-soft flex items-center justify-center group-hover:bg-[var(--color-brand-terracotta)] group-hover:text-white transition-colors">
                   <Users className="w-8 h-8" />
                 </div>
                 <span className="font-bold text-xl">Reprise en Lot (Flotte)</span>
@@ -272,7 +272,7 @@ export default function DevisPage() {
 
             <div className="flex flex-col gap-4">
               {bulkItems.map((item, index) => (
-                <div key={index} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 bg-white p-4 rounded-2xl shadow-sm">
+                <div key={index} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 bg-[var(--brand-surface)] p-4 rounded-2xl shadow-sm">
                   <select
                     value={item.model}
                     onChange={e => updateBulkItem(index, 'model', e.target.value)}
@@ -324,7 +324,7 @@ export default function DevisPage() {
                 value={deviceSearch}
                 onChange={(e) => setDeviceSearch(e.target.value)}
                 placeholder="Rechercher un modèle..."
-                className="w-full pl-10 pr-4 py-3 bg-white/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
+                className="w-full pl-10 pr-4 py-3 bg-[var(--brand-surface)]/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
               />
             </div>
 
@@ -438,7 +438,7 @@ export default function DevisPage() {
                     href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white p-4 rounded-xl shadow-sm border-2 border-transparent hover:border-[var(--color-brand-terracotta)] hover:shadow-soft flex flex-col items-center justify-center text-center gap-2 transition-all cursor-pointer group"
+                    className="bg-[var(--brand-surface)] p-4 rounded-xl shadow-sm border-2 border-transparent hover:border-[var(--color-brand-terracotta)] hover:shadow-soft flex flex-col items-center justify-center text-center gap-2 transition-all cursor-pointer group"
                   >
                     <span className="text-xs text-gray-500 font-semibold group-hover:text-[var(--color-brand-terracotta)] transition-colors leading-tight">{source.name}</span>
                     <span className="text-lg md:text-xl font-bold text-[var(--color-brand-dark)]">{source.price} €</span>
@@ -547,7 +547,7 @@ export default function DevisPage() {
               </PDFDownloadLink>
             </div>
 
-            <div className="bg-white rounded-3xl shadow-inner-soft overflow-hidden h-[600px] p-4">
+            <div className="bg-[var(--brand-surface)] rounded-3xl shadow-inner-soft overflow-hidden h-[600px] p-4">
               <PDFViewer width="100%" height="100%" className="border-0 rounded-2xl">
                 <DevisPDF expertise={expertise} />
               </PDFViewer>

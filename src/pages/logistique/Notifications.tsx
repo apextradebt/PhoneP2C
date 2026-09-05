@@ -41,22 +41,22 @@ export default function NotificationsPage() {
         </div>
       </header>
 
-      <div className="bg-white/40 p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
+      <div className="bg-[var(--brand-surface)]/40 p-4 sm:p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
         {filteredActivities.length > 0 ? (
           filteredActivities.map((activity, i) => (
             <Link
               key={activity.id}
               to="/logistique"
               onClick={() => setSelectedActivity(activity)}
-              className="flex items-center gap-4 p-4 hover:bg-white/60 rounded-2xl transition-all cursor-pointer w-full border border-transparent hover:border-[#E8E1D9]"
+              className="flex items-center gap-4 p-4 hover:bg-[var(--brand-surface)]/60 rounded-2xl transition-all cursor-pointer w-full border border-transparent hover:border-[#E8E1D9]"
             >
-              <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[var(--brand-surface)] shadow-sm flex items-center justify-center shrink-0">
                 <activity.icon className={`w-6 h-6 ${activity.color}`} />
               </div>
               <div className="flex flex-col flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-4">
                   <span className="font-bold text-[var(--color-brand-dark)] truncate">{activity.title}</span>
-                  <span className="text-xs text-gray-400 font-medium whitespace-nowrap bg-white/50 px-2 py-1 rounded-md">{activity.time}</span>
+                  <span className="text-xs text-gray-400 font-medium whitespace-nowrap bg-[var(--brand-surface)]/50 px-2 py-1 rounded-md">{activity.time}</span>
                 </div>
                 <span className="text-sm text-gray-500 truncate mt-1">{activity.desc}</span>
               </div>
@@ -79,7 +79,7 @@ export default function NotificationsPage() {
             <div className="p-6 sm:p-8 flex flex-col gap-6">
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-[1.2rem] bg-white shadow-soft flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-[1.2rem] bg-[var(--brand-surface)] shadow-soft flex items-center justify-center shrink-0">
                     <selectedActivity.icon className={`w-6 h-6 ${selectedActivity.color}`} />
                   </div>
                   <div>
@@ -89,20 +89,20 @@ export default function NotificationsPage() {
                 </div>
                 <button
                   onClick={() => setSelectedActivity(null)}
-                  className="w-10 h-10 rounded-full bg-white shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors"
+                  className="w-10 h-10 rounded-full bg-[var(--brand-surface)] shadow-soft flex items-center justify-center text-gray-500 hover:text-[var(--color-brand-dark)] transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="bg-white/60 p-5 rounded-2xl border border-[#E8E1D9] flex flex-col gap-2">
+              <div className="bg-[var(--brand-surface)]/60 p-5 rounded-2xl border border-[#E8E1D9] flex flex-col gap-2">
                 <p className="text-sm text-[var(--color-brand-dark)] font-medium leading-relaxed">{selectedActivity.desc}</p>
                 <div className="h-[1px] w-full bg-[#E8E1D9] my-1" />
                 <p className="text-sm text-gray-600 leading-relaxed">{selectedActivity.details}</p>
               </div>
             </div>
 
-            <div className="p-6 bg-white/40 border-t border-[#E8E1D9] flex justify-end">
+            <div className="p-6 bg-[var(--brand-surface)]/40 border-t border-[#E8E1D9] flex justify-end">
               <button
                 onClick={() => setSelectedActivity(null)}
                 className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity"

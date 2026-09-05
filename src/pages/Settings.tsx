@@ -1,9 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 export default function SettingsPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-10 max-w-4xl mx-auto pb-12">
       <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold tracking-tight">Paramètres</h1>
-        <p className="text-gray-500 font-medium text-sm">Gérez la configuration de votre boutique et vos règles de marge.</p>
+        <h1 className="text-3xl font-bold tracking-tight">{t('settings.title')}</h1>
+        <p className="text-gray-500 font-medium text-sm">{t('settings.desc')}</p>
       </header>
 
       <div className="flex flex-col gap-6">

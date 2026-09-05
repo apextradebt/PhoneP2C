@@ -1,0 +1,9 @@
+[
+    {
+        "nom": "leNom",
+        "prenom": "lePrenom",
+        "email": "coucou@truc.com",
+        "magasin": "le nom du magasin",
+        "role": "admin"
+    }
+]

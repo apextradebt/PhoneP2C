@@ -4,6 +4,8 @@ import { useState, useMemo } from "react";
 import { Search, ChevronLeft, Save, Wrench, Battery, Monitor, Aperture, CircleDot, Smartphone } from "lucide-react";
 import { useCatalog } from "@/lib/CatalogContext";
 
+import { useTranslation } from "react-i18next";
+
 type RepairKeys = "batterie" | "ecran" | "connecteurs" | "camera" | "boutons";
 
 const REPAIR_ICONS: Record<RepairKeys, any> = {
@@ -15,6 +17,7 @@ const REPAIR_ICONS: Record<RepairKeys, any> = {
 };
 
 export default function CataloguePage() {
+  const { t } = useTranslation();
   const { catalog, updateRepairs } = useCatalog();
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [selectedModelName, setSelectedModelName] = useState<string | null>(null);
@@ -83,8 +86,8 @@ export default function CataloguePage() {
     return (
       <div className="flex flex-col gap-10 max-w-7xl mx-auto pb-12">
         <header className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold tracking-tight">Catalogue Appareils</h1>
-          <p className="text-gray-500 font-medium text-sm">Gérez les modèles de téléphones et les coûts de réparation par défaut.</p>
+          <h1 className="text-3xl font-bold tracking-tight">{t('catalogue.title')}</h1>
+          <p className="text-gray-500 font-medium text-sm">{t('catalogue.desc')}</p>
         </header>
 
         <div className="relative max-w-lg">
@@ -93,7 +96,7 @@ export default function CataloguePage() {
             type="text"
             value={globalSearch}
             onChange={(e) => setGlobalSearch(e.target.value)}
-            placeholder="Rechercher un modèle dans tout le catalogue..."
+            placeholder={t('catalogue.search')}
             className="w-full pl-10 pr-4 py-3 bg-white/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
           />
         </div>

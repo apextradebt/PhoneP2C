@@ -1,9 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 export default function MarchePage() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-10 max-w-7xl mx-auto pb-12">
       <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold tracking-tight">Veille Marché</h1>
-        <p className="text-gray-500 font-medium text-sm">Prix de référence scrappés en temps réel pour l'ajustement de vos offres.</p>
+        <h1 className="text-3xl font-bold tracking-tight">{t('marche.title')}</h1>
+        <p className="text-gray-500 font-medium text-sm">{t('marche.desc')}</p>
       </header>
 
       <div className="bg-[var(--color-brand-light)] p-8 rounded-[2rem] shadow-soft flex flex-col gap-6">

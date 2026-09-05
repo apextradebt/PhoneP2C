@@ -9,6 +9,7 @@ import Catalogue from './pages/Catalogue';
 import Marche from './pages/Marche';
 import Settings from './pages/Settings';
 import LogistiqueIndex from './pages/logistique/Index';
+import Users from './pages/Users';
 
 export default function App() {
   const domain = import.meta.env.VITE_AUTH0_DOMAIN || '';
@@ -35,6 +36,7 @@ export default function App() {
               <Route path="/marche" element={<Marche />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/logistique" element={<LogistiqueIndex />} />
+              <Route path="/users" element={<Users />} />
             </Routes>
           </LayoutContent>
         </HashRouter>

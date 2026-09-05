@@ -13,9 +13,11 @@
   "dependencies": {
     "@auth0/auth0-react": "^2.24.1",
     "@react-pdf/renderer": "^4.9.0",
+    "i18next": "^26.4.2",
     "lucide-react": "^1.39.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "react-i18next": "^17.0.13",
     "react-router-dom": "^7.18.3",
     "recharts": "^3.10.1"
   },

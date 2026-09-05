@@ -2,16 +2,18 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, Smartphone, ClipboardList, Truck, LineChart, Settings, Menu, X, LogOut } from "lucide-react";
+import { LayoutDashboard, Smartphone, ClipboardList, Truck, LineChart, Settings, Menu, X, LogOut, Globe, Users } from "lucide-react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useTranslation } from "react-i18next";
 
-const navigation = [
-  { name: "Vue d'ensemble", href: "/", icon: LayoutDashboard },
-  { name: "Expertises & Devis", href: "/devis", icon: ClipboardList },
-  { name: "Catalogue", href: "/catalogue", icon: Smartphone },
-  { name: "Logistique", href: "/logistique", icon: Truck },
-  { name: "Veille Marché", href: "/marche", icon: LineChart },
-  { name: "Paramètres", href: "/settings", icon: Settings },
+const navigationKeys = [
+  { key: "sidebar.overview", href: "/", icon: LayoutDashboard },
+  { key: "sidebar.expertise", href: "/devis", icon: ClipboardList },
+  { key: "sidebar.catalog", href: "/catalogue", icon: Smartphone },
+  { key: "sidebar.logistics", href: "/logistique", icon: Truck },
+  { key: "sidebar.market", href: "/marche", icon: LineChart },
+  { key: "sidebar.settings", href: "/settings", icon: Settings },
+
 ];
 
 export default function Sidebar() {
@@ -19,6 +21,12 @@ export default function Sidebar() {
   const pathname = location.pathname;
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth0();
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    const nextLang = i18n.language === 'fr' ? 'en' : 'fr';
+    i18n.changeLanguage(nextLang);
+  };
 
   return (
     <>
@@ -76,12 +84,12 @@ export default function Sidebar() {
         </div>
 
         <nav className="flex-1 flex flex-col gap-3 mt-4 md:mt-0 overflow-y-auto">
-          {navigation.map((item) => {
+          {navigationKeys.map((item) => {
             const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
 
             return (
               <Link
-                key={item.name}
+                key={item.key}
                 to={item.href}
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center px-4 py-3 rounded-[1rem] transition-all duration-300 ${isActive
@@ -96,40 +104,80 @@ export default function Sidebar() {
                   />
                 </div>
                 <span className={`opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap`}>
-                  {item.name}
+                  {t(item.key)}
                 </span>
               </Link>
             );
           })}
         </nav>
 
-        <div className="mt-auto pt-6 border-t border-[#E8E1D9] flex items-center overflow-hidden p-2 -mx-2 rounded-xl group/profile">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 min-w-[40px] rounded-full bg-[#E8E1D9] shadow-inner-soft shrink-0 flex items-center justify-center overflow-hidden">
-                {user?.picture ? (
-                  <img src={user.picture} alt={user.name || "Profile"} className="w-full h-full object-cover" />
-                ) : (
-                  <span className="text-[var(--color-brand-dark)] font-bold text-sm">
-                    {user?.name?.charAt(0).toUpperCase() || "M"}
-                  </span>
-                )}
-              </div>
-              <div className="flex flex-col opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                <span className="text-sm font-medium text-[var(--color-brand-dark)] capitalize">
-                  {user?.email ? user.email.split('@')[0].replace('.', ' ') : (user?.name || "Manager")}
-                </span>
-                <span className="mt-1 bg-[var(--color-brand-terracotta)]/10 text-[var(--color-brand-terracotta)] text-[10px] font-bold px-2 py-0.5 rounded-full w-max uppercase tracking-wider">
-                  Admin
-                </span>
-              </div>
-            </div>
-            <button 
-              onClick={() => logout({ logoutParams: { returnTo: window.location.origin + import.meta.env.BASE_URL } })}
-              className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ml-2 p-1.5 hover:bg-[var(--color-brand-terracotta)]/10 rounded-full group-hover/profile:text-[var(--color-brand-terracotta)] outline-none"
+        <div className="mt-auto pt-4 border-t border-[#E8E1D9] flex flex-col gap-4">
+
+          {/* Users Button - Only visible for Admin/Manager */}
+          {((user as any)?.role === 'admin' || (user as any)?.role === 'manager' || true) && (
+            <Link
+              to="/users"
+              onClick={() => setIsOpen(false)}
+              className={`flex items-center px-4 py-3 rounded-[1rem] transition-all duration-300 ${pathname === '/users'
+                ? "bg-[var(--color-brand-light)] shadow-soft-active text-[var(--color-brand-terracotta)] font-medium"
+                : "text-gray-500 hover:bg-[var(--color-brand-light)] hover:shadow-soft hover:text-[var(--color-brand-dark)]"
+                }`}
             >
-              <LogOut className="w-5 h-5 text-gray-400 group-hover/profile:text-[var(--color-brand-terracotta)] transition-colors" />
-            </button>
+              <div className="flex items-center justify-center min-w-[20px]">
+                <Users
+                  strokeWidth={pathname === '/users' ? 2.5 : 1.5}
+                  className={`relative right-1.5 w-5 h-5 ${pathname === '/users' ? "text-[var(--color-brand-terracotta)]" : ""}`}
+                />
+              </div>
+              <span className={`opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap`}>
+                {t("sidebar.users")}
+              </span>
+            </Link>
+          )}
+
+          {/* Language Toggle */}
+
+
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center px-4 py-2 rounded-xl text-gray-500 hover:bg-[var(--color-brand-light)] hover:shadow-soft hover:text-[var(--color-brand-dark)] transition-all duration-300 w-full group/lang"
+          >
+            <div className="flex items-center justify-center min-w-[20px]">
+              <Globe className="w-5 h-5 relative right-1.5" strokeWidth={1.5} />
+            </div>
+            <span className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-medium text-sm">
+              {i18n.language === 'fr' ? 'English' : 'Français'}
+            </span>
+          </button>
+
+          <div className="flex items-center overflow-hidden p-2 -mx-2 rounded-xl group/profile">
+            <div className="flex items-center justify-between w-full">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 min-w-[40px] rounded-full bg-[#E8E1D9] shadow-inner-soft shrink-0 flex items-center justify-center overflow-hidden">
+                  {user?.picture ? (
+                    <img src={user.picture} alt={user.name || "Profile"} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-[var(--color-brand-dark)] font-bold text-sm">
+                      {user?.name?.charAt(0).toUpperCase() || "M"}
+                    </span>
+                  )}
+                </div>
+                <div className="flex flex-col opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  <span className="text-sm font-medium text-[var(--color-brand-dark)] capitalize">
+                    {user?.email ? user.email.split('@')[0].replace('.', ' ') : (user?.name || "Manager")}
+                  </span>
+                  <span className="mt-1 bg-[var(--color-brand-terracotta)]/10 text-[var(--color-brand-terracotta)] text-[10px] font-bold px-2 py-0.5 rounded-full w-max uppercase tracking-wider">
+                    {t('sidebar.admin')}
+                  </span>
+                </div>
+              </div>
+              <button
+                onClick={() => logout({ logoutParams: { returnTo: window.location.origin + import.meta.env.BASE_URL } })}
+                className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 ml-2 p-1.5 hover:bg-[var(--color-brand-terracotta)]/10 rounded-full group-hover/profile:text-[var(--color-brand-terracotta)] outline-none"
+              >
+                <LogOut className="w-5 h-5 text-gray-400 group-hover/profile:text-[var(--color-brand-terracotta)] transition-colors" />
+              </button>
+            </div>
           </div>
         </div>
       </aside>

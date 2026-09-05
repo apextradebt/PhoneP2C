@@ -6,6 +6,7 @@ import { DevisPDF } from "../components/DevisPDF";
 import { DeviceGrade, DevisItem, Expertise } from "@/types";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine } from 'recharts';
 import { useCatalog } from "@/lib/CatalogContext";
+import { useTranslation } from "react-i18next";
 
 import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
 
@@ -23,6 +24,7 @@ const STRATEGY_MODIFIERS = {
 };
 
 export default function DevisPage() {
+  const { t } = useTranslation();
   const { allModels, getModel, getRepairOptions } = useCatalog();
   const [step, setStep] = useState(0);
   const [devisType, setDevisType] = useState<"unitaire" | "flotte" | null>(null);
@@ -174,8 +176,8 @@ export default function DevisPage() {
   return (
     <div className="flex flex-col gap-10 max-w-5xl mx-auto pb-12">
       <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold tracking-tight">Nouveau Devis</h1>
-        <p className="text-gray-500 font-medium text-sm">Créez une nouvelle offre de reprise (Unitaire ou Lot).</p>
+        <h1 className="text-3xl font-bold tracking-tight">{t('devis.title')}</h1>
+        <p className="text-gray-500 font-medium text-sm">{t('devis.desc')}</p>
       </header>
 
       {/* Stepper (Only show if type is selected) */}

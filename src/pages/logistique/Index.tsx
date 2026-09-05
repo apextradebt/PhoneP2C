@@ -6,6 +6,7 @@ import { Expertise } from "@/types";
 import { Smartphone, User, Tag, PenTool, X } from "lucide-react";
 import CommandesPage from "./Commandes";
 import NotificationsPage from "./Notifications";
+import { useTranslation } from "react-i18next";
 
 const columnConfigs = [
   { id: "En attente", title: "En attente" },
@@ -15,6 +16,7 @@ const columnConfigs = [
 ];
 
 export default function LogistiquePage() {
+  const { t } = useTranslation();
   const [columns, setColumns] = useState(() => {
     return columnConfigs.map(col => ({
       ...col,
@@ -74,21 +76,21 @@ export default function LogistiquePage() {
           onClick={() => setActiveTab('expertises')}
           className={`px-4 py-2 font-bold transition-all relative ${activeTab === 'expertises' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-400 hover:text-[var(--color-brand-dark)]'}`}
         >
-          Expertises
+          {t('logistics.tab_expertises')}
           {activeTab === 'expertises' && <div className="absolute bottom-[-17px] left-0 right-0 h-0.5 bg-[var(--color-brand-terracotta)] rounded-t-full" />}
         </button>
         <button
           onClick={() => setActiveTab('commandes')}
           className={`px-4 py-2 font-bold transition-all relative ${activeTab === 'commandes' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-400 hover:text-[var(--color-brand-dark)]'}`}
         >
-          Commandes
+          {t('logistics.tab_orders')}
           {activeTab === 'commandes' && <div className="absolute bottom-[-17px] left-0 right-0 h-0.5 bg-[var(--color-brand-terracotta)] rounded-t-full" />}
         </button>
         <button
           onClick={() => setActiveTab('notifications')}
           className={`px-4 py-2 font-bold transition-all relative ${activeTab === 'notifications' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-400 hover:text-[var(--color-brand-dark)]'}`}
         >
-          Notifications
+          {t('logistics.tab_notifications')}
           {activeTab === 'notifications' && <div className="absolute bottom-[-17px] left-0 right-0 h-0.5 bg-[var(--color-brand-terracotta)] rounded-t-full" />}
         </button>
       </div>

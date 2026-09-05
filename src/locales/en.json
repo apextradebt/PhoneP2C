@@ -1,0 +1,87 @@
+{
+  "sidebar": {
+    "overview": "Overview",
+    "expertise": "Appraisals & Quotes",
+    "catalog": "Catalog",
+    "logistics": "Logistics",
+    "market": "Market Watch",
+    "settings": "Settings",
+    "admin": "Admin",
+    "language": "FR",
+    "users": "Users"
+  },
+  "home": {
+    "overview": "Overview",
+    "welcome": "Welcome to your trade-in management space.",
+    "search": "Search...",
+    "new_quote": "New Quote",
+    "kpi_phones": "Appraised Phones",
+    "kpi_value": "Trade-in Value",
+    "kpi_waiting": "Awaiting Receipt",
+    "latest_expertises": "Latest Appraisals",
+    "results": "Results",
+    "see_all": "See all",
+    "proposed_price": "Proposed price",
+    "no_results": "No results for",
+    "recent_activities": "Recent Activities",
+    "new_quote_quick": "Quick New Quote",
+    "new_quote_desc": "Enter initial information.",
+    "device_model": "Device Model",
+    "device_model_placeholder": "Ex: iPhone 13 Pro",
+    "imei": "IMEI / Serial Number",
+    "imei_placeholder": "Enter or scan IMEI",
+    "scan": "SCAN",
+    "start_tunnel": "Start appraisal tunnel",
+    "client": "Client",
+    "devices": "Devices",
+    "identification": "Identification",
+    "planned_repairs": "Planned repairs",
+    "no_repairs": "No repairs planned.",
+    "total": "Total",
+    "trade_offer": "Trade-in Offer",
+    "print_quote": "Print Quote",
+    "send_label": "Send Label",
+    "close": "Close"
+  },
+  "connexion": {
+    "restricted_access": "Restricted Access",
+    "login_desc": "You must be logged in to access this resource.",
+    "login_btn": "Log in"
+  },
+  "catalogue": {
+    "title": "Device Catalog",
+    "desc": "Manage phone models and default repair costs.",
+    "search": "Search for a model across the catalog..."
+  },
+  "marche": {
+    "title": "Market Watch",
+    "desc": "Real-time scraped reference prices for offer adjustments."
+  },
+  "settings": {
+    "title": "Settings",
+    "desc": "Manage your store configuration and margin rules."
+  },
+  "logistics": {
+    "tab_expertises": "Appraisals",
+    "tab_orders": "Orders",
+    "tab_notifications": "Notifications"
+  },
+  "devis": {
+    "title": "Appraisal & Quote",
+    "desc": "Evaluate the device condition to generate a trade-in offer."
+  },
+  "users": {
+    "title": "User Management",
+    "desc": "Manage roles and access for your workshop members.",
+    "col_name": "Name",
+    "col_email": "Email",
+    "col_workshop": "Workshop",
+    "col_role": "Role",
+    "col_actions": "Actions",
+    "search": "Search a user...",
+    "edit_role": "Edit Role",
+    "save": "Save",
+    "access_denied": "Access Denied",
+    "access_denied_desc": "You do not have sufficient permissions to access this page."
+  }
+}

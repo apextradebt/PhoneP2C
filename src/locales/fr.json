@@ -1,0 +1,87 @@
+{
+  "sidebar": {
+    "overview": "Vue d'ensemble",
+    "expertise": "Expertises & Devis",
+    "catalog": "Catalogue",
+    "logistics": "Logistique",
+    "market": "Veille Marché",
+    "settings": "Paramètres",
+    "admin": "Admin",
+    "language": "EN",
+    "users": "Utilisateurs"
+  },
+  "home": {
+    "overview": "Vue d'ensemble",
+    "welcome": "Bienvenue sur votre espace de gestion des reprises.",
+    "search": "Rechercher...",
+    "new_quote": "Nouveau Devis",
+    "kpi_phones": "Téléphones Expertisés",
+    "kpi_value": "Valeur de Reprise",
+    "kpi_waiting": "En attente de réception",
+    "latest_expertises": "Dernières Expertises",
+    "results": "Résultats",
+    "see_all": "Voir tout",
+    "proposed_price": "Prix proposé",
+    "no_results": "Aucun résultat pour",
+    "recent_activities": "Activités Récentes",
+    "new_quote_quick": "Nouveau Devis Rapide",
+    "new_quote_desc": "Saisissez les premières informations.",
+    "device_model": "Modèle de l'appareil",
+    "device_model_placeholder": "Ex: iPhone 13 Pro",
+    "imei": "IMEI / Numéro de série",
+    "imei_placeholder": "Saisir ou scanner l'IMEI",
+    "scan": "SCAN",
+    "start_tunnel": "Lancer le tunnel d'expertise",
+    "client": "Client",
+    "devices": "Appareils",
+    "identification": "Identification",
+    "planned_repairs": "Réparations prévues",
+    "no_repairs": "Aucune réparation prévue.",
+    "total": "Total",
+    "trade_offer": "Offre de Reprise",
+    "print_quote": "Imprimer Devis",
+    "send_label": "Envoyer Étiquette",
+    "close": "Fermer"
+  },
+  "connexion": {
+    "restricted_access": "Accès Restreint",
+    "login_desc": "Vous devez être connecté pour accéder à cette ressource.",
+    "login_btn": "Se connecter"
+  },
+  "catalogue": {
+    "title": "Catalogue Appareils",
+    "desc": "Gérez les modèles de téléphones et les coûts de réparation par défaut.",
+    "search": "Rechercher un modèle dans tout le catalogue..."
+  },
+  "marche": {
+    "title": "Veille Marché",
+    "desc": "Prix de référence scrappés en temps réel pour l'ajustement de vos offres."
+  },
+  "settings": {
+    "title": "Paramètres",
+    "desc": "Gérez la configuration de votre boutique et vos règles de marge."
+  },
+  "logistics": {
+    "tab_expertises": "Expertises",
+    "tab_orders": "Commandes",
+    "tab_notifications": "Notifications"
+  },
+  "devis": {
+    "title": "Expertise & Devis",
+    "desc": "Évaluez l'état de l'appareil pour générer une offre de reprise."
+  },
+  "users": {
+    "title": "Gestion des Utilisateurs",
+    "desc": "Gérez les rôles et accès des membres de votre atelier.",
+    "col_name": "Nom",
+    "col_email": "Email",
+    "col_workshop": "Atelier",
+    "col_role": "Rôle",
+    "col_actions": "Actions",
+    "search": "Rechercher un utilisateur...",
+    "edit_role": "Modifier le rôle",
+    "save": "Enregistrer",
+    "access_denied": "Accès Refusé",
+    "access_denied_desc": "Vous n'avez pas les droits suffisants pour accéder à cette page."
+  }
+}

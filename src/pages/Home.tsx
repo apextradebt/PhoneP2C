@@ -7,7 +7,10 @@ import { mockExpertises } from "@/lib/mockData";
 import { mockActivities } from "@/lib/mockActivities";
 import { Expertise } from "@/types";
 
+import { useTranslation } from "react-i18next";
+
 export default function Home() {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [isNewDevisDrawerOpen, setIsNewDevisDrawerOpen] = useState(false);
   const [selectedExpertise, setSelectedExpertise] = useState<Expertise | null>(null);
@@ -25,8 +28,8 @@ export default function Home() {
     <div className="flex flex-col gap-10 pb-12 relative h-full">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight mb-2">Vue d'ensemble</h1>
-          <p className="text-gray-500 font-medium text-sm">Bienvenue sur votre espace de gestion des reprises.</p>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">{t('home.overview')}</h1>
+          <p className="text-gray-500 font-medium text-sm">{t('home.welcome')}</p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -36,13 +39,13 @@ export default function Home() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Rechercher..."
+              placeholder={t('home.search')}
               className="w-full pl-10 pr-4 py-3 bg-[var(--color-brand-light)] rounded-full shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
             />
           </div>
           <Link to="/devis" className="flex items-center justify-center gap-2 bg-[var(--color-brand-terracotta)] text-white px-6 py-3 rounded-full font-medium shadow-soft hover:opacity-90 transition-opacity whitespace-nowrap">
             <Plus className="w-5 h-5" />
-            Nouveau Devis
+            {t('home.new_quote')}
           </Link>
         </div>
       </header>
@@ -50,9 +53,9 @@ export default function Home() {
       {/* KPI Cards */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { title: "Téléphones Expertisés", value: "124", label: "+12% ce mois-ci" },
-          { title: "Valeur de Reprise", value: "24,500 €", label: "Marge moy: 28%" },
-          { title: "En attente de réception", value: "18", label: "Colis en transit" }
+          { title: t('home.kpi_phones'), value: "124", label: "+12% ce mois-ci" },
+          { title: t('home.kpi_value'), value: "24,500 €", label: "Marge moy: 28%" },
+          { title: t('home.kpi_waiting'), value: "18", label: "Colis en transit" }
         ].map((kpi, i) => (
           <div key={i} className="p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
             <h3 className="text-gray-500 font-medium text-sm uppercase tracking-wider">{kpi.title}</h3>
@@ -67,9 +70,9 @@ export default function Home() {
         <section className="lg:col-span-2 flex flex-col gap-6">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold">
-              {searchQuery ? `Résultats (${filteredExpertises.length})` : "Dernières Expertises"}
+              {searchQuery ? `${t('home.results')} (${filteredExpertises.length})` : t('home.latest_expertises')}
             </h2>
-            {!searchQuery && <button className="text-[var(--color-brand-terracotta)] text-sm font-medium hover:underline">Voir tout</button>}
+            {!searchQuery && <button className="text-[var(--color-brand-terracotta)] text-sm font-medium hover:underline">{t('home.see_all')}</button>}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -99,7 +102,7 @@ export default function Home() {
                     <p className="text-gray-400 text-xs font-mono mt-1">{exp.id} • {exp.client.firstName} {exp.client.lastName}</p>
                   </div>
                   <div className="mt-auto pt-4 border-t border-[#E8E1D9]/50 flex justify-between items-end">
-                    <span className="text-sm text-gray-500 font-medium">Prix proposé</span>
+                    <span className="text-sm text-gray-500 font-medium">{t('home.proposed_price')}</span>
                     <span className="text-xl font-bold text-[var(--color-brand-terracotta)]">{exp.totalProposedPrice} €</span>
                   </div>
                 </div>
@@ -108,7 +111,7 @@ export default function Home() {
 
             {filteredExpertises.length === 0 && (
               <div className="col-span-1 sm:col-span-2 text-center py-10 text-gray-500 font-medium">
-                Aucun résultat pour "{searchQuery}"
+                {t('home.no_results')} "{searchQuery}"
               </div>
             )}
           </div>
@@ -117,8 +120,8 @@ export default function Home() {
         {/* Timeline (Activités récentes) */}
         <section className="flex flex-col gap-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold">Activités Récentes</h2>
-            <Link to="/logistique/notifications" className="text-[var(--color-brand-terracotta)] text-sm font-medium hover:underline">Voir tout</Link>
+            <h2 className="text-xl font-bold">{t('home.recent_activities')}</h2>
+            <Link to="/logistique/notifications" className="text-[var(--color-brand-terracotta)] text-sm font-medium hover:underline">{t('home.see_all')}</Link>
           </div>
 
           <div className="bg-[var(--color-brand-light)] p-4 rounded-[2rem] shadow-soft flex flex-col gap-2 h-full">

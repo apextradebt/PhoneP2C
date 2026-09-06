@@ -22,11 +22,12 @@ export default function App() {
       clientId={clientId}
       authorizationParams={{
         redirect_uri: window.location.origin + import.meta.env.BASE_URL,
+        audience: import.meta.env.VITE_AUTH0_IDENTIFIER,
       }}
       useRefreshTokens={true}
       cacheLocation="localstorage"
     >
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
         <CatalogProvider>
           <HashRouter>
             <LayoutContent>

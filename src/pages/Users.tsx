@@ -4,24 +4,18 @@ import { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useTranslation } from "react-i18next";
 import { Search, UserCog, Shield, ShieldAlert, Check, UserPlus, X } from "lucide-react";
-
-interface UserData {
-  nom: string;
-  prenom: string;
-  email: string;
-  magasin: string;
-  role: string;
-}
+import { useUser } from "@/lib/UserContext";
+import type { User } from "@/types/user";
 
 export default function UsersPage() {
   const { user, getAccessTokenSilently } = useAuth0();
   const { t } = useTranslation();
+  const { userData, loading } = useUser()
 
-  // Assume the API or Auth0 returns a role. For testing, fallback to 'admin'.
-  const currentUserRole = (user as any)?.role || 'admin';
+  const currentUserRole = userData?.role;
   const hasAccess = currentUserRole === 'admin' || currentUserRole === 'manager';
 
-  const [usersList, setUsersList] = useState<UserData[]>([]);
+  const [usersList, setUsersList] = useState<User[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [editingEmail, setEditingEmail] = useState<string | null>(null);
   const [newRole, setNewRole] = useState<string>("");
@@ -111,7 +105,7 @@ export default function UsersPage() {
     u.magasin.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const startEditing = (u: UserData) => {
+  const startEditing = (u: User) => {
     setEditingEmail(u.email);
     setNewRole(u.role);
   };
@@ -182,7 +176,7 @@ export default function UsersPage() {
                       </select>
                     ) : (
                       <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold capitalize ${u.role === 'admin' ? 'bg-[var(--color-brand-terracotta)]/10 text-[var(--color-brand-terracotta)]' :
-                          u.role === 'manager' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-600'
+                        u.role === 'manager' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-600'
                         }`}>
                         {u.role === 'admin' && <Shield className="w-3 h-3 mr-1" />}
                         {u.role}

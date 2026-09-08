@@ -2,6 +2,8 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { CatalogProvider } from './lib/CatalogContext';
 import { ThemeProvider } from './lib/ThemeProvider';
+import { UserProvider } from './lib/UserContext';
+import { NotificationProvider } from './lib/NotificationContext';
 import LayoutContent from './components/LayoutContent';
 import Home from './pages/Home';
 import Connexion from './pages/Connexion';
@@ -27,24 +29,29 @@ export default function App() {
       useRefreshTokens={true}
       cacheLocation="localstorage"
     >
-      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-        <CatalogProvider>
-          <HashRouter>
-            <LayoutContent>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/connexion" element={<Connexion />} />
-                <Route path="/devis" element={<Devis />} />
-                <Route path="/catalogue" element={<Catalogue />} />
-                <Route path="/marche" element={<Marche />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="/logistique" element={<LogistiqueIndex />} />
-                <Route path="/users" element={<Users />} />
-              </Routes>
-            </LayoutContent>
-          </HashRouter>
-        </CatalogProvider>
-      </ThemeProvider>
+      <UserProvider>
+        <NotificationProvider>
+          <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+            <CatalogProvider>
+              <HashRouter>
+                <LayoutContent>
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/connexion" element={<Connexion />} />
+                    <Route path="/devis" element={<Devis />} />
+                    <Route path="/catalogue" element={<Catalogue />} />
+                    <Route path="/marche" element={<Marche />} />
+                    <Route path="/settings" element={<Settings />} />
+                    <Route path="/logistique" element={<LogistiqueIndex />} />
+                    <Route path="/users" element={<Users />} />
+                  </Routes>
+                </LayoutContent>
+              </HashRouter>
+            </CatalogProvider>
+          </ThemeProvider>
+        </NotificationProvider>
+      </UserProvider>
     </Auth0Provider>
   );
 }
+

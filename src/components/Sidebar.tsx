@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { LayoutDashboard, Smartphone, ClipboardList, Truck, LineChart, Settings, Menu, X, LogOut, Globe, Users } from "lucide-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useTranslation } from "react-i18next";
+import { useUser } from "@/lib/UserContext";
 
 const navigationKeys = [
   { key: "sidebar.overview", href: "/", icon: LayoutDashboard },
@@ -22,7 +23,7 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth0();
   const { t, i18n } = useTranslation();
-
+  const { userData, loading } = useUser()
   const toggleLanguage = () => {
     const nextLang = i18n.language === 'fr' ? 'en' : 'fr';
     i18n.changeLanguage(nextLang);
@@ -114,7 +115,7 @@ export default function Sidebar() {
         <div className="mt-auto pt-4 border-t border-[#E8E1D9] flex flex-col gap-4">
 
           {/* Users Button - Only visible for Admin/Manager */}
-          {((user as any)?.role === 'admin' || (user as any)?.role === 'manager' || true) && (
+          {((userData as any)?.role === 'admin' || (userData as any)?.role === 'manager') && (
             <Link
               to="/users"
               onClick={() => setIsOpen(false)}
@@ -155,19 +156,19 @@ export default function Sidebar() {
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 min-w-[40px] rounded-full bg-[#E8E1D9] shadow-inner-soft shrink-0 flex items-center justify-center overflow-hidden">
                   {user?.picture ? (
-                    <img src={user.picture} alt={user.name || "Profile"} className="w-full h-full object-cover" />
+                    <img src={user.picture} alt={userData?.nom || "Profile"} className="w-full h-full object-cover" />
                   ) : (
                     <span className="text-[var(--color-brand-dark)] font-bold text-sm">
-                      {user?.name?.charAt(0).toUpperCase() || "M"}
+                      {userData?.nom?.charAt(0).toUpperCase() || "M"}
                     </span>
                   )}
                 </div>
                 <div className="flex flex-col opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                   <span className="text-sm font-medium text-[var(--color-brand-dark)] capitalize">
-                    {user?.email ? user.email.split('@')[0].replace('.', ' ') : (user?.name || "Manager")}
+                    {user?.email ? user.email.split('@')[0].replace('.', ' ') : (userData?.nom || "Manager")}
                   </span>
                   <span className="mt-1 bg-[var(--color-brand-terracotta)]/10 text-[var(--color-brand-terracotta)] text-[10px] font-bold px-2 py-0.5 rounded-full w-max uppercase tracking-wider">
-                    {t('sidebar.admin')}
+                    {(userData?.role)}
                   </span>
                 </div>
               </div>

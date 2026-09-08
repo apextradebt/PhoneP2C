@@ -36,7 +36,7 @@ export default function UsersPage() {
           audience: import.meta.env.VITE_AUTH0_IDENTIFIER
         }
       });
-      const res = await fetch("http://localhost:3001/api/users/market", {
+      const res = await fetch(`${process.env.VITE_API_URL}/api/users/market`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -62,7 +62,7 @@ export default function UsersPage() {
     e.preventDefault();
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch("http://localhost:3001/api/users/add", {
+      const res = await fetch(`${process.env.VITE_API_URL}/api/users/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -80,7 +80,7 @@ export default function SettingsPage() {
     setProfileLoading(true);
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch(`http://localhost:3001/api/users/edit/${encodeURIComponent(userData.auth0Id)}`, {
+      const res = await fetch(`${process.env.VITE_API_URL}/api/users/edit/${encodeURIComponent(userData.auth0Id)}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ export default function SettingsPage() {
     setEmailLoading(true);
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch(`http://localhost:3001/api/users/edit/${encodeURIComponent(userData.auth0Id)}`, {
+      const res = await fetch(`${process.env.VITE_API_URL}/api/users/edit/${encodeURIComponent(userData.auth0Id)}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -150,7 +150,7 @@ export default function SettingsPage() {
     setPasswordLoading(true);
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch('http://localhost:3001/api/users/me/password', {
+      const res = await fetch(`${process.env.VITE_API_URL}/api/users/me/password`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ export default function SettingsPage() {
     setDeleteLoading(true);
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch('http://localhost:3001/api/users/delete', {
+      const res = await fetch(`${process.env.VITE_API_URL}/api/users/delete`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -405,31 +405,28 @@ export default function SettingsPage() {
             ══════════════════════════════════════════ */}
         <div className={sectionClass}>
           <h2 className="text-xl font-bold">{t('settings.appearance')}</h2>
-          
+
           <div className="grid grid-cols-3 gap-4">
             <button
               onClick={() => setTheme('light')}
-              className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${
-                theme === 'light' ? 'border-[var(--color-brand-terracotta)] bg-[var(--color-brand-terracotta)]/5 shadow-inner-soft' : 'border-transparent bg-[var(--background)] shadow-soft hover:shadow-soft-hover'
-              }`}
+              className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${theme === 'light' ? 'border-[var(--color-brand-terracotta)] bg-[var(--color-brand-terracotta)]/5 shadow-inner-soft' : 'border-transparent bg-[var(--background)] shadow-soft hover:shadow-soft-hover'
+                }`}
             >
               <Sun className={`w-6 h-6 ${theme === 'light' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-500'}`} />
               <span className={`text-sm font-semibold ${theme === 'light' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-500'}`}>{t('settings.theme_light')}</span>
             </button>
             <button
               onClick={() => setTheme('dark')}
-              className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${
-                theme === 'dark' ? 'border-[var(--color-brand-terracotta)] bg-[var(--color-brand-terracotta)]/5 shadow-inner-soft' : 'border-transparent bg-[var(--background)] shadow-soft hover:shadow-soft-hover'
-              }`}
+              className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${theme === 'dark' ? 'border-[var(--color-brand-terracotta)] bg-[var(--color-brand-terracotta)]/5 shadow-inner-soft' : 'border-transparent bg-[var(--background)] shadow-soft hover:shadow-soft-hover'
+                }`}
             >
               <Moon className={`w-6 h-6 ${theme === 'dark' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-500'}`} />
               <span className={`text-sm font-semibold ${theme === 'dark' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-500'}`}>{t('settings.theme_dark')}</span>
             </button>
             <button
               onClick={() => setTheme('system')}
-              className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${
-                theme === 'system' ? 'border-[var(--color-brand-terracotta)] bg-[var(--color-brand-terracotta)]/5 shadow-inner-soft' : 'border-transparent bg-[var(--background)] shadow-soft hover:shadow-soft-hover'
-              }`}
+              className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${theme === 'system' ? 'border-[var(--color-brand-terracotta)] bg-[var(--color-brand-terracotta)]/5 shadow-inner-soft' : 'border-transparent bg-[var(--background)] shadow-soft hover:shadow-soft-hover'
+                }`}
             >
               <Monitor className={`w-6 h-6 ${theme === 'system' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-500'}`} />
               <span className={`text-sm font-semibold ${theme === 'system' ? 'text-[var(--color-brand-terracotta)]' : 'text-gray-500'}`}>{t('settings.theme_system')}</span>

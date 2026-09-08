@@ -27,7 +27,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       setLoading(true);
       const token = await getAccessTokenSilently();
 
-      const response = await fetch(`http://localhost:3001/api/users/me?email=${encodeURIComponent(auth0User.email || '')}`, {
+      const response = await fetch(`${process.env.VITE_API_URL}/api/users/me?email=${encodeURIComponent(auth0User.email || '')}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

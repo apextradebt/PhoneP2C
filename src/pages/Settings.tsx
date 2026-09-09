@@ -22,6 +22,7 @@ export default function SettingsPage() {
   const { getAccessTokenSilently, logout } = useAuth0();
   const { userData, refreshUserData } = useUser();
   const { notify } = useNotification();
+  const url = import.meta.env.VITE_API_URL;
 
   // ── Profile editing ──
   const [editNom, setEditNom] = useState("");
@@ -80,7 +81,7 @@ export default function SettingsPage() {
     setProfileLoading(true);
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch(`${process.env.VITE_API_URL}/api/users/edit/${encodeURIComponent(userData.auth0Id)}`, {
+      const res = await fetch(`${url}/api/users/edit/${encodeURIComponent(userData.auth0Id)}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +114,7 @@ export default function SettingsPage() {
     setEmailLoading(true);
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch(`${process.env.VITE_API_URL}/api/users/edit/${encodeURIComponent(userData.auth0Id)}`, {
+      const res = await fetch(`${url}/api/users/edit/${encodeURIComponent(userData.auth0Id)}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -150,7 +151,7 @@ export default function SettingsPage() {
     setPasswordLoading(true);
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch(`${process.env.VITE_API_URL}/api/users/me/password`, {
+      const res = await fetch(`${url}/api/users/me/password`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -178,7 +179,7 @@ export default function SettingsPage() {
     setDeleteLoading(true);
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch(`${process.env.VITE_API_URL}/api/users/delete`, {
+      const res = await fetch(`${url}/api/users/delete`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

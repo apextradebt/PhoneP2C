@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState, ReactNode } from
 import { useAuth0 } from '@auth0/auth0-react';
 import type { User } from '@/types/user';
 
+const url = import.meta.env.VITE_API_URL;
 
 interface UserContextType {
   userData: User | null;
@@ -27,7 +28,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       setLoading(true);
       const token = await getAccessTokenSilently();
 
-      const response = await fetch(`${process.env.VITE_API_URL}/api/users/me?email=${encodeURIComponent(auth0User.email || '')}`, {
+      const response = await fetch(`${url}/api/users/me?email=${encodeURIComponent(auth0User.email || '')}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

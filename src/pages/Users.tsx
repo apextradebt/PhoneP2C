@@ -11,6 +11,7 @@ export default function UsersPage() {
   const { user, getAccessTokenSilently } = useAuth0();
   const { t } = useTranslation();
   const { userData, loading } = useUser()
+  const url = import.meta.env.VITE_API_URL;
 
   const currentUserRole = userData?.role;
   const hasAccess = currentUserRole === 'admin' || currentUserRole === 'manager';
@@ -36,7 +37,7 @@ export default function UsersPage() {
           audience: import.meta.env.VITE_AUTH0_IDENTIFIER
         }
       });
-      const res = await fetch(`${process.env.VITE_API_URL}/api/users/market`, {
+      const res = await fetch(`${url}/api/users/market`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -62,7 +63,7 @@ export default function UsersPage() {
     e.preventDefault();
     try {
       const token = await getAccessTokenSilently();
-      const res = await fetch(`${process.env.VITE_API_URL}/api/users/add`, {
+      const res = await fetch(`${url}/api/users/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

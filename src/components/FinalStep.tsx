@@ -168,10 +168,14 @@ export default function FinalStep({ unitairePricing, devisType, bulkItems, getMo
                 </div>
             </div>
 
-            <div className="hidden md:block bg-(--brand-surface) rounded-3xl shadow-inner-soft overflow-hidden h-150 p-4">
-                <PDFViewer width="100%" height="100%" className="border-0 rounded-2xl">
-                    <DevisPDF expertise={expertise} />
-                </PDFViewer>
+            <div className="hidden md:block bg-[var(--brand-surface)] rounded-3xl shadow-inner-soft overflow-hidden h-[600px] p-4">
+                {instance.url ? (
+                    <iframe src={`${instance.url}#view=FitH`} width="100%" height="100%" className="border-0 rounded-2xl" title="Devis PDF" />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center text-gray-500 font-medium">
+                        Génération du PDF en cours...
+                    </div>
+                )}
             </div>
         </div>
     )

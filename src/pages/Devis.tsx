@@ -3,15 +3,18 @@
 import { useState, useMemo, useEffect } from "react";
 import { ChevronRight, Smartphone, Wrench, FileText, CheckCircle, Search, Users, Plus, Trash2, Download, TrendingDown, Shield, Zap, BarChart2, Loader2 } from "lucide-react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { DevisPDF } from "../components/DevisPDF";
 import { DeviceGrade, DevisItem, Expertise } from "@/types";
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, ReferenceLine } from 'recharts';
 import { useCatalog } from "@/lib/CatalogContext";
 import { useTranslation } from "react-i18next";
 
-import { PDFViewer, PDFDownloadLink } from '@react-pdf/renderer';
 import ChoiceReprise from "@/components/devis/ChoiceReprise";
 import F_step1 from "@/components/devis/flotte/F_step1";
+import U_steap1 from "@/components/devis/unitaire/U_step1";
+import U_step2 from "@/components/devis/unitaire/U_step2";
+import U_step3 from "@/components/devis/unitaire/U_step3";
+import U_step4 from "@/components/devis/unitaire/U_step4";
+import FinalStep from "@/components/FinalStep";
+import NavigationButton from "./NavigationButton";
 
 const GRADE_DISCOUNTS: Record<DeviceGrade, number> = {
   "A": 0,    // 0% discount
@@ -261,48 +264,48 @@ export default function DevisPage() {
       {/* Stepper (Only show if type is selected) */}
       {devisType && (
         <div className="flex items-center justify-between relative px-2 sm:px-8">
-          <div className="absolute left-6 right-6 sm:left-8 sm:right-8 top-1/2 -translate-y-1/2 h-1 bg-[#E8E1D9] -z-10 rounded-full" />
+          <div className="absolute left-6 right-6 sm:left-8 sm:right-8 top-1/2 -translate-y-1/2 h-1 bg-brand-lin -z-10 rounded-full" />
 
-          <div className="flex flex-col items-center gap-2 sm:gap-3 bg-[var(--color-brand-light)] px-2 sm:px-4">
-            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 1 ? "bg-[var(--color-brand-terracotta)] text-white shadow-soft" : "bg-[var(--color-brand-light)] text-gray-400 shadow-inner-soft"}`}>
+          <div className="flex flex-col items-center gap-2 sm:gap-3 bg-(--color-brand-light) px-2 sm:px-4">
+            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 1 ? "bg-(--color-brand-terracotta) text-white shadow-soft" : "bg-(--color-brand-light) text-gray-400 shadow-inner-soft"}`}>
               <Smartphone className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${step >= 1 ? "text-[var(--color-brand-dark)]" : "text-gray-400"}`}>Appareils</span>
+            <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${step >= 1 ? "text-(--color-brand-dark)" : "text-gray-400"}`}>Appareils</span>
           </div>
 
           {devisType === "unitaire" && (
             <>
-              <div className="flex flex-col items-center gap-2 sm:gap-3 bg-[var(--color-brand-light)] px-2 sm:px-4">
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 2 ? "bg-[var(--color-brand-terracotta)] text-white shadow-soft" : "bg-[var(--color-brand-light)] text-gray-400 shadow-inner-soft"}`}>
+              <div className="flex flex-col items-center gap-2 sm:gap-3 bg-(--color-brand-light) px-2 sm:px-4">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 2 ? "bg-(--color-brand-terracotta) text-white shadow-soft" : "bg-(--color-brand-light) text-gray-400 shadow-inner-soft"}`}>
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${step >= 2 ? "text-[var(--color-brand-dark)]" : "text-gray-400"}`}>Diagnostic</span>
+                <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${step >= 2 ? "text-(--color-brand-dark)" : "text-gray-400"}`}>Diagnostic</span>
               </div>
-              <div className="flex flex-col items-center gap-2 sm:gap-3 bg-[var(--color-brand-light)] px-2 sm:px-4">
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 3 ? "bg-[var(--color-brand-terracotta)] text-white shadow-soft" : "bg-[var(--color-brand-light)] text-gray-400 shadow-inner-soft"}`}>
+              <div className="flex flex-col items-center gap-2 sm:gap-3 bg-(--color-brand-light) px-2 sm:px-4">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 3 ? "bg-(--color-brand-terracotta) text-white shadow-soft" : "bg-(--color-brand-light) text-gray-400 shadow-inner-soft"}`}>
                   <Wrench className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${step >= 3 ? "text-[var(--color-brand-dark)]" : "text-gray-400"}`}>Prestations</span>
+                <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${step >= 3 ? "text-(--color-brand-dark)" : "text-gray-400"}`}>Prestations</span>
               </div>
-              <div className="flex flex-col items-center gap-2 sm:gap-3 bg-[var(--color-brand-light)] px-2 sm:px-4">
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 4 ? "bg-[var(--color-brand-terracotta)] text-white shadow-soft" : "bg-[var(--color-brand-light)] text-gray-400 shadow-inner-soft"}`}>
+              <div className="flex flex-col items-center gap-2 sm:gap-3 bg-(--color-brand-light) px-2 sm:px-4">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${step >= 4 ? "bg-(--color-brand-terracotta) text-white shadow-soft" : "bg-(--color-brand-light) text-gray-400 shadow-inner-soft"}`}>
                   <BarChart2 className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${step >= 4 ? "text-[var(--color-brand-dark)]" : "text-gray-400"}`}>Stratégie</span>
+                <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${step >= 4 ? "text-(--color-brand-dark)" : "text-gray-400"}`}>Stratégie</span>
               </div>
             </>
           )}
 
-          <div className="flex flex-col items-center gap-2 sm:gap-3 bg-[var(--color-brand-light)] px-2 sm:px-4">
-            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${currentStepLabel === 5 ? "bg-[var(--color-brand-terracotta)] text-white shadow-soft" : "bg-[var(--color-brand-light)] text-gray-400 shadow-inner-soft"}`}>
+          <div className="flex flex-col items-center gap-2 sm:gap-3 bg-(--color-brand-light) px-2 sm:px-4">
+            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold transition-colors ${currentStepLabel === 5 ? "bg-(--color-brand-terracotta) text-white shadow-soft" : "bg-(--color-brand-light) text-gray-400 shadow-inner-soft"}`}>
               <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${currentStepLabel === 5 ? "text-[var(--color-brand-dark)]" : "text-gray-400"}`}>Devis PDF</span>
+            <span className={`text-[10px] sm:text-xs font-semibold hidden sm:block ${currentStepLabel === 5 ? "text-(--color-brand-dark)" : "text-gray-400"}`}>Devis PDF</span>
           </div>
         </div>
       )}
 
-      <main className="bg-[var(--color-brand-light)] p-6 md:p-10 rounded-[2rem] shadow-soft min-h-[400px]">
+      <main className="bg-(--color-brand-light) p-6 md:p-10 rounded-[2rem] shadow-soft min-h-100">
         {/* Step 0: Choice */}
         {step === 0 && (
           <ChoiceReprise setDevisType={setDevisType} setStep={setStep} />
@@ -315,345 +318,36 @@ export default function DevisPage() {
 
         {/* Step 1: Unitaire Device */}
         {step === 1 && devisType === "unitaire" && (
-          <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4">
-            <div>
-              <h2 className="text-xl font-bold mb-1">Quel appareil souhaitez-vous reprendre ?</h2>
-              <p className="text-sm text-gray-500">Sélectionnez le modèle.</p>
-            </div>
-
-            <div className="relative max-w-md">
-              <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                value={deviceSearch}
-                onChange={(e) => setDeviceSearch(e.target.value)}
-                placeholder="Rechercher un modèle..."
-                className="w-full pl-10 pr-4 py-3 bg-[var(--brand-surface)]/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
-              />
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-h-[500px] overflow-y-auto pr-2">
-              {filteredModels.map((cat, i) => (
-                <div
-                  key={i}
-                  onClick={() => { setSelectedModel(cat.model); setRepairs([]); }}
-                  className={`p-4 rounded-2xl border-2 cursor-pointer text-center font-medium transition-all ${selectedModel === cat.model
-                    ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)] text-[var(--color-brand-terracotta)]"
-                    : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent text-[var(--color-brand-dark)]"
-                    }`}
-                >
-                  <span className="text-xs text-gray-400 block mb-1">{cat.brand}</span>
-                  {cat.model}
-                </div>
-              ))}
-              {filteredModels.length === 0 && (
-                <div className="col-span-full text-center py-10 text-gray-500 font-medium">
-                  Aucun modèle trouvé pour "{deviceSearch}"
-                </div>
-              )}
-            </div>
-          </div>
+          <U_steap1 deviceSearch={deviceSearch} setDeviceSearch={setDeviceSearch} filteredModels={filteredModels} setSelectedModel={setSelectedModel} setRepairs={setRepairs} selectedModel={selectedModel} />
         )}
 
         {/* Step 2: Unitaire Caractéristiques & Diagnostic */}
         {step === 2 && devisType === "unitaire" && (
-          <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4">
-            <div>
-              <h2 className="text-xl font-bold mb-1">Caractéristiques & Diagnostic</h2>
-              <p className="text-sm text-gray-500">Précisez les caractéristiques et l'état de l'appareil.</p>
-            </div>
-
-            <div className="flex flex-col gap-6">
-              <div>
-                <h3 className="font-bold text-lg mb-3">Capacité</h3>
-                <div className="grid grid-cols-3 sm:grid-cols-5 gap-3">
-                  {["64GB", "128GB", "256GB", "512GB", "1TB"].map(cap => (
-                    <button
-                      key={cap}
-                      onClick={() => setUnitCapacity(cap)}
-                      className={`p-3 rounded-xl border-2 font-semibold transition-all ${unitCapacity === cap ? "bg-[var(--color-brand-light)] border-[var(--color-brand-terracotta)] text-[var(--color-brand-terracotta)] shadow-inner-soft" : "bg-[var(--color-brand-light)] border-transparent text-[var(--color-brand-dark)] shadow-soft-active hover:shadow-soft"}`}
-                    >
-                      {cap}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-lg mb-3">Couleur</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  {[
-                    { name: "Noir Sidéral", code: "#333333" },
-                    { name: "Argent", code: "#E3E4E5" },
-                    { name: "Or", code: "#FAD6BD" },
-                    { name: "Bleu", code: "#2B475D" },
-                    { name: "Vert", code: "#3C4B3E" },
-                    { name: "Rouge", code: "#A5282C" },
-                    { name: "Blanc", code: "#F9F6EF" },
-                    { name: "Violet", code: "#B6A1C4" },
-                  ].map(color => (
-                    <button
-                      key={color.name}
-                      onClick={() => setUnitColor(color.name)}
-                      className={`flex items-center gap-3 p-3 rounded-xl border-2 font-semibold transition-all ${unitColor === color.name ? "bg-[var(--color-brand-light)] border-[var(--color-brand-terracotta)] text-[var(--color-brand-terracotta)] shadow-inner-soft" : "bg-[var(--color-brand-light)] border-transparent text-[var(--color-brand-dark)] shadow-soft-active hover:shadow-soft"}`}
-                    >
-                      <div className="w-6 h-6 rounded-full border shadow-sm flex items-center justify-center bg-white shrink-0">
-                        <div className="w-4 h-4 rounded-full" style={{ backgroundColor: color.code }} />
-                      </div>
-                      <span className="text-sm truncate">{color.name}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-bold text-lg mb-3">État Global (Grade)</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { grade: "A", desc: "Comme neuf (0%)" },
-                    { grade: "B", desc: "Micro-rayures (-15%)" },
-                    { grade: "C", desc: "Rayures marquées (-30%)" },
-                    { grade: "D", desc: "Cassé (-50%)" },
-                  ].map((g, i) => (
-                    <div
-                      key={i}
-                      onClick={() => setUnitGrade(g.grade as DeviceGrade)}
-                      className={`p-6 rounded-2xl border-2 cursor-pointer transition-all ${unitGrade === g.grade
-                        ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)]"
-                        : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
-                        }`}
-                    >
-                      <h3 className="font-bold text-lg text-[var(--color-brand-dark)]">Grade {g.grade}</h3>
-                      <p className="text-sm text-gray-500">{g.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <U_step2 unitCapacity={unitCapacity} unitColor={unitColor} unitGrade={unitGrade} setUnitCapacity={setUnitCapacity} setUnitColor={setUnitColor} setUnitGrade={setUnitGrade} />
         )}
 
         {/* Step 3: Unitaire Repairs */}
         {step === 3 && devisType === "unitaire" && (
-          <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4">
-            <div>
-              <h2 className="text-xl font-bold mb-1">Prestations & Main d'œuvre</h2>
-              <p className="text-sm text-gray-500">Coûts de réparation issus du catalogue pour <span className="font-bold text-[var(--color-brand-dark)]">{selectedModel}</span>.</p>
-            </div>
-
-            <div className="flex flex-col gap-4">
-              {getRepairOptions(selectedModel).map((opt, i) => {
-                const isSelected = repairs.some(r => r.name === opt.name);
-                return (
-                  <label key={i} className={`flex items-center justify-between p-5 bg-[var(--color-brand-light)] rounded-2xl shadow-soft-active cursor-pointer transition-all border-2 ${isSelected ? "border-[var(--color-brand-terracotta)] shadow-inner-soft" : "border-transparent hover:shadow-soft"}`}>
-                    <div className="flex items-center gap-4">
-                      <input
-                        type="checkbox"
-                        checked={isSelected}
-                        onChange={(e) => {
-                          if (e.target.checked) setRepairs([...repairs, opt]);
-                          else setRepairs(repairs.filter(r => r.name !== opt.name));
-                        }}
-                        className="w-5 h-5 accent-[var(--color-brand-terracotta)]"
-                      />
-                      <span className="font-semibold">{opt.name}</span>
-                    </div>
-                    <span className="text-[var(--color-brand-terracotta)] font-bold">{opt.price} €</span>
-                  </label>
-                )
-              })}
-            </div>
-          </div>
+          <U_step3 selectedModel={selectedModel} repairs={repairs} setRepairs={setRepairs} getRepairOptions={getRepairOptions} />
         )}
 
         {/* Step 4: Market Strategy & Prediction (Unitaire Only) */}
         {step === 4 && devisType === "unitaire" && unitairePricing && (
-          <div className="flex flex-col gap-10 animate-in fade-in slide-in-from-bottom-4">
-            {isFetchingPrices ? (
-              <div className="flex flex-col items-center justify-center py-20 gap-6">
-                <Loader2 className="w-16 h-16 text-[var(--color-brand-terracotta)] animate-spin" />
-                <div className="text-center">
-                  <h2 className="text-2xl font-bold text-[var(--color-brand-dark)] mb-3">Analyse du marché en cours...</h2>
-                  <p className="text-gray-500 max-w-md mx-auto">Nos agents parcourent le web (BackMarket, EasyCash, Rebuy...) pour extraire la meilleure stratégie de prix pour votre {selectedModel} ({unitCapacity}).</p>
-                </div>
-              </div>
-            ) : (
-              <>
-                <header>
-                  <h2 className="text-2xl font-bold mb-2">Stratégie & Analyse Marché</h2>
-                  <p className="text-sm text-gray-500">
-                    La valeur de base calculée pour ce {selectedModel} ({unitCapacity}, {unitColor}, Grade {unitGrade}) après réparations est de <span className="font-bold text-[var(--color-brand-dark)]">{unitairePricing.valNet} €</span>.
-                  </p>
-                </header>
-
-                {/* Sources du marché */}
-                <div className="bg-[var(--color-brand-light)] p-6 rounded-2xl shadow-inner-soft">
-                  <h3 className="font-bold text-[var(--color-brand-dark)] mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
-                    <Search className="w-4 h-4 text-[var(--color-brand-terracotta)]" />
-                    Sources du marché en temps réel
-                  </h3>
-
-                  {marketResults?.resultats?.offres?.length > 0 ? (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {marketResults.resultats.offres.map((source: any, i: number) => (
-                        <a
-                          key={i}
-                          href={source.lien}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-[var(--brand-surface)] p-4 rounded-xl shadow-sm border-2 border-transparent hover:border-[var(--color-brand-terracotta)] hover:shadow-soft flex flex-col items-center justify-center text-center gap-2 transition-all cursor-pointer group"
-                        >
-                          <span className="text-xs text-gray-500 font-semibold group-hover:text-[var(--color-brand-terracotta)] transition-colors leading-tight">{source.revendeur}</span>
-                          <span className="text-lg md:text-xl font-bold text-[var(--color-brand-dark)]">{source.prix} €</span>
-                        </a>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-6 text-gray-500">
-                      Aucune offre trouvée sur le marché en temps réel.
-                    </div>
-                  )}
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <button
-                    onClick={() => setPricingStrategy("safe")}
-                    className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${pricingStrategy === "safe"
-                      ? "bg-[var(--color-brand-light)] shadow-inner-soft border-blue-400"
-                      : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
-                      }`}
-                  >
-                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner-soft">
-                      <Shield className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg text-blue-900">Sécurisée</h3>
-                      <p className="text-xs text-gray-500 mt-1 mb-3">Risque minimal face à la dépréciation.</p>
-                      <span className="text-3xl font-bold text-blue-600">{unitairePricing.safePrice} €</span>
-                    </div>
-                  </button>
-
-                  <button
-                    onClick={() => setPricingStrategy("market")}
-                    className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${pricingStrategy === "market"
-                      ? "bg-[var(--color-brand-light)] shadow-inner-soft border-[var(--color-brand-terracotta)]"
-                      : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
-                      }`}
-                  >
-                    <div className="w-10 h-10 rounded-full bg-[var(--color-brand-terracotta)]/20 flex items-center justify-center text-[var(--color-brand-terracotta)] shadow-inner-soft">
-                      <TrendingDown className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg text-[var(--color-brand-terracotta)]">Marché</h3>
-                      <p className="text-xs text-gray-500 mt-1 mb-3">Prix juste selon la cotation actuelle.</p>
-                      <span className="text-3xl font-bold text-[var(--color-brand-terracotta)]">{unitairePricing.marketPrice} €</span>
-                    </div>
-                  </button>
-
-                  <button
-                    onClick={() => setPricingStrategy("aggressive")}
-                    className={`flex flex-col items-start gap-4 p-6 rounded-2xl border-2 transition-all text-left ${pricingStrategy === "aggressive"
-                      ? "bg-[var(--color-brand-light)] shadow-inner-soft border-orange-400"
-                      : "bg-[var(--color-brand-light)] shadow-soft-active hover:shadow-soft border-transparent"
-                      }`}
-                  >
-                    <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 shadow-inner-soft">
-                      <Zap className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg text-orange-900">Agressive</h3>
-                      <p className="text-xs text-gray-500 mt-1 mb-3">Pour être sûr de remporter la reprise.</p>
-                      <span className="text-3xl font-bold text-orange-600">{unitairePricing.aggressivePrice} €</span>
-                    </div>
-                  </button>
-                </div>
-
-                <div className="p-8 rounded-[2rem] bg-[var(--color-brand-light)] shadow-inner-soft mt-4">
-                  <h3 className="font-bold text-[var(--color-brand-dark)] mb-6 flex items-center gap-2">
-                    <BarChart2 className="w-5 h-5 text-[var(--color-brand-terracotta)]" />
-                    Prédiction de Dépréciation (Évolution par semestre)
-                  </h3>
-                  <ResponsiveContainer width="100%" height={250}>
-                    <AreaChart data={unitairePricing.chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                      <defs>
-                        <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#E07A5F" stopOpacity={0.3} />
-                          <stop offset="95%" stopColor="#E07A5F" stopOpacity={0} />
-                        </linearGradient>
-                      </defs>
-                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E8E1D9" />
-                      <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#888' }} axisLine={false} tickLine={false} />
-                      <YAxis tick={{ fontSize: 12, fill: '#888' }} axisLine={false} tickLine={false} />
-                      <Tooltip
-                        contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '8px 8px 16px #d4d4dc, -8px -8px 16px #ffffff' }}
-                        itemStyle={{ color: '#1E1E24', fontWeight: 'bold' }}
-                        formatter={(val: any) => [`${val} €`, 'Valeur estimée']}
-                      />
-                      <ReferenceLine y={unitairePricing.marketPrice} stroke="#E07A5F" strokeDasharray="3 3" label={{ position: 'top', value: 'Votre offre', fill: '#E07A5F', fontSize: 10 }} />
-                      <Area type="monotone" dataKey="Valeur" stroke="#E07A5F" strokeWidth={3} fillOpacity={1} fill="url(#colorValue)" />
-                    </AreaChart>
-                  </ResponsiveContainer>
-                </div>
-              </>
-            )}
-
-          </div>
+          <U_step4 unitairePricing={unitairePricing} selectedModel={selectedModel} unitCapacity={unitCapacity} unitColor={unitColor} unitGrade={unitGrade} isFetchingPrices={isFetchingPrices} marketResults={marketResults} pricingStrategy={pricingStrategy} setPricingStrategy={setPricingStrategy} />
         )
         }
 
         {/* Final Step: PDF Preview */}
         {
           currentStepLabel === 5 && (
-            <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4">
-              <div className="flex justify-between items-center mb-4">
-                <div>
-                  <h2 className="text-2xl font-bold mb-1">Devis Prêt !</h2>
-                  <p className="text-sm text-gray-500">Prévisualisez le devis professionnel ci-dessous.</p>
-                </div>
-                <PDFDownloadLink document={<DevisPDF expertise={expertise} />} fileName={`Devis_${expertise.id}.pdf`}>
-                  {({ loading }) => (
-                    <button disabled={loading} className="flex items-center gap-2 bg-[var(--color-brand-dark)] text-white px-6 py-3 rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity">
-                      <Download className="w-5 h-5" />
-                      {loading ? "Génération..." : "Télécharger PDF"}
-                    </button>
-                  )}
-                </PDFDownloadLink>
-              </div>
-
-              <div className="bg-[var(--brand-surface)] rounded-3xl shadow-inner-soft overflow-hidden h-[600px] p-4">
-                <PDFViewer width="100%" height="100%" className="border-0 rounded-2xl">
-                  <DevisPDF expertise={expertise} />
-                </PDFViewer>
-              </div>
-            </div>
+            <FinalStep devisType={devisType} bulkItems={bulkItems} getModel={getModel} selectedModel={selectedModel} marketResults={marketResults} pricingStrategy={pricingStrategy} unitGrade={unitGrade} repairs={repairs} unitairePricing={unitairePricing} />
           )
         }
 
         {/* Navigation buttons */}
         {
           step > 0 && (
-            <div className="flex flex-col-reverse sm:flex-row justify-between gap-4 mt-8 md:mt-12 pt-6 border-t border-[#E8E1D9]">
-              <button
-                onClick={() => {
-                  if (step === 1) setStep(0);
-                  else setStep(s => Math.max(1, s - 1));
-                }}
-                className="w-full sm:w-auto px-6 py-4 sm:py-3 font-semibold text-gray-500 hover:bg-[#E8E1D9]/50 rounded-2xl sm:rounded-full transition-all text-center"
-              >
-                Retour
-              </button>
-
-              {step < maxSteps && (
-                <button
-                  onClick={() => setStep(s => s + 1)}
-                  disabled={(devisType === "unitaire" && step === 1 && !selectedModel) || (devisType === "flotte" && bulkItems.length === 0)}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[var(--color-brand-dark)] text-white px-8 py-4 sm:py-3 rounded-2xl sm:rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity disabled:opacity-50"
-                >
-                  Étape suivante
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              )}
-            </div>
+            <NavigationButton step={step} setStep={setStep} maxSteps={maxSteps} devisType={devisType} selectedModel={selectedModel} bulkItems={bulkItems} />
           )
         }
       </main >

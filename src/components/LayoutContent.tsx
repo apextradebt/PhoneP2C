@@ -26,7 +26,7 @@ export default function LayoutContent({ children }: { children: React.ReactNode 
       {(!loading && userData?.role === 'pending') ? (
         <GuestPage />
       ) : (
-        <div className="flex flex-col md:flex-row h-full min-h-screen bg-[var(--color-brand-light)] text-[var(--color-brand-dark)] w-full">
+        <div className="flex flex-col md:flex-row h-full min-h-screen bg-(--color-brand-light) text-(--color-brand-dark) w-full">
           <Sidebar />
           <main className="flex-1 p-4 sm:p-6 md:p-8 overflow-y-auto">
             {children}

@@ -19,9 +19,9 @@ export default function ChoiceReprise({ setDevisType, setStep }: ChoiceInterface
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                 <button
                     onClick={() => { setDevisType("unitaire"); setStep(1); }}
-                    className="flex flex-col items-center gap-4 p-8 bg-[var(--color-brand-light)] rounded-[2rem] shadow-soft-active hover:shadow-soft transition-all text-[var(--color-brand-dark)] group"
+                    className="flex flex-col items-center gap-4 p-8 bg-(--color-brand-light) rounded-[2rem] shadow-soft-active hover:shadow-soft transition-all text-(--color-brand-dark) group"
                 >
-                    <div className="w-16 h-16 rounded-full bg-[var(--brand-surface)] shadow-inner-soft flex items-center justify-center group-hover:bg-[var(--color-brand-terracotta)] group-hover:text-white transition-colors">
+                    <div className="w-16 h-16 rounded-full bg-(--brand-surface) shadow-inner-soft flex items-center justify-center group-hover:bg-(--color-brand-terracotta) group-hover:text-white transition-colors">
                         <Smartphone className="w-8 h-8" />
                     </div>
                     <span className="font-bold text-xl">Reprise Unitaire</span>
@@ -29,9 +29,9 @@ export default function ChoiceReprise({ setDevisType, setStep }: ChoiceInterface
 
                 <button
                     onClick={() => { setDevisType("flotte"); setStep(1); }}
-                    className="flex flex-col items-center gap-4 p-8 bg-[var(--color-brand-light)] rounded-[2rem] shadow-soft-active hover:shadow-soft transition-all text-[var(--color-brand-dark)] group"
+                    className="flex flex-col items-center gap-4 p-8 bg-(--color-brand-light) rounded-[2rem] shadow-soft-active hover:shadow-soft transition-all text-(--color-brand-dark) group"
                 >
-                    <div className="w-16 h-16 rounded-full bg-[var(--brand-surface)] shadow-inner-soft flex items-center justify-center group-hover:bg-[var(--color-brand-terracotta)] group-hover:text-white transition-colors">
+                    <div className="w-16 h-16 rounded-full bg-(--brand-surface) shadow-inner-soft flex items-center justify-center group-hover:bg-(--color-brand-terracotta) group-hover:text-white transition-colors">
                         <Users className="w-8 h-8" />
                     </div>
                     <span className="font-bold text-xl">Reprise en Lot (Flotte)</span>

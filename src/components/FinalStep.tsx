@@ -133,7 +133,7 @@ export default function FinalStep({ unitairePricing, devisType, bulkItems, getMo
                 company: devisType === "flotte" ? "Entreprise XYZ" : undefined
             }
         };
-    }, [devisType, bulkItems, selectedModel, unitGrade, repairs, pricingStrategy, unitairePricing, getModel]);
+    }, [devisType, bulkItems, selectedModel, unitGrade, repairs, pricingStrategy, unitairePricing, getModel, marketResults]);
 
 
     const [instance] = usePDF({ document: <DevisPDF expertise={expertise} /> });

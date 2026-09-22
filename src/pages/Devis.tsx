@@ -114,7 +114,7 @@ export default function DevisPage() {
     ];
 
     return { valNet, safePrice, marketPrice, aggressivePrice, chartData, marketSources };
-  }, [devisType, selectedModel, unitGrade, repairs, getModel]);
+  }, [devisType, selectedModel, unitGrade, repairs, getModel, marketResults]);
 
   // Trigger market fetch when reaching Step 4 for Unitaire
   useEffect(() => {
@@ -241,7 +241,7 @@ export default function DevisPage() {
         company: devisType === "flotte" ? "Entreprise XYZ" : undefined
       }
     };
-  }, [devisType, bulkItems, selectedModel, unitGrade, repairs, pricingStrategy, unitairePricing, getModel]);
+  }, [devisType, bulkItems, selectedModel, unitGrade, repairs, pricingStrategy, unitairePricing, getModel, marketResults]);
 
   const addBulkItem = () => setBulkItems([...bulkItems, { model: firstModel, grade: "B", quantity: 1 }]);
   const updateBulkItem = (index: number, field: string, value: any) => {

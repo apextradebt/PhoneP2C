@@ -35,6 +35,10 @@ interface FinalStepInterface {
             Valeur: number;
         }[];
         forecastFromModel: boolean;
+        avgVente: number | null;
+        margeSafe: number | null;
+        margeMarket: number | null;
+        margeAggressive: number | null;
     } | null,
 }
 

@@ -33,12 +33,13 @@ interface DevisUnitaireInterface {
     unitairePricing: any,
     isFetchingPrices: boolean,
     marketResults: any,
+    ventesResults: any,
     pricingStrategy: "safe" | "market" | "aggressive",
     setPricingStrategy: Dispatch<SetStateAction<"safe" | "market" | "aggressive">>,
     step: number,
 }
 
-export default function DevisUnitaireForm({ step, deviceSearch, setDeviceSearch, filteredModels, setSelectedModel, selectedModel, unitCapacity, unitColor, unitGrade, setUnitCapacity, setUnitColor, setUnitGrade, getRepairOptions, unitairePricing, isFetchingPrices, marketResults, pricingStrategy, setPricingStrategy }: DevisUnitaireInterface) {
+export default function DevisUnitaireForm({ step, deviceSearch, setDeviceSearch, filteredModels, setSelectedModel, selectedModel, unitCapacity, unitColor, unitGrade, setUnitCapacity, setUnitColor, setUnitGrade, getRepairOptions, unitairePricing, isFetchingPrices, marketResults, ventesResults, pricingStrategy, setPricingStrategy }: DevisUnitaireInterface) {
 
     const [repairs, setRepairs] = useState<{ name: string, price: number }[]>([]);
 
@@ -66,7 +67,7 @@ export default function DevisUnitaireForm({ step, deviceSearch, setDeviceSearch,
 
             {/* Step 4: Market Strategy & Prediction (Unitaire Only) */}
             {step === 4 && unitairePricing && (
-                <U_step4 unitairePricing={unitairePricing} selectedModel={selectedModel} unitCapacity={unitCapacity} unitColor={unitColor} unitGrade={unitGrade} isFetchingPrices={isFetchingPrices} marketResults={marketResults} pricingStrategy={pricingStrategy} setPricingStrategy={setPricingStrategy} />
+                <U_step4 unitairePricing={unitairePricing} selectedModel={selectedModel} unitCapacity={unitCapacity} unitColor={unitColor} unitGrade={unitGrade} isFetchingPrices={isFetchingPrices} marketResults={marketResults} ventesResults={ventesResults} pricingStrategy={pricingStrategy} setPricingStrategy={setPricingStrategy} />
             )
             }
         </>

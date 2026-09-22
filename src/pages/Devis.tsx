@@ -54,6 +54,7 @@ export default function DevisPage() {
   // State for Market Fetch
   const [isFetchingPrices, setIsFetchingPrices] = useState(false);
   const [marketResults, setMarketResults] = useState<any>(null);
+  const [ventesResults, setVentesResults] = useState<{ total_offres: number; offres: { revendeur: string; prix: number }[] } | null>(null);
   const [priceForecast, setPriceForecast] = useState<{ forecast: { month: number; retention: number }[] } | null>(null);
 
   const filteredModels = useMemo(() => {
@@ -84,6 +85,19 @@ export default function DevisPage() {
     const marketPrice = Math.round(valNet * STRATEGY_MODIFIERS.market);
     const aggressivePrice = Math.round(valNet * STRATEGY_MODIFIERS.aggressive);
 
+    // Marge = prix de revente moyen constaté chez la concurrence (Back Market,
+    // CertiDeal, Recommerce) - prix de rachat proposé au client - réparations.
+    // Donne au staff une estimation de rentabilité par stratégie, pas juste le
+    // montant de l'offre.
+    const ventesOffres = ventesResults?.offres || [];
+    const avgVente = ventesOffres.length > 0
+      ? Math.round(ventesOffres.reduce((acc: number, o: any) => acc + o.prix, 0) / ventesOffres.length)
+      : null;
+
+    const margeSafe = avgVente !== null ? avgVente - safePrice - repairsTotal : null;
+    const margeMarket = avgVente !== null ? avgVente - marketPrice - repairsTotal : null;
+    const margeAggressive = avgVente !== null ? avgVente - aggressivePrice - repairsTotal : null;
+
     // Prédiction de dépréciation à 12 mois — issue du modèle de deep learning
     // (ml/) quand disponible, sinon repli sur une courbe forfaitaire (-2.5%/mois).
     const currentMonth = new Date().getMonth();
@@ -107,8 +121,12 @@ export default function DevisPage() {
       return { name: i === 0 ? "Actuel" : `${months[m]} '${y}`, Valeur: value };
     });
 
-    return { valNet, safePrice, marketPrice, aggressivePrice, chartData, forecastFromModel: isForecastFromModel };
-  }, [devisType, selectedModel, unitGrade, repairs, getModel, marketResults, priceForecast]);
+    return {
+      valNet, safePrice, marketPrice, aggressivePrice, chartData,
+      forecastFromModel: isForecastFromModel,
+      avgVente, margeSafe, margeMarket, margeAggressive,
+    };
+  }, [devisType, selectedModel, unitGrade, repairs, getModel, marketResults, priceForecast, ventesResults]);
 
   // Trigger market fetch when reaching Step 4 for Unitaire
   useEffect(() => {
@@ -142,6 +160,7 @@ export default function DevisPage() {
           if (!response.ok) throw new Error("Erreur api");
           const data = await response.json();
           setMarketResults(data);
+          setVentesResults(data.ventes || null);
 
           try {
             const forecastRes = await fetch(
@@ -156,6 +175,7 @@ export default function DevisPage() {
         } catch (error) {
           console.error(error);
           setMarketResults({ resultats: { offres: [] } });
+          setVentesResults(null);
         } finally {
           setIsFetchingPrices(false);
         }
@@ -168,6 +188,7 @@ export default function DevisPage() {
   // Reset market results if dependencies change
   useEffect(() => {
     setMarketResults(null);
+    setVentesResults(null);
     setPriceForecast(null);
   }, [selectedModel, unitColor, unitCapacity, unitGrade]);
   // Calculate final Expertise object
@@ -339,7 +360,7 @@ export default function DevisPage() {
 
         {/* Step 4: Market Strategy & Prediction (Unitaire Only) */}
         {step === 4 && devisType === "unitaire" && unitairePricing && (
-          <U_step4 unitairePricing={unitairePricing} selectedModel={selectedModel} unitCapacity={unitCapacity} unitColor={unitColor} unitGrade={unitGrade} isFetchingPrices={isFetchingPrices} marketResults={marketResults} pricingStrategy={pricingStrategy} setPricingStrategy={setPricingStrategy} />
+          <U_step4 unitairePricing={unitairePricing} selectedModel={selectedModel} unitCapacity={unitCapacity} unitColor={unitColor} unitGrade={unitGrade} isFetchingPrices={isFetchingPrices} marketResults={marketResults} ventesResults={ventesResults} pricingStrategy={pricingStrategy} setPricingStrategy={setPricingStrategy} />
         )
         }
 

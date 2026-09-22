@@ -5,6 +5,7 @@ import { Area, AreaChart, CartesianGrid, ReferenceLine, ResponsiveContainer, Too
 
 interface U_step4Interface {
     marketResults: any,
+    ventesResults: { total_offres: number; offres: { revendeur: string; prix: number }[] } | null,
     unitColor: string,
     unitCapacity: string,
     selectedModel: string,
@@ -20,6 +21,10 @@ interface U_step4Interface {
             Valeur: number;
         }[];
         forecastFromModel: boolean;
+        avgVente: number | null;
+        margeSafe: number | null;
+        margeMarket: number | null;
+        margeAggressive: number | null;
     } | null
     ,
     pricingStrategy: "safe" | "market" | "aggressive",
@@ -27,7 +32,19 @@ interface U_step4Interface {
 }
 
 
-export default function U_step4({ setPricingStrategy, marketResults, unitColor, unitCapacity, selectedModel, isFetchingPrices, unitGrade, unitairePricing, pricingStrategy }: U_step4Interface) {
+function MargeBadge({ marge }: { marge: number | null }) {
+    if (marge === null) {
+        return <span className="text-[11px] text-gray-400 mt-1">Marge : —</span>;
+    }
+    const positive = marge >= 0;
+    return (
+        <span className={`text-[11px] font-semibold mt-1 ${positive ? "text-emerald-600" : "text-red-500"}`}>
+            Marge estimée : {positive ? "+" : ""}{marge} €
+        </span>
+    );
+}
+
+export default function U_step4({ setPricingStrategy, marketResults, ventesResults, unitColor, unitCapacity, selectedModel, isFetchingPrices, unitGrade, unitairePricing, pricingStrategy }: U_step4Interface) {
 
     return (
         <div className="flex flex-col gap-10 animate-in fade-in slide-in-from-bottom-4">
@@ -77,6 +94,32 @@ export default function U_step4({ setPricingStrategy, marketResults, unitColor, 
                         )}
                     </div>
 
+                    {/* Sources de revente (benchmark marge) */}
+                    <div className="bg-(--color-brand-light) p-6 rounded-2xl shadow-inner-soft">
+                        <h3 className="font-bold text-(--color-brand-dark) mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
+                            <TrendingDown className="w-4 h-4 text-(--color-brand-terracotta) rotate-180" />
+                            Prix de revente constatés (Back Market, CertiDeal, Recommerce)
+                        </h3>
+
+                        {ventesResults?.offres && ventesResults.offres.length > 0 ? (
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                {ventesResults.offres.map((source, i) => (
+                                    <div
+                                        key={i}
+                                        className="bg-(--brand-surface) p-4 rounded-xl shadow-sm flex flex-col items-center justify-center text-center gap-2"
+                                    >
+                                        <span className="text-xs text-gray-500 font-semibold leading-tight">{source.revendeur}</span>
+                                        <span className="text-lg md:text-xl font-bold text-(--color-brand-dark)">{source.prix} €</span>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="text-center py-6 text-gray-500">
+                                Aucun prix de revente comparable trouvé — la marge ne peut pas être estimée.
+                            </div>
+                        )}
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <button
                             onClick={() => setPricingStrategy("safe")}
@@ -92,6 +135,7 @@ export default function U_step4({ setPricingStrategy, marketResults, unitColor, 
                                 <h3 className="font-bold text-lg text-blue-900">Sécurisée</h3>
                                 <p className="text-xs text-gray-500 mt-1 mb-3">Risque minimal face à la dépréciation.</p>
                                 <span className="text-3xl font-bold text-blue-600">{unitairePricing?.safePrice} €</span>
+                                <MargeBadge marge={unitairePricing?.margeSafe ?? null} />
                             </div>
                         </button>
 
@@ -109,6 +153,7 @@ export default function U_step4({ setPricingStrategy, marketResults, unitColor, 
                                 <h3 className="font-bold text-lg text-(--color-brand-terracotta)">Marché</h3>
                                 <p className="text-xs text-gray-500 mt-1 mb-3">Prix juste selon la cotation actuelle.</p>
                                 <span className="text-3xl font-bold text-(--color-brand-terracotta)">{unitairePricing?.marketPrice} €</span>
+                                <MargeBadge marge={unitairePricing?.margeMarket ?? null} />
                             </div>
                         </button>
 
@@ -126,6 +171,7 @@ export default function U_step4({ setPricingStrategy, marketResults, unitColor, 
                                 <h3 className="font-bold text-lg text-orange-900">Agressive</h3>
                                 <p className="text-xs text-gray-500 mt-1 mb-3">Pour être sûr de remporter la reprise.</p>
                                 <span className="text-3xl font-bold text-orange-600">{unitairePricing?.aggressivePrice} €</span>
+                                <MargeBadge marge={unitairePricing?.margeAggressive ?? null} />
                             </div>
                         </button>
                     </div>

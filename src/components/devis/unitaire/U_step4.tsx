@@ -19,12 +19,7 @@ interface U_step4Interface {
             name: string;
             Valeur: number;
         }[];
-        marketSources: {
-            name: string;
-            price: number;
-            url: string;
-            trend: string;
-        }[];
+        forecastFromModel: boolean;
     } | null
     ,
     pricingStrategy: "safe" | "market" | "aggressive",
@@ -138,7 +133,10 @@ export default function U_step4({ setPricingStrategy, marketResults, unitColor, 
                     <div className="p-8 rounded-[2rem] bg-(--color-brand-light) shadow-inner-soft mt-4">
                         <h3 className="font-bold text-(--color-brand-dark) mb-6 flex items-center gap-2">
                             <BarChart2 className="w-5 h-5 text-(--color-brand-terracotta)" />
-                            Prédiction de Dépréciation (Évolution par semestre)
+                            Prédiction de Dépréciation (12 prochains mois)
+                            <span className={`ml-2 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${unitairePricing?.forecastFromModel ? "bg-emerald-100 text-emerald-700" : "bg-gray-200 text-gray-500"}`}>
+                                {unitairePricing?.forecastFromModel ? "Modèle IA" : "Estimation"}
+                            </span>
                         </h3>
                         <ResponsiveContainer width="100%" height={250}>
                             <AreaChart data={unitairePricing?.chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>

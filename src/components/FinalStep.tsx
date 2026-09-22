@@ -33,12 +33,8 @@ interface FinalStepInterface {
         chartData: {
             name: string;
             Valeur: number;
-        }[]; marketSources: {
-            name: string;
-            price: number;
-            url: string;
-            trend: string;
         }[];
+        forecastFromModel: boolean;
     } | null,
 }
 

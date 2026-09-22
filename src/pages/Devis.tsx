@@ -54,6 +54,7 @@ export default function DevisPage() {
   // State for Market Fetch
   const [isFetchingPrices, setIsFetchingPrices] = useState(false);
   const [marketResults, setMarketResults] = useState<any>(null);
+  const [priceForecast, setPriceForecast] = useState<{ forecast: { month: number; retention: number }[] } | null>(null);
 
   const filteredModels = useMemo(() => {
     if (!deviceSearch.trim()) return allModels;
@@ -83,38 +84,31 @@ export default function DevisPage() {
     const marketPrice = Math.round(valNet * STRATEGY_MODIFIERS.market);
     const aggressivePrice = Math.round(valNet * STRATEGY_MODIFIERS.aggressive);
 
-    // Mock Depreciation Data (6-month intervals)
+    // Prédiction de dépréciation à 12 mois — issue du modèle de deep learning
+    // (ml/) quand disponible, sinon repli sur une courbe forfaitaire (-2.5%/mois).
     const currentMonth = new Date().getMonth();
     const currentYear = new Date().getFullYear();
     const months = ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Aoû", "Sep", "Oct", "Nov", "Déc"];
 
-    const chartData = Array.from({ length: 7 }).map((_, i) => {
-      const totalMonthsAdded = i * 6;
-      const d = new Date(currentYear, currentMonth + totalMonthsAdded, 1);
+    const forecastMonths = priceForecast?.forecast;
+    const isForecastFromModel = Array.isArray(forecastMonths) && forecastMonths.length === 12;
+
+    const chartData = Array.from({ length: 13 }).map((_, i) => {
+      const d = new Date(currentYear, currentMonth + i, 1);
       const m = d.getMonth();
       const y = d.getFullYear().toString().slice(-2);
 
-      // depreciates by ~2.5% per month
-      const predictedVal = Math.round(valNet * Math.pow(0.975, totalMonthsAdded));
-      return {
-        name: i === 0 ? "Actuel" : `${months[m]} '${y}`,
-        Valeur: predictedVal
-      };
+      let value = valNet;
+      if (i > 0) {
+        const retention = isForecastFromModel ? forecastMonths![i - 1].retention : Math.pow(0.975, i);
+        value = Math.round(valNet * retention);
+      }
+
+      return { name: i === 0 ? "Actuel" : `${months[m]} '${y}`, Valeur: value };
     });
 
-    // Dynamic URLs based on Model & Grade
-    const searchSlug = encodeURIComponent(`${selectedModel.toLowerCase()} grade ${unitGrade.toLowerCase()}`);
-
-    // Mock Market Sources (justifying the valNet)
-    const marketSources = [
-      { name: "BackMarket", price: valNet + 25, url: `https://www.backmarket.fr/fr-fr/search?q=${searchSlug}`, trend: "up" },
-      { name: "Amazon Renewed", price: valNet + 5, url: `https://www.amazon.fr/s?k=${searchSlug}+renewed`, trend: "stable" },
-      { name: "Certideal", price: Math.max(0, valNet - 15), url: `https://certideal.com/search?q=${searchSlug}`, trend: "down" },
-      { name: "Rakuten", price: valNet + 12, url: `https://fr.shopping.rakuten.com/search/${searchSlug}`, trend: "up" }
-    ];
-
-    return { valNet, safePrice, marketPrice, aggressivePrice, chartData, marketSources };
-  }, [devisType, selectedModel, unitGrade, repairs, getModel, marketResults]);
+    return { valNet, safePrice, marketPrice, aggressivePrice, chartData, forecastFromModel: isForecastFromModel };
+  }, [devisType, selectedModel, unitGrade, repairs, getModel, marketResults, priceForecast]);
 
   // Trigger market fetch when reaching Step 4 for Unitaire
   useEffect(() => {
@@ -148,6 +142,17 @@ export default function DevisPage() {
           if (!response.ok) throw new Error("Erreur api");
           const data = await response.json();
           setMarketResults(data);
+
+          try {
+            const forecastRes = await fetch(
+              `${import.meta.env.VITE_API_URL || "http://localhost:3001"}/api/market/forecast?marque=${encodeURIComponent(brand)}&modele=${encodeURIComponent(selectedModel)}`,
+              { headers: token ? { Authorization: `Bearer ${token}` } : {} }
+            );
+            setPriceForecast(forecastRes.ok ? await forecastRes.json() : null);
+          } catch (forecastError) {
+            console.error(forecastError);
+            setPriceForecast(null);
+          }
         } catch (error) {
           console.error(error);
           setMarketResults({ resultats: { offres: [] } });
@@ -163,6 +168,7 @@ export default function DevisPage() {
   // Reset market results if dependencies change
   useEffect(() => {
     setMarketResults(null);
+    setPriceForecast(null);
   }, [selectedModel, unitColor, unitCapacity, unitGrade]);
   // Calculate final Expertise object
   const expertise: Expertise = useMemo(() => {

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { mockExpertises } from "@/lib/mockData";
 import { Expertise } from "@/types";
 import { Smartphone, User, Tag, PenTool, X } from "lucide-react";
@@ -25,7 +26,16 @@ export default function LogistiquePage() {
   });
   const [draggedItem, setDraggedItem] = useState<{ id: string, sourceColId: string } | null>(null);
   const [selectedExpertise, setSelectedExpertise] = useState<Expertise | null>(null);
-  const [activeTab, setActiveTab] = useState<'expertises' | 'commandes' | 'notifications'>('expertises');
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState<'expertises' | 'commandes' | 'notifications'>(
+    (location.state as any)?.tab || 'expertises'
+  );
+
+  useEffect(() => {
+    if (location.state && (location.state as any).tab) {
+      setActiveTab((location.state as any).tab);
+    }
+  }, [location.state]);
 
   const handleDragStart = (e: React.DragEvent, itemId: string, colId: string) => {
     setDraggedItem({ id: itemId, sourceColId: colId });

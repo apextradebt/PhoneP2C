@@ -160,7 +160,7 @@ export default function MarchePage() {
               <XAxis dataKey="name" tick={{ fontSize: 12, fill: '#888' }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fontSize: 12, fill: '#888' }} axisLine={false} tickLine={false} />
               <Tooltip
-                contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '8px 8px 16px #d4d4dc, -8px -8px 16px #ffffff' }}
+                contentStyle={{ borderRadius: '12px', border: 'none' }}
                 itemStyle={{ color: '#1E1E24', fontWeight: 'bold' }}
                 formatter={(val: any) => [`${val} €`, 'Valeur estimée']}
               />

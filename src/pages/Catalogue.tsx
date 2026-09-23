@@ -109,8 +109,8 @@ export default function CataloguePage() {
                 onClick={() => handleSelectModel(model.model, model.brandName)}
                 className="bg-[var(--brand-surface)]/40 p-5 rounded-2xl shadow-soft flex items-center gap-4 text-left hover:bg-[var(--brand-surface)] hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
               >
-                <div className="w-12 h-12 rounded-[1.2rem] bg-[#E8E1D9] shadow-inner-soft flex items-center justify-center shrink-0 group-hover:bg-[var(--color-brand-terracotta)] transition-colors">
-                  <Smartphone className="w-5 h-5 text-[var(--color-brand-dark)]/70 group-hover:text-white transition-colors" />
+                <div className="w-15 h-15 rounded-[1.2rem] bg-[#E8E1D9] shadow-inner-soft flex items-center justify-center shrink-0 p-2">
+                  <img src={`${import.meta.env.BASE_URL}logos/${model.brandName}.png`} alt={model.brandName} className="w-full h-full object-contain mix-blend-darken opacity-70" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-bold text-[var(--color-brand-dark)] truncate">{model.model}</p>
@@ -131,8 +131,8 @@ export default function CataloguePage() {
                 onClick={() => { setSelectedBrand(brand.name); setSearchQuery(""); }}
                 className="bg-[var(--brand-surface)]/40 p-6 rounded-[2rem] shadow-soft flex flex-col items-center justify-center gap-3 h-36 cursor-pointer hover:bg-[var(--brand-surface)] hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
               >
-                <div className="w-12 h-12 rounded-full bg-[#E8E1D9] flex items-center justify-center shadow-inner-soft group-hover:bg-[var(--color-brand-terracotta)] transition-colors">
-                  <Smartphone className="w-6 h-6 text-[var(--color-brand-dark)] group-hover:text-white transition-colors" />
+                <div className="w-15 h-15 rounded-full bg-[#E8E1D9] flex items-center justify-center shadow-inner-soft">
+                  <img src={`${import.meta.env.BASE_URL}logos/${brand.name}.png`} alt={brand.name} className="w-full h-full object-contain mix-blend-darken opacity-80 " />
                 </div>
                 <span className="text-xl font-bold text-[var(--color-brand-dark)]">{brand.name}</span>
                 <span className="text-xs text-gray-400 font-medium">{brand.models.length} modèles</span>
@@ -190,8 +190,8 @@ export default function CataloguePage() {
                 onClick={() => handleSelectModel(model.model)}
                 className="bg-[var(--brand-surface)]/40 p-5 rounded-2xl shadow-soft flex items-center gap-4 text-left hover:bg-[var(--brand-surface)] hover:shadow-soft-hover hover:-translate-y-0.5 transition-all group"
               >
-                <div className="w-12 h-12 rounded-[1.2rem] bg-[#E8E1D9] shadow-inner-soft flex items-center justify-center shrink-0 group-hover:bg-[var(--color-brand-terracotta)] transition-colors">
-                  <Smartphone className="w-5 h-5 text-[var(--color-brand-dark)]/70 group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 rounded-[1.2rem] bg-[#E8E1D9] shadow-inner-soft flex items-center justify-center shrink-0 p-2">
+                  <img src={`${import.meta.env.BASE_URL}logos/${selectedBrand}.png`} alt={selectedBrand || ''} className="w-full h-full object-contain mix-blend-darken opacity-70 " />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-bold text-[var(--color-brand-dark)] truncate">{model.model}</p>
@@ -213,8 +213,8 @@ export default function CataloguePage() {
           <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4">
             {/* Summary card */}
             <div className="bg-[var(--brand-surface)]/40 p-6 sm:p-8 rounded-[2rem] shadow-soft flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <div className="w-16 h-16 rounded-[1.5rem] bg-[var(--color-brand-terracotta)]/10 flex items-center justify-center shrink-0">
-                <Smartphone className="w-8 h-8 text-[var(--color-brand-terracotta)]" />
+              <div className="w-16 h-16 rounded-[1.5rem] bg-[var(--color-brand-terracotta)]/10 flex items-center justify-center shrink-0 p-3">
+                <img src={`${import.meta.env.BASE_URL}logos/${selectedBrand}.png`} alt={selectedBrand || ''} className="w-full h-full object-contain mix-blend-darken opacity-80" />
               </div>
               <div className="flex-1">
                 <h2 className="text-xl font-bold text-[var(--color-brand-dark)]">{currentModel.model}</h2>

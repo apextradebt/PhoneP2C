@@ -1,5 +1,5 @@
 {
- "generatedFrom": "laptop_catalog.xlsx (spec-verified 2026-09-24)",
+ "generatedFrom": "Spec-verified laptop catalog (manufacturer spec sheets, 2026-09-24)",
  "models": [
   {
    "id": "DELLATITUDE5420",
@@ -38,7 +38,6 @@
     "FHD Touch",
     "FHD SafeScreen (privacy)"
    ],
-   "supply": 16399,
    "source": "https://dl.dell.com/content/manual30148736-latitude-5420-setup-and-specifications.pdf?language=en-us"
   },
   {
@@ -75,7 +74,6 @@
     "FHD Touch",
     "FHD Sure View 1000nit (privacy)"
    ],
-   "supply": 10878,
    "source": "https://www.highend-computer.de/wp-content/uploads/2026/05/HP-EliteBook-840-G8-Notebook-PC_Quickspecs.pdf"
   },
   {
@@ -114,7 +112,6 @@
     "FHD Touch",
     "FHD SafeScreen (privacy)"
    ],
-   "supply": 10433,
    "source": "https://doi-product-assets.s3.amazonaws.com/pub/User-Manual/1073605101.pdf"
   },
   {
@@ -151,7 +148,6 @@
     "FHD Touch",
     "FHD Sure View 1000nit (privacy)"
    ],
-   "supply": 7079,
    "source": "https://gc3.de/files/quickspecs/qs_830G8.pdf"
   },
   {
@@ -191,7 +187,6 @@
     "FHD PrivacyGuard",
     "4K UHD (Intel only)"
    ],
-   "supply": 4878,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T14s_Gen_1_Intel/ThinkPad_T14s_Gen_1_Intel_Spec.pdf"
   },
   {
@@ -236,7 +231,6 @@
     "FHD PrivacyGuard",
     "4K UHD (Intel only)"
    ],
-   "supply": 4638,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T14_Gen_1_Intel/ThinkPad_T14_Gen_1_Intel_Spec.pdf",
    "ramAmd": [
     "8GB",
@@ -281,7 +275,6 @@
     "FHD Touch",
     "FHD Sure View 1000nit (privacy)"
    ],
-   "supply": 4545,
    "source": "https://www.lap4worx.de/media/pdf/52/d2/17/HP-EliteBook-845-G8-QuickSpecs.pdf"
   },
   {
@@ -322,7 +315,6 @@
     "FHD PrivacyGuard",
     "4K UHD"
    ],
-   "supply": 4367,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T14s_Gen_2_Intel/ThinkPad_T14s_Gen_2_Intel_Spec.pdf"
   },
   {
@@ -364,7 +356,6 @@
     "2.8K OLED",
     "4K WQUXGA"
    ],
-   "supply": 4083,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X1_Carbon_Gen_10/ThinkPad_X1_Carbon_Gen_10_Spec.pdf"
   },
   {
@@ -401,7 +392,6 @@
     "FHD Touch",
     "FHD Sure View 1000nit (privacy)"
    ],
-   "supply": 3986,
    "source": "https://gc3.de/files/quickspecs/qs_430G7.pdf"
   },
   {
@@ -439,7 +429,6 @@
     "FHD Touch",
     "FHD Sure View 1000nit (privacy)"
    ],
-   "supply": 3980,
    "source": "https://gc3.de/files/quickspecs/qs_840G7.pdf"
   },
   {
@@ -479,7 +468,6 @@
     "FHD Touch",
     "FHD Sure View 1000nit (privacy)"
    ],
-   "supply": 3934,
    "source": "https://gc3.de/files/quickspecs/qs_640G8.pdf"
   },
   {
@@ -506,7 +494,6 @@
    "display": [
     "HD Touch (convertible)"
    ],
-   "supply": 3670,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/Lenovo/Lenovo_500e_Chromebook_Gen_3_Intel/Lenovo_500e_Chromebook_Gen_3_Intel_Spec.pdf"
   },
   {
@@ -547,7 +534,6 @@
     "FHD Touch",
     "FHD PrivacyGuard 500nit"
    ],
-   "supply": 3574,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X13_Gen_1_Intel/ThinkPad_X13_Gen_1_Intel_Spec.pdf"
   },
   {
@@ -590,7 +576,6 @@
     "FHD PrivacyGuard",
     "4K UHD"
    ],
-   "supply": 3438,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T14_Gen_2_Intel/ThinkPad_T14_Gen_2_Intel_Spec.pdf"
   },
   {
@@ -629,7 +614,6 @@
     "FHD 400nit",
     "FHD Touch"
    ],
-   "supply": 3160,
    "source": "https://www.tdsynnex.com/na/us/hpi/wp-content/uploads/sites/36/2023/03/HP-ProBook-440-14-inch-G9-Notebook-PC-Data-Sheet.pdf"
   },
   {
@@ -667,7 +651,6 @@
     "FHD Sure View 1000nit (privacy)",
     "UHD 400nit"
    ],
-   "supply": 3013,
    "source": "https://gc3.de/files/quickspecs/qs_850G8.pdf"
   },
   {
@@ -705,7 +688,6 @@
     "FHD",
     "FHD Touch"
    ],
-   "supply": 2946,
    "source": "https://www.sos.state.co.us/pubs/elections/VotingSystems/DVS-DemocracySuite517/documentation/DellLatitude3420SetupandSpecification-en-us.pdf"
   },
   {
@@ -734,7 +716,6 @@
    "display": [
     "HD Touch (convertible)"
    ],
-   "supply": 2911,
    "source": "https://media2store2.blob.core.windows.net/storage/item_spec/19/196362.pdf"
   },
   {
@@ -775,7 +756,6 @@
     "FHD Touch",
     "FHD SafeScreen (privacy)"
    ],
-   "supply": 2874,
    "source": "https://dl.dell.com/content/manual33332152-latitude-5530-configuration-et-sp%C3%A9cifications.pdf?language=fr-fr"
   },
   {
@@ -813,7 +793,6 @@
     "FHD Sure View 1000nit (privacy)",
     "UHD 400nit"
    ],
-   "supply": 2813,
    "source": "https://gc3.de/files/quickspecs/qs_840G6.pdf"
   },
   {
@@ -849,7 +828,6 @@
     "FHD Touch",
     "FHD Touch (2-in-1)"
    ],
-   "supply": 2513,
    "source": "https://dl.dell.com/content/manual40442222-latitude-5320-latitude-5320-2in1-setup-and-specifications-guide.pdf?language=en-us"
   },
   {
@@ -881,7 +859,6 @@
    "display": [
     "HD"
    ],
-   "supply": 2503,
    "source": "https://dl.dell.com/content/manual21800025-dell-latitude-3310-setup-and-specifications.pdf?language=en-us"
   },
   {
@@ -928,7 +905,6 @@
     "2.2K",
     "4K WQUXGA"
    ],
-   "supply": 2444,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T14_Gen_3_Intel/ThinkPad_T14_Gen_3_Intel_Spec.pdf",
    "ramAmd": [
     "8GB",
@@ -974,7 +950,6 @@
     "FHD Touch",
     "4K UHD"
    ],
-   "supply": 2080,
    "source": "https://dl.dell.com/content/manual44196431-latitude-5520-setup-and-specifications.pdf?language=en-us"
   },
   {
@@ -1007,7 +982,6 @@
     "HD",
     "FHD"
    ],
-   "supply": 1930,
    "source": "https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-LIFEBOOK_E5410.pdf"
   },
   {
@@ -1044,7 +1018,6 @@
     "FHD SafeScreen (privacy)",
     "FHD Touch (2-in-1)"
    ],
-   "supply": 1910,
    "source": "https://www.dell.com/support/manuals/en-us/latitude-14-7430-2-in-1-laptop/lat-7430_sg-specs/processor?guid=guid-e5c13638-3e43-453e-addc-3610066cb746&lang=en-us"
   },
   {
@@ -1078,7 +1051,6 @@
     "FHD SafeScreen (privacy)",
     "4K UHD"
    ],
-   "supply": 1900,
    "source": "https://dl.dell.com/content/manual43859724-latitude-7420-setup-and-specifications.pdf?language=en-us"
   },
   {
@@ -1118,7 +1090,6 @@
     "FHD Sure View (privacy)",
     "UHD"
    ],
-   "supply": 1880,
    "source": "https://gc3.de/files/quickspecs/qs_840G5.pdf"
   },
   {
@@ -1155,7 +1126,6 @@
     "FHD Touch",
     "FHD Sure View 1000nit (privacy)"
    ],
-   "supply": 1808,
    "source": "https://gc3.de/files/quickspecs/qs_830G6.pdf"
   },
   {
@@ -1190,7 +1160,6 @@
     "FHD Touch (2-in-1)",
     "FHD SafeScreen (privacy)"
    ],
-   "supply": 1789,
    "source": "https://dl.dell.com/content/manual30339142-latitude-5330-latitude-5330-2-en-1-configuration-et-caract%C3%A9ristiques.pdf?language=fr-fr"
   },
   {
@@ -1228,7 +1197,6 @@
     "FHD Sure View (privacy)",
     "QHD"
    ],
-   "supply": 1773,
    "source": "https://bargainhardware.co.uk/media/quick-specs/laptops/HP-EliteBook-840-G3-Quick-Specs.pdf"
   },
   {
@@ -1263,7 +1231,6 @@
     "FHD Touch",
     "FHD ePrivacyFilter (privacy)"
    ],
-   "supply": 1749,
    "source": "https://sp.ts.fujitsu.com/dmsp/Publications/public/ds-LIFEBOOK_U7411.pdf"
   },
   {
@@ -1301,7 +1268,6 @@
     "FHD Touch",
     "FHD Sure View 1000nit (privacy)"
    ],
-   "supply": 1693,
    "source": "https://gc3.de/files/quickspecs/qs_830G7.pdf"
   },
   {
@@ -1341,7 +1307,6 @@
     "WUXGA PrivacyGuard 500nit",
     "WQXGA 400nit"
    ],
-   "supply": 1682,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X13_Gen_2_Intel/ThinkPad_X13_Gen_2_Intel_Spec.pdf"
   },
   {
@@ -1381,7 +1346,6 @@
     "WUXGA Touch",
     "WUXGA Sure View (privacy)"
    ],
-   "supply": 1662,
    "source": "https://gc3.de/files/quickspecs/qs_840G9.pdf"
   },
   {
@@ -1423,7 +1387,6 @@
     "FHD PrivacyGuard",
     "WQHD"
    ],
-   "supply": 1574,
    "source": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_T490/ThinkPad_T490_Spec.pdf"
   }
  ]

@@ -7,6 +7,9 @@ import phonesDataRaw from "@/data/phones.json";
 export type PhoneModel = {
   model: string;
   basePrice: number;
+  /** Real storage capacities this model was actually sold in. Undefined for
+   * brands not yet audited — callers should fall back to a generic list. */
+  storageOptions?: string[];
   repairs: Record<string, number>;
 };
 
@@ -20,12 +23,14 @@ export type CatalogData = {
   repairLabels: Record<string, string>;
 };
 
+type CatalogModel = { brand: string; model: string; basePrice: number; storageOptions?: string[]; repairs: Record<string, number> };
+
 type CatalogContextType = {
   catalog: CatalogData;
   /** Flat list of all models with their brand name */
-  allModels: { brand: string; model: string; basePrice: number; repairs: Record<string, number> }[];
+  allModels: CatalogModel[];
   /** Get a specific model by name */
-  getModel: (modelName: string) => { brand: string; model: string; basePrice: number; repairs: Record<string, number> } | undefined;
+  getModel: (modelName: string) => CatalogModel | undefined;
   /** Get repair options for a specific model, using catalog labels */
   getRepairOptions: (modelName: string) => { name: string; price: number }[];
   /** Update repair costs for a specific model and persist */
@@ -78,6 +83,7 @@ export function CatalogProvider({ children }: { children: React.ReactNode }) {
         brand: brand.name,
         model: model.model,
         basePrice: model.basePrice,
+        storageOptions: model.storageOptions,
         repairs: model.repairs,
       }))
     );

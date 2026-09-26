@@ -6,126 +6,151 @@
         {
           "model": "iPhone 16 Pro Max",
           "basePrice": 1050,
+          "storageOptions": ["256GB", "512GB", "1TB"],
           "repairs": { "batterie": 89, "ecran": 329, "connecteurs": 25, "camera": 180, "boutons": 45 }
         },
         {
           "model": "iPhone 16 Pro",
           "basePrice": 950,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 89, "ecran": 299, "connecteurs": 25, "camera": 170, "boutons": 45 }
         },
         {
           "model": "iPhone 16",
           "basePrice": 750,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 79, "ecran": 249, "connecteurs": 20, "camera": 140, "boutons": 40 }
         },
         {
           "model": "iPhone 16e",
           "basePrice": 550,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 69, "ecran": 199, "connecteurs": 20, "camera": 110, "boutons": 35 }
         },
         {
           "model": "iPhone 15 Pro Max",
           "basePrice": 900,
+          "storageOptions": ["256GB", "512GB", "1TB"],
           "repairs": { "batterie": 85, "ecran": 299, "connecteurs": 25, "camera": 170, "boutons": 45 }
         },
         {
           "model": "iPhone 15 Pro",
           "basePrice": 800,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 85, "ecran": 279, "connecteurs": 25, "camera": 160, "boutons": 45 }
         },
         {
           "model": "iPhone 15 Plus",
           "basePrice": 700,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 75, "ecran": 239, "connecteurs": 20, "camera": 130, "boutons": 40 }
         },
         {
           "model": "iPhone 15",
           "basePrice": 650,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 75, "ecran": 219, "connecteurs": 20, "camera": 120, "boutons": 40 }
         },
         {
           "model": "iPhone 14 Pro Max",
           "basePrice": 750,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 79, "ecran": 279, "connecteurs": 20, "camera": 150, "boutons": 40 }
         },
         {
           "model": "iPhone 14 Pro",
           "basePrice": 680,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 79, "ecran": 259, "connecteurs": 20, "camera": 140, "boutons": 40 }
         },
         {
           "model": "iPhone 14 Plus",
           "basePrice": 580,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 69, "ecran": 219, "connecteurs": 18, "camera": 110, "boutons": 35 }
         },
         {
           "model": "iPhone 14",
           "basePrice": 530,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 69, "ecran": 199, "connecteurs": 18, "camera": 100, "boutons": 35 }
         },
         {
           "model": "iPhone 13 Pro Max",
           "basePrice": 600,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 69, "ecran": 239, "connecteurs": 18, "camera": 130, "boutons": 35 }
         },
         {
           "model": "iPhone 13 Pro",
           "basePrice": 550,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 69, "ecran": 219, "connecteurs": 18, "camera": 120, "boutons": 35 }
         },
         {
           "model": "iPhone 13",
           "basePrice": 430,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 59, "ecran": 179, "connecteurs": 15, "camera": 90, "boutons": 30 }
         },
         {
           "model": "iPhone 13 Mini",
           "basePrice": 380,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 59, "ecran": 169, "connecteurs": 15, "camera": 85, "boutons": 30 }
         },
         {
           "model": "iPhone 12 Pro Max",
           "basePrice": 480,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 59, "ecran": 199, "connecteurs": 15, "camera": 110, "boutons": 30 }
         },
         {
           "model": "iPhone 12 Pro",
           "basePrice": 420,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 59, "ecran": 179, "connecteurs": 15, "camera": 100, "boutons": 30 }
         },
         {
           "model": "iPhone 12",
           "basePrice": 340,
+          "storageOptions": ["64GB", "128GB", "256GB"],
           "repairs": { "batterie": 49, "ecran": 149, "connecteurs": 15, "camera": 80, "boutons": 25 }
         },
         {
           "model": "iPhone 12 Mini",
           "basePrice": 290,
+          "storageOptions": ["64GB", "128GB", "256GB"],
           "repairs": { "batterie": 49, "ecran": 139, "connecteurs": 15, "camera": 75, "boutons": 25 }
         },
         {
           "model": "iPhone 11 Pro Max",
           "basePrice": 360,
+          "storageOptions": ["64GB", "256GB", "512GB"],
           "repairs": { "batterie": 49, "ecran": 169, "connecteurs": 15, "camera": 90, "boutons": 25 }
         },
         {
           "model": "iPhone 11 Pro",
           "basePrice": 310,
+          "storageOptions": ["64GB", "256GB", "512GB"],
           "repairs": { "batterie": 49, "ecran": 149, "connecteurs": 15, "camera": 85, "boutons": 25 }
         },
         {
           "model": "iPhone 11",
           "basePrice": 250,
+          "storageOptions": ["64GB", "128GB", "256GB"],
           "repairs": { "batterie": 45, "ecran": 129, "connecteurs": 12, "camera": 70, "boutons": 20 }
         },
         {
           "model": "iPhone SE (2022)",
           "basePrice": 230,
+          "storageOptions": ["64GB", "128GB", "256GB"],
           "repairs": { "batterie": 45, "ecran": 109, "connecteurs": 12, "camera": 60, "boutons": 20 }
         },
         {
           "model": "iPhone SE (2020)",
           "basePrice": 150,
+          "storageOptions": ["64GB", "128GB", "256GB"],
           "repairs": { "batterie": 39, "ecran": 89, "connecteurs": 10, "camera": 50, "boutons": 18 }
         }
       ]
@@ -136,136 +161,163 @@
         {
           "model": "Galaxy S25 Ultra",
           "basePrice": 1000,
+          "storageOptions": ["256GB", "512GB", "1TB"],
           "repairs": { "batterie": 85, "ecran": 310, "connecteurs": 25, "camera": 170, "boutons": 40 }
         },
         {
           "model": "Galaxy S25+",
           "basePrice": 800,
+          "storageOptions": ["256GB", "512GB"],
           "repairs": { "batterie": 75, "ecran": 259, "connecteurs": 22, "camera": 140, "boutons": 35 }
         },
         {
           "model": "Galaxy S25",
           "basePrice": 650,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 69, "ecran": 219, "connecteurs": 20, "camera": 120, "boutons": 35 }
         },
         {
           "model": "Galaxy S24 Ultra",
           "basePrice": 850,
+          "storageOptions": ["256GB", "512GB", "1TB"],
           "repairs": { "batterie": 79, "ecran": 289, "connecteurs": 22, "camera": 160, "boutons": 40 }
         },
         {
           "model": "Galaxy S24+",
           "basePrice": 680,
+          "storageOptions": ["256GB", "512GB"],
           "repairs": { "batterie": 69, "ecran": 239, "connecteurs": 20, "camera": 130, "boutons": 35 }
         },
         {
           "model": "Galaxy S24",
           "basePrice": 560,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 65, "ecran": 199, "connecteurs": 18, "camera": 110, "boutons": 30 }
         },
         {
           "model": "Galaxy S24 FE",
           "basePrice": 450,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 59, "ecran": 169, "connecteurs": 18, "camera": 95, "boutons": 28 }
         },
         {
           "model": "Galaxy S23 Ultra",
           "basePrice": 700,
+          "storageOptions": ["256GB", "512GB", "1TB"],
           "repairs": { "batterie": 75, "ecran": 269, "connecteurs": 20, "camera": 150, "boutons": 35 }
         },
         {
           "model": "Galaxy S23+",
           "basePrice": 550,
+          "storageOptions": ["256GB", "512GB"],
           "repairs": { "batterie": 65, "ecran": 219, "connecteurs": 18, "camera": 120, "boutons": 30 }
         },
         {
           "model": "Galaxy S23",
           "basePrice": 450,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 59, "ecran": 179, "connecteurs": 18, "camera": 100, "boutons": 28 }
         },
         {
           "model": "Galaxy S23 FE",
           "basePrice": 370,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 55, "ecran": 159, "connecteurs": 15, "camera": 85, "boutons": 25 }
         },
         {
           "model": "Galaxy S22 Ultra",
           "basePrice": 550,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 69, "ecran": 239, "connecteurs": 18, "camera": 130, "boutons": 30 }
         },
         {
           "model": "Galaxy S22+",
           "basePrice": 420,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 59, "ecran": 199, "connecteurs": 15, "camera": 110, "boutons": 28 }
         },
         {
           "model": "Galaxy S22",
           "basePrice": 350,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 55, "ecran": 169, "connecteurs": 15, "camera": 90, "boutons": 25 }
         },
         {
           "model": "Galaxy S21 Ultra",
           "basePrice": 420,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 59, "ecran": 219, "connecteurs": 15, "camera": 120, "boutons": 28 }
         },
         {
           "model": "Galaxy S21+",
           "basePrice": 330,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 55, "ecran": 179, "connecteurs": 15, "camera": 100, "boutons": 25 }
         },
         {
           "model": "Galaxy S21",
           "basePrice": 280,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 49, "ecran": 149, "connecteurs": 12, "camera": 80, "boutons": 22 }
         },
         {
           "model": "Galaxy S21 FE",
           "basePrice": 260,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 49, "ecran": 139, "connecteurs": 12, "camera": 75, "boutons": 22 }
         },
         {
           "model": "Galaxy Z Fold 6",
           "basePrice": 1100,
+          "storageOptions": ["256GB", "512GB", "1TB"],
           "repairs": { "batterie": 95, "ecran": 450, "connecteurs": 30, "camera": 180, "boutons": 45 }
         },
         {
           "model": "Galaxy Z Fold 5",
           "basePrice": 850,
+          "storageOptions": ["256GB", "512GB", "1TB"],
           "repairs": { "batterie": 89, "ecran": 399, "connecteurs": 28, "camera": 160, "boutons": 40 }
         },
         {
           "model": "Galaxy Z Flip 6",
           "basePrice": 700,
+          "storageOptions": ["256GB", "512GB"],
           "repairs": { "batterie": 79, "ecran": 329, "connecteurs": 25, "camera": 140, "boutons": 38 }
         },
         {
           "model": "Galaxy Z Flip 5",
           "basePrice": 550,
+          "storageOptions": ["256GB", "512GB"],
           "repairs": { "batterie": 75, "ecran": 299, "connecteurs": 22, "camera": 120, "boutons": 35 }
         },
         {
           "model": "Galaxy A55",
           "basePrice": 280,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 39, "ecran": 99, "connecteurs": 12, "camera": 55, "boutons": 18 }
         },
         {
           "model": "Galaxy A54",
           "basePrice": 240,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 35, "ecran": 89, "connecteurs": 10, "camera": 50, "boutons": 15 }
         },
         {
           "model": "Galaxy A35",
           "basePrice": 200,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 35, "ecran": 79, "connecteurs": 10, "camera": 45, "boutons": 15 }
         },
         {
           "model": "Galaxy A25",
           "basePrice": 150,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 29, "ecran": 65, "connecteurs": 10, "camera": 35, "boutons": 12 }
         },
         {
           "model": "Galaxy A15",
           "basePrice": 100,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 25, "ecran": 55, "connecteurs": 8, "camera": 30, "boutons": 10 }
         }
       ]
@@ -276,66 +328,79 @@
         {
           "model": "Pixel 9 Pro XL",
           "basePrice": 850,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 79, "ecran": 269, "connecteurs": 22, "camera": 150, "boutons": 38 }
         },
         {
           "model": "Pixel 9 Pro",
           "basePrice": 750,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 75, "ecran": 239, "connecteurs": 20, "camera": 130, "boutons": 35 }
         },
         {
           "model": "Pixel 9",
           "basePrice": 600,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 65, "ecran": 199, "connecteurs": 18, "camera": 110, "boutons": 30 }
         },
         {
           "model": "Pixel 9a",
           "basePrice": 400,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 49, "ecran": 139, "connecteurs": 15, "camera": 75, "boutons": 25 }
         },
         {
           "model": "Pixel 8 Pro",
           "basePrice": 580,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
           "repairs": { "batterie": 69, "ecran": 219, "connecteurs": 18, "camera": 120, "boutons": 32 }
         },
         {
           "model": "Pixel 8",
           "basePrice": 430,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 59, "ecran": 179, "connecteurs": 15, "camera": 95, "boutons": 28 }
         },
         {
           "model": "Pixel 8a",
           "basePrice": 320,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 45, "ecran": 129, "connecteurs": 12, "camera": 70, "boutons": 22 }
         },
         {
           "model": "Pixel 7 Pro",
           "basePrice": 420,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 59, "ecran": 189, "connecteurs": 15, "camera": 110, "boutons": 28 }
         },
         {
           "model": "Pixel 7",
           "basePrice": 330,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 49, "ecran": 149, "connecteurs": 12, "camera": 80, "boutons": 25 }
         },
         {
           "model": "Pixel 7a",
           "basePrice": 260,
+          "storageOptions": ["128GB"],
           "repairs": { "batterie": 45, "ecran": 119, "connecteurs": 12, "camera": 65, "boutons": 20 }
         },
         {
           "model": "Pixel 6 Pro",
           "basePrice": 310,
+          "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 55, "ecran": 169, "connecteurs": 12, "camera": 95, "boutons": 25 }
         },
         {
           "model": "Pixel 6",
           "basePrice": 230,
+          "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 45, "ecran": 129, "connecteurs": 10, "camera": 70, "boutons": 20 }
         },
         {
           "model": "Pixel 6a",
           "basePrice": 180,
+          "storageOptions": ["128GB"],
           "repairs": { "batterie": 39, "ecran": 99, "connecteurs": 10, "camera": 55, "boutons": 18 }
         }
       ]

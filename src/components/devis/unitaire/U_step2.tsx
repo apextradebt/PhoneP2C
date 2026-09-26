@@ -1,5 +1,9 @@
 import { DeviceGrade } from "@/types";
 
+// Repli utilisé pour les marques dont on n'a pas encore audité les capacités
+// réellement commercialisées (voir storageOptions dans phones.json).
+const CAPACITES_PAR_DEFAUT = ["64GB", "128GB", "256GB", "512GB", "1TB"];
+
 interface U_step2Interface {
     setUnitCapacity: (unitCapacity: string) => void,
     unitCapacity: string,
@@ -7,9 +11,11 @@ interface U_step2Interface {
     unitColor: string,
     setUnitGrade: (unitGrade: DeviceGrade) => void,
     unitGrade: DeviceGrade,
+    storageOptions?: string[],
 }
 
-export default function U_step2({ setUnitCapacity, unitCapacity, setUnitColor, unitColor, setUnitGrade, unitGrade }: U_step2Interface) {
+export default function U_step2({ setUnitCapacity, unitCapacity, setUnitColor, unitColor, setUnitGrade, unitGrade, storageOptions }: U_step2Interface) {
+    const capacites = storageOptions && storageOptions.length > 0 ? storageOptions : CAPACITES_PAR_DEFAUT;
 
     return (
         <div className="flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4">
@@ -22,7 +28,7 @@ export default function U_step2({ setUnitCapacity, unitCapacity, setUnitColor, u
                 <div>
                     <h3 className="font-bold text-lg mb-3">Capacité</h3>
                     <div className="grid grid-cols-3 sm:grid-cols-5 gap-3">
-                        {["64GB", "128GB", "256GB", "512GB", "1TB"].map(cap => (
+                        {capacites.map(cap => (
                             <button
                                 key={cap}
                                 onClick={() => setUnitCapacity(cap)}

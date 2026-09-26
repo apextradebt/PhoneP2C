@@ -149,18 +149,24 @@ export default function DevisPage() {
               ...(token ? { Authorization: `Bearer ${token}` } : {})
             },
             body: JSON.stringify({
-              marque: brand,
-              modele: selectedModel,
-              couleur: unitColor.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(" ", "-"),
-              capacite: unitCapacity.replace("GB", "").replace("TB", "000"),
-              grade: unitGrade === "A" ? "parfait_etat" : unitGrade === "B" ? "tres_bon_etat" : unitGrade === "C" ? "bon_etat" : "etat_correct"
+              devices: [{
+                brand: brand,
+                model: selectedModel,
+                color: unitColor.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(" ", "-"),
+                storage: unitCapacity.replace("GB", "").replace("TB", "000"),
+                grade: unitGrade === "A" ? "parfait_etat" : unitGrade === "B" ? "tres_bon_etat" : unitGrade === "C" ? "bon_etat" : "etat_correct",
+                type: "phones"
+              }]
             })
           });
 
           if (!response.ok) throw new Error("Erreur api");
-          const data = await response.json();
-          setMarketResults(data);
-          setVentesResults(data.ventes || null);
+          const responseBody = await response.json();
+          const devices = [...(responseBody.knownDevices || []), ...(responseBody.newlyScrapedDevices || [])];
+          const data = devices.length > 0 ? devices[0].price : null;
+
+          setMarketResults({ resultats: { offres: data?.offres || [] } });
+          setVentesResults(data?.ventes ? { total_offres: data.ventes.length, offres: data.ventes } : null);
 
           try {
             const forecastRes = await fetch(

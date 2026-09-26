@@ -4,6 +4,55 @@
       "name": "Apple",
       "models": [
         {
+          "model": "iPhone 18 Pro",
+          "basePrice": 1030,
+          "storageOptions": ["256GB", "512GB", "1TB", "2TB"],
+          "repairs": { "batterie": 92, "ecran": 355, "connecteurs": 26, "camera": 186, "boutons": 48 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 18 Pro Max",
+          "basePrice": 1120,
+          "storageOptions": ["256GB", "512GB", "1TB", "2TB"],
+          "repairs": { "batterie": 97, "ecran": 382, "connecteurs": 27, "camera": 199, "boutons": 50 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 17e",
+          "basePrice": 520,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 62, "ecran": 198, "connecteurs": 17, "camera": 106, "boutons": 30 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 17",
+          "basePrice": 690,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 73, "ecran": 252, "connecteurs": 20, "camera": 134, "boutons": 36 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 17 Pro",
+          "basePrice": 950,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 88, "ecran": 332, "connecteurs": 25, "camera": 174, "boutons": 45 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 17 Pro Max",
+          "basePrice": 1030,
+          "storageOptions": ["256GB", "512GB", "1TB", "2TB"],
+          "repairs": { "batterie": 92, "ecran": 355, "connecteurs": 26, "camera": 186, "boutons": 48 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone Air",
+          "basePrice": 860,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 83, "ecran": 305, "connecteurs": 23, "camera": 161, "boutons": 42 },
+          "estimated": true
+        },
+        {
           "model": "iPhone 16 Pro Max",
           "basePrice": 1050,
           "storageOptions": ["256GB", "512GB", "1TB"],
@@ -26,6 +75,13 @@
           "basePrice": 550,
           "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 69, "ecran": 199, "connecteurs": 20, "camera": 110, "boutons": 35 }
+        },
+        {
+          "model": "iPhone 16 Plus",
+          "basePrice": 770,
+          "storageOptions": ["128GB", "256GB", "512GB"],
+          "repairs": { "batterie": 78, "ecran": 277, "connecteurs": 22, "camera": 147, "boutons": 39 },
+          "estimated": true
         },
         {
           "model": "iPhone 15 Pro Max",
@@ -152,12 +208,222 @@
           "basePrice": 150,
           "storageOptions": ["64GB", "128GB", "256GB"],
           "repairs": { "batterie": 39, "ecran": 89, "connecteurs": 10, "camera": 50, "boutons": 18 }
+        },
+        {
+          "model": "iPhone XR",
+          "basePrice": 230,
+          "storageOptions": ["64GB", "128GB", "256GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone XS",
+          "basePrice": 260,
+          "storageOptions": ["64GB", "256GB", "512GB"],
+          "repairs": { "batterie": 41, "ecran": 110, "connecteurs": 12, "camera": 60, "boutons": 19 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone XS Max",
+          "basePrice": 300,
+          "storageOptions": ["64GB", "256GB", "512GB"],
+          "repairs": { "batterie": 45, "ecran": 124, "connecteurs": 13, "camera": 68, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone X",
+          "basePrice": 260,
+          "storageOptions": ["64GB", "256GB"],
+          "repairs": { "batterie": 41, "ecran": 110, "connecteurs": 12, "camera": 60, "boutons": 19 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 8",
+          "basePrice": 140,
+          "storageOptions": ["64GB", "128GB", "256GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 8 Plus",
+          "basePrice": 200,
+          "storageOptions": ["64GB", "256GB"],
+          "repairs": { "batterie": 35, "ecran": 88, "connecteurs": 10, "camera": 49, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 7",
+          "basePrice": 160,
+          "storageOptions": ["32GB", "128GB", "256GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 7 Plus",
+          "basePrice": 190,
+          "storageOptions": ["32GB", "128GB", "256GB"],
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone SE",
+          "basePrice": 100,
+          "storageOptions": ["16GB", "32GB", "64GB", "128GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 6S",
+          "basePrice": 150,
+          "storageOptions": ["16GB", "32GB", "64GB", "128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 6S Plus",
+          "basePrice": 150,
+          "storageOptions": ["16GB", "32GB", "64GB", "128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 6",
+          "basePrice": 150,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "iPhone 6 Plus",
+          "basePrice": 160,
+          "storageOptions": ["16GB", "64GB", "128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
         }
       ]
     },
     {
       "name": "Samsung",
       "models": [
+        {
+          "model": "Galaxy Z Flip 8",
+          "basePrice": 990,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 90, "ecran": 344, "connecteurs": 25, "camera": 180, "boutons": 46 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Fold 8",
+          "basePrice": 1460,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 113, "ecran": 479, "connecteurs": 31, "camera": 248, "boutons": 60 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Fold 8 Ultra",
+          "basePrice": 1640,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 121, "ecran": 529, "connecteurs": 34, "camera": 273, "boutons": 65 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A37",
+          "basePrice": 350,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 49, "ecran": 141, "connecteurs": 14, "camera": 77, "boutons": 23 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A57",
+          "basePrice": 380,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 51, "ecran": 152, "connecteurs": 15, "camera": 82, "boutons": 24 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S26",
+          "basePrice": 760,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 77, "ecran": 274, "connecteurs": 22, "camera": 145, "boutons": 39 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S26+",
+          "basePrice": 950,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 88, "ecran": 332, "connecteurs": 25, "camera": 174, "boutons": 45 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S26 Ultra",
+          "basePrice": 1100,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 96, "ecran": 376, "connecteurs": 27, "camera": 197, "boutons": 50 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S25 FE",
+          "basePrice": 560,
+          "storageOptions": ["128GB", "256GB", "512GB"],
+          "repairs": { "batterie": 64, "ecran": 211, "connecteurs": 18, "camera": 113, "boutons": 32 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A17",
+          "basePrice": 150,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Flip 7",
+          "basePrice": 830,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 81, "ecran": 296, "connecteurs": 23, "camera": 156, "boutons": 41 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Flip 7 FE",
+          "basePrice": 700,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 73, "ecran": 256, "connecteurs": 21, "camera": 136, "boutons": 37 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Fold 7",
+          "basePrice": 1360,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 108, "ecran": 451, "connecteurs": 30, "camera": 234, "boutons": 57 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S25 Edge",
+          "basePrice": 810,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 80, "ecran": 290, "connecteurs": 22, "camera": 153, "boutons": 40 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A26",
+          "basePrice": 230,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A36",
+          "basePrice": 310,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 45, "ecran": 128, "connecteurs": 13, "camera": 70, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A56",
+          "basePrice": 380,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 51, "ecran": 152, "connecteurs": 15, "camera": 82, "boutons": 24 },
+          "estimated": true
+        },
         {
           "model": "Galaxy S25 Ultra",
           "basePrice": 1000,
@@ -175,6 +441,13 @@
           "basePrice": 650,
           "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 69, "ecran": 219, "connecteurs": 20, "camera": 120, "boutons": 35 }
+        },
+        {
+          "model": "Galaxy A16",
+          "basePrice": 110,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
         },
         {
           "model": "Galaxy S24 Ultra",
@@ -201,6 +474,41 @@
           "repairs": { "batterie": 59, "ecran": 169, "connecteurs": 18, "camera": 95, "boutons": 28 }
         },
         {
+          "model": "Galaxy XCover 7",
+          "basePrice": 220,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 37, "ecran": 95, "connecteurs": 11, "camera": 53, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A05s",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A24",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A14",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A34",
+          "basePrice": 190,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
           "model": "Galaxy S23 Ultra",
           "basePrice": 700,
           "storageOptions": ["256GB", "512GB", "1TB"],
@@ -225,6 +533,76 @@
           "repairs": { "batterie": 55, "ecran": 159, "connecteurs": 15, "camera": 85, "boutons": 25 }
         },
         {
+          "model": "Galaxy A04s",
+          "basePrice": 90,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Flip 4",
+          "basePrice": 450,
+          "storageOptions": ["128GB", "256GB", "512GB"],
+          "repairs": { "batterie": 57, "ecran": 175, "connecteurs": 16, "camera": 94, "boutons": 27 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Fold 4",
+          "basePrice": 760,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 77, "ecran": 274, "connecteurs": 22, "camera": 145, "boutons": 39 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy M13",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A33",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy M23",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy M33",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A13",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A23",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A53",
+          "basePrice": 200,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 35, "ecran": 88, "connecteurs": 10, "camera": 49, "boutons": 16 },
+          "estimated": true
+        },
+        {
           "model": "Galaxy S22 Ultra",
           "basePrice": 550,
           "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
@@ -241,6 +619,90 @@
           "basePrice": 350,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 55, "ecran": 169, "connecteurs": 15, "camera": 90, "boutons": 25 }
+        },
+        {
+          "model": "Galaxy A03",
+          "basePrice": 80,
+          "storageOptions": ["32GB", "64GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy M22",
+          "basePrice": 150,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy M52",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A52s",
+          "basePrice": 190,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A03s",
+          "basePrice": 80,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Flip 3",
+          "basePrice": 350,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 49, "ecran": 141, "connecteurs": 14, "camera": 77, "boutons": 23 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Fold 3",
+          "basePrice": 570,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 65, "ecran": 214, "connecteurs": 18, "camera": 115, "boutons": 32 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A22",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy M32",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A52",
+          "basePrice": 140,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A72",
+          "basePrice": 220,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 37, "ecran": 95, "connecteurs": 11, "camera": 53, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy XCover 5",
+          "basePrice": 160,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
         },
         {
           "model": "Galaxy S21 Ultra",
@@ -319,12 +781,439 @@
           "basePrice": 100,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 25, "ecran": 55, "connecteurs": 8, "camera": 30, "boutons": 10 }
+        },
+        {
+          "model": "Galaxy A32",
+          "basePrice": 110,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A02s",
+          "basePrice": 70,
+          "storageOptions": ["32GB", "64GB"],
+          "repairs": { "batterie": 19, "ecran": 36, "connecteurs": 6, "camera": 21, "boutons": 8 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A12",
+          "basePrice": 80,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A42",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S20 FE",
+          "basePrice": 230,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Fold 2",
+          "basePrice": 270,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 42, "ecran": 113, "connecteurs": 12, "camera": 62, "boutons": 19 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Note 20",
+          "basePrice": 310,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 45, "ecran": 128, "connecteurs": 13, "camera": 70, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Note 20 Ultra",
+          "basePrice": 440,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 56, "ecran": 172, "connecteurs": 16, "camera": 93, "boutons": 27 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A21",
+          "basePrice": 100,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A21s",
+          "basePrice": 80,
+          "storageOptions": ["32GB", "128GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A41",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A31",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S20",
+          "basePrice": 260,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 41, "ecran": 110, "connecteurs": 12, "camera": 60, "boutons": 19 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S20+",
+          "basePrice": 320,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 46, "ecran": 131, "connecteurs": 13, "camera": 71, "boutons": 22 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S20 Ultra",
+          "basePrice": 430,
+          "storageOptions": ["128GB", "512GB"],
+          "repairs": { "batterie": 55, "ecran": 169, "connecteurs": 16, "camera": 91, "boutons": 26 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S10 Lite",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Z Flip",
+          "basePrice": 210,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Note 10 Lite",
+          "basePrice": 190,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy XCover Pro",
+          "basePrice": 180,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A51",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A71",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A90 5G",
+          "basePrice": 220,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 37, "ecran": 95, "connecteurs": 11, "camera": 53, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Fold 5G",
+          "basePrice": 210,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Note 10",
+          "basePrice": 250,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 40, "ecran": 106, "connecteurs": 11, "camera": 58, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Note 10+",
+          "basePrice": 300,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 45, "ecran": 124, "connecteurs": 13, "camera": 68, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A20e",
+          "basePrice": 70,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 19, "ecran": 36, "connecteurs": 6, "camera": 21, "boutons": 8 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A70",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A80",
+          "basePrice": 190,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A40",
+          "basePrice": 80,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A50",
+          "basePrice": 110,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S10",
+          "basePrice": 230,
+          "storageOptions": ["128GB", "512GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S10+",
+          "basePrice": 250,
+          "storageOptions": ["128GB", "512GB", "1TB"],
+          "repairs": { "batterie": 40, "ecran": 106, "connecteurs": 11, "camera": 58, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S10e",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A7 (2018)",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A9 (2018)",
+          "basePrice": 150,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy J6+ (2018)",
+          "basePrice": 90,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Note 9",
+          "basePrice": 160,
+          "storageOptions": ["128GB", "512GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A6 (2018)",
+          "basePrice": 100,
+          "storageOptions": ["32GB", "64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy J6 (2018)",
+          "basePrice": 90,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S9",
+          "basePrice": 150,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S9+",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A8 (2018)",
+          "basePrice": 130,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Note 8",
+          "basePrice": 120,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy J5 (2017)",
+          "basePrice": 90,
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S8",
+          "basePrice": 150,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S8+",
+          "basePrice": 170,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy J3 (2017)",
+          "basePrice": 80,
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A3 (2017)",
+          "basePrice": 110,
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A5 (2017)",
+          "basePrice": 110,
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy J5 (2016)",
+          "basePrice": 80,
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S7",
+          "basePrice": 120,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S7 Edge",
+          "basePrice": 160,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy A5 (2016)",
+          "basePrice": 100,
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S6 Edge+",
+          "basePrice": 130,
+          "storageOptions": ["32GB", "64GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S6",
+          "basePrice": 120,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy S6 Edge",
+          "basePrice": 160,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Galaxy Note 4",
+          "basePrice": 160,
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
         }
       ]
     },
     {
       "name": "Google",
       "models": [
+        {
+          "model": "Pixel 10a",
+          "basePrice": 430,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 55, "ecran": 169, "connecteurs": 16, "camera": 91, "boutons": 26 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 10 Pro Fold",
+          "basePrice": 1320,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 106, "ecran": 439, "connecteurs": 30, "camera": 228, "boutons": 56 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 10",
+          "basePrice": 640,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 70, "ecran": 237, "connecteurs": 20, "camera": 126, "boutons": 35 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 10 Pro",
+          "basePrice": 810,
+          "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 80, "ecran": 290, "connecteurs": 22, "camera": 153, "boutons": 40 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 10 Pro XL",
+          "basePrice": 960,
+          "storageOptions": ["256GB", "512GB", "1TB"],
+          "repairs": { "batterie": 88, "ecran": 335, "connecteurs": 25, "camera": 176, "boutons": 45 },
+          "estimated": true
+        },
         {
           "model": "Pixel 9 Pro XL",
           "basePrice": 850,
@@ -350,6 +1239,13 @@
           "repairs": { "batterie": 49, "ecran": 139, "connecteurs": 15, "camera": 75, "boutons": 25 }
         },
         {
+          "model": "Pixel 9 Pro Fold",
+          "basePrice": 1100,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 96, "ecran": 376, "connecteurs": 27, "camera": 197, "boutons": 50 },
+          "estimated": true
+        },
+        {
           "model": "Pixel 8 Pro",
           "basePrice": 580,
           "storageOptions": ["128GB", "256GB", "512GB", "1TB"],
@@ -366,6 +1262,13 @@
           "basePrice": 320,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 45, "ecran": 129, "connecteurs": 12, "camera": 70, "boutons": 22 }
+        },
+        {
+          "model": "Pixel Fold",
+          "basePrice": 870,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 83, "ecran": 308, "connecteurs": 23, "camera": 162, "boutons": 42 },
+          "estimated": true
         },
         {
           "model": "Pixel 7 Pro",
@@ -402,6 +1305,90 @@
           "basePrice": 180,
           "storageOptions": ["128GB"],
           "repairs": { "batterie": 39, "ecran": 99, "connecteurs": 10, "camera": 55, "boutons": 18 }
+        },
+        {
+          "model": "Pixel 5a",
+          "basePrice": 210,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 5",
+          "basePrice": 230,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 4a",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 4",
+          "basePrice": 230,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 4 XL",
+          "basePrice": 310,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 45, "ecran": 128, "connecteurs": 13, "camera": 70, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 3a",
+          "basePrice": 140,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 3a XL",
+          "basePrice": 180,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 3",
+          "basePrice": 130,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 3 XL",
+          "basePrice": 250,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 40, "ecran": 106, "connecteurs": 11, "camera": 58, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 2",
+          "basePrice": 150,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel 2 XL",
+          "basePrice": 160,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Pixel",
+          "basePrice": 180,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
         }
       ]
     },
@@ -445,6 +1432,13 @@
           "repairs": { "batterie": 49, "ecran": 149, "connecteurs": 15, "camera": 85, "boutons": 25 }
         },
         {
+          "model": "Redmi 13C",
+          "basePrice": 90,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
           "model": "Xiaomi 13T Pro",
           "basePrice": 380,
           "storageOptions": ["256GB", "512GB", "1TB"],
@@ -473,6 +1467,13 @@
           "basePrice": 140,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 29, "ecran": 65, "connecteurs": 8, "camera": 35, "boutons": 12 }
+        },
+        {
+          "model": "Xiaomi 13",
+          "basePrice": 430,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 55, "ecran": 169, "connecteurs": 16, "camera": 91, "boutons": 26 },
+          "estimated": true
         },
         {
           "model": "Redmi Note 12 Pro+",
@@ -509,6 +1510,178 @@
           "basePrice": 220,
           "storageOptions": ["256GB", "512GB"],
           "repairs": { "batterie": 32, "ecran": 79, "connecteurs": 10, "camera": 45, "boutons": 15 }
+        },
+        {
+          "model": "Xiaomi 12T",
+          "basePrice": 350,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 49, "ecran": 141, "connecteurs": 14, "camera": 77, "boutons": 23 },
+          "estimated": true
+        },
+        {
+          "model": "Xiaomi 12T Pro",
+          "basePrice": 160,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xiaomi 12 Lite",
+          "basePrice": 240,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 39, "ecran": 103, "connecteurs": 11, "camera": 56, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "POCO F4",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "POCO M4 Pro",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "POCO X4 Pro 5G",
+          "basePrice": 130,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Redmi 10C",
+          "basePrice": 120,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Redmi Note 11",
+          "basePrice": 130,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Redmi Note 11 Pro",
+          "basePrice": 220,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 37, "ecran": 95, "connecteurs": 11, "camera": 53, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Xiaomi 12",
+          "basePrice": 430,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 55, "ecran": 169, "connecteurs": 16, "camera": 91, "boutons": 26 },
+          "estimated": true
+        },
+        {
+          "model": "Xiaomi 12 Pro",
+          "basePrice": 530,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 62, "ecran": 202, "connecteurs": 18, "camera": 108, "boutons": 30 },
+          "estimated": true
+        },
+        {
+          "model": "Xiaomi 11T",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Xiaomi 11T Pro",
+          "basePrice": 120,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Mi 11 Lite",
+          "basePrice": 240,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 39, "ecran": 103, "connecteurs": 11, "camera": 56, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "POCO X3 Pro",
+          "basePrice": 150,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Mi 9T Pro",
+          "basePrice": 230,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Mi 9",
+          "basePrice": 210,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Redmi Note 7",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Mi Mix 3",
+          "basePrice": 210,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Mi 8 Lite",
+          "basePrice": 120,
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Pocophone F1",
+          "basePrice": 130,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Mi A2",
+          "basePrice": 110,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Mi 8",
+          "basePrice": 190,
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Mi Mix 2S",
+          "basePrice": 190,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Redmi Note 5",
+          "basePrice": 90,
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
         }
       ]
     },
@@ -532,6 +1705,13 @@
           "basePrice": 400,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 49, "ecran": 149, "connecteurs": 15, "camera": 80, "boutons": 25 }
+        },
+        {
+          "model": "Open",
+          "basePrice": 1210,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 101, "ecran": 408, "connecteurs": 28, "camera": 213, "boutons": 53 },
+          "estimated": true
         },
         {
           "model": "OnePlus 11",
@@ -562,6 +1742,153 @@
           "basePrice": 150,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 29, "ecran": 65, "connecteurs": 8, "camera": 35, "boutons": 12 }
+        },
+        {
+          "model": "OnePlus 10T",
+          "basePrice": 330,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 47, "ecran": 135, "connecteurs": 13, "camera": 73, "boutons": 22 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus Nord 2T",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 10 Pro",
+          "basePrice": 380,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 51, "ecran": 152, "connecteurs": 15, "camera": 82, "boutons": 24 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus Nord 2",
+          "basePrice": 120,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Nord CE 5G",
+          "basePrice": 130,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 9",
+          "basePrice": 170,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 9 Pro",
+          "basePrice": 310,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 45, "ecran": 128, "connecteurs": 13, "camera": 70, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "Nord N10",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Nord N100",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 8T",
+          "basePrice": 210,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus Nord",
+          "basePrice": 150,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 8",
+          "basePrice": 220,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 37, "ecran": 95, "connecteurs": 11, "camera": 53, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 8 Pro",
+          "basePrice": 200,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 35, "ecran": 88, "connecteurs": 10, "camera": 49, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 7T",
+          "basePrice": 200,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 35, "ecran": 88, "connecteurs": 10, "camera": 49, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 7T Pro",
+          "basePrice": 250,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 40, "ecran": 106, "connecteurs": 11, "camera": 58, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 7T Pro Mclaren 5G",
+          "basePrice": 210,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 7",
+          "basePrice": 150,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 7 Pro",
+          "basePrice": 180,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 6T",
+          "basePrice": 180,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 6",
+          "basePrice": 150,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "OnePlus 5T",
+          "basePrice": 140,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
         }
       ]
     },
@@ -611,6 +1938,13 @@
           "repairs": { "batterie": 32, "ecran": 79, "connecteurs": 10, "camera": 45, "boutons": 15 }
         },
         {
+          "model": "A40 (A3 4G)",
+          "basePrice": 90,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
           "model": "A60",
           "basePrice": 130,
           "storageOptions": ["128GB", "256GB"],
@@ -621,6 +1955,188 @@
           "basePrice": 100,
           "storageOptions": ["128GB"],
           "repairs": { "batterie": 22, "ecran": 49, "connecteurs": 8, "camera": 25, "boutons": 10 }
+        },
+        {
+          "model": "Find N2 Flip",
+          "basePrice": 400,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 53, "ecran": 159, "connecteurs": 15, "camera": 86, "boutons": 25 },
+          "estimated": true
+        },
+        {
+          "model": "A16",
+          "basePrice": 90,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 8",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 8 Pro",
+          "basePrice": 290,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 44, "ecran": 120, "connecteurs": 12, "camera": 66, "boutons": 20 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 8 Lite",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 7",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Find X5",
+          "basePrice": 310,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 45, "ecran": 128, "connecteurs": 13, "camera": 70, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "Find X5 Lite",
+          "basePrice": 150,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Find X5 Pro",
+          "basePrice": 300,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 45, "ecran": 124, "connecteurs": 13, "camera": 68, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "A54s",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "A16s",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "A74",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "A94",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "A54",
+          "basePrice": 120,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Find X3 Lite",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Find X3 Neo",
+          "basePrice": 250,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 40, "ecran": 106, "connecteurs": 11, "camera": 58, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "Find X3 Pro",
+          "basePrice": 400,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 53, "ecran": 159, "connecteurs": 15, "camera": 86, "boutons": 25 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 4 Z 5G",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "A53",
+          "basePrice": 90,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 4 Pro",
+          "basePrice": 240,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 39, "ecran": 103, "connecteurs": 11, "camera": 56, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 4",
+          "basePrice": 180,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Find X2 Pro",
+          "basePrice": 220,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 37, "ecran": 95, "connecteurs": 11, "camera": 53, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "A9 (2020) (A11x)",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 10x zoom",
+          "basePrice": 170,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Reno Z",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Reno 5G",
+          "basePrice": 210,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
         }
       ]
     },
@@ -674,12 +2190,185 @@
           "basePrice": 220,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 35, "ecran": 79, "connecteurs": 10, "camera": 45, "boutons": 15 }
+        },
+        {
+          "model": "Mate 40 Pro",
+          "basePrice": 400,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 53, "ecran": 159, "connecteurs": 15, "camera": 86, "boutons": 25 },
+          "estimated": true
+        },
+        {
+          "model": "P Smart (2021)",
+          "basePrice": 100,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "P40 Pro Plus",
+          "basePrice": 440,
+          "storageOptions": ["256GB", "512GB"],
+          "repairs": { "batterie": 56, "ecran": 172, "connecteurs": 16, "camera": 93, "boutons": 27 },
+          "estimated": true
+        },
+        {
+          "model": "P Smart (2020)",
+          "basePrice": 90,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "P40",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "P40 Pro",
+          "basePrice": 160,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "P40 Lite",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Mate 30 Pro",
+          "basePrice": 210,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Nova 5T",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "P Smart Z",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "P30 Lite",
+          "basePrice": 150,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "P30",
+          "basePrice": 200,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 35, "ecran": 88, "connecteurs": 10, "camera": 49, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "P30 Pro",
+          "basePrice": 130,
+          "storageOptions": ["128GB", "512GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "P Smart (2019)",
+          "basePrice": 90,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Mate 20 X",
+          "basePrice": 130,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Mate 20",
+          "basePrice": 280,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 43, "ecran": 117, "connecteurs": 12, "camera": 64, "boutons": 20 },
+          "estimated": true
+        },
+        {
+          "model": "Mate 20 Pro",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Mate 20 Lite",
+          "basePrice": 160,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "P20",
+          "basePrice": 120,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "P20 Lite",
+          "basePrice": 130,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "P20 Pro",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Mate 10 Lite",
+          "basePrice": 110,
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Mate 10 Pro",
+          "basePrice": 230,
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "P10 Plus",
+          "basePrice": 180,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
         }
       ]
     },
     {
       "name": "Sony",
       "models": [
+        {
+          "model": "Xperia 1 VII",
+          "basePrice": 930,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 87, "ecran": 326, "connecteurs": 24, "camera": 171, "boutons": 44 },
+          "estimated": true
+        },
         {
           "model": "Xperia 1 VI",
           "basePrice": 750,
@@ -709,12 +2398,292 @@
           "basePrice": 220,
           "storageOptions": ["128GB"],
           "repairs": { "batterie": 35, "ecran": 79, "connecteurs": 10, "camera": 45, "boutons": 15 }
+        },
+        {
+          "model": "Xperia 5 IV",
+          "basePrice": 550,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 64, "ecran": 208, "connecteurs": 18, "camera": 111, "boutons": 31 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 10 IV",
+          "basePrice": 210,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia Pro-I",
+          "basePrice": 160,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 5 III",
+          "basePrice": 160,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 1 III",
+          "basePrice": 410,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 54, "ecran": 162, "connecteurs": 15, "camera": 87, "boutons": 26 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 10 III",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 5 II",
+          "basePrice": 210,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 1 II",
+          "basePrice": 180,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 10 II",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 5",
+          "basePrice": 230,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 1",
+          "basePrice": 120,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 10",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia 10 Plus",
+          "basePrice": 120,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XZ3",
+          "basePrice": 160,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XZ2 Premium",
+          "basePrice": 160,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XZ2",
+          "basePrice": 240,
+          "repairs": { "batterie": 39, "ecran": 103, "connecteurs": 11, "camera": 56, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XZ2 Compact",
+          "basePrice": 210,
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XA2",
+          "basePrice": 130,
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XA2 Ultra",
+          "basePrice": 140,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XA1 Plus",
+          "basePrice": 120,
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XZ1",
+          "basePrice": 190,
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XZ1 Compact",
+          "basePrice": 170,
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XZ Premium",
+          "basePrice": 210,
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XA1 Ultra",
+          "basePrice": 120,
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XA1",
+          "basePrice": 90,
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XZ",
+          "basePrice": 190,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia XA",
+          "basePrice": 80,
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia Z5",
+          "basePrice": 170,
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia Z5 Compact",
+          "basePrice": 160,
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia Z5 Premium",
+          "basePrice": 210,
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
+          "model": "Xperia Z3",
+          "basePrice": 140,
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
         }
       ]
     },
     {
       "name": "Motorola",
       "models": [
+        {
+          "model": "Edge 70 Max",
+          "basePrice": 600,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 67, "ecran": 224, "connecteurs": 19, "camera": 120, "boutons": 33 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 70 Pro",
+          "basePrice": 650,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 70, "ecran": 240, "connecteurs": 20, "camera": 128, "boutons": 35 },
+          "estimated": true
+        },
+        {
+          "model": "Razr 70",
+          "basePrice": 690,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 73, "ecran": 252, "connecteurs": 20, "camera": 134, "boutons": 36 },
+          "estimated": true
+        },
+        {
+          "model": "Razr 70 Ultra",
+          "basePrice": 1030,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 92, "ecran": 355, "connecteurs": 26, "camera": 186, "boutons": 48 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 70 Fusion",
+          "basePrice": 310,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 45, "ecran": 128, "connecteurs": 13, "camera": 70, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G56",
+          "basePrice": 170,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 60",
+          "basePrice": 290,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 44, "ecran": 120, "connecteurs": 12, "camera": 66, "boutons": 20 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 60 Pro",
+          "basePrice": 460,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 57, "ecran": 179, "connecteurs": 16, "camera": 96, "boutons": 28 },
+          "estimated": true
+        },
+        {
+          "model": "Razr 60 Ultra",
+          "basePrice": 820,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 80, "ecran": 293, "connecteurs": 23, "camera": 154, "boutons": 41 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 50 Neo",
+          "basePrice": 280,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 43, "ecran": 117, "connecteurs": 12, "camera": 64, "boutons": 20 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G85",
+          "basePrice": 190,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 34, "ecran": 84, "connecteurs": 10, "camera": 47, "boutons": 15 },
+          "estimated": true
+        },
         {
           "model": "Edge 50 Ultra",
           "basePrice": 550,
@@ -732,6 +2701,34 @@
           "basePrice": 300,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 39, "ecran": 99, "connecteurs": 12, "camera": 55, "boutons": 18 }
+        },
+        {
+          "model": "Moto G34",
+          "basePrice": 100,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 40 Neo",
+          "basePrice": 170,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Razr 40",
+          "basePrice": 390,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 52, "ecran": 155, "connecteurs": 15, "camera": 84, "boutons": 25 },
+          "estimated": true
+        },
+        {
+          "model": "Razr 40 Ultra",
+          "basePrice": 410,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 54, "ecran": 162, "connecteurs": 15, "camera": 87, "boutons": 26 },
+          "estimated": true
         },
         {
           "model": "Edge 40 Pro",
@@ -768,6 +2765,273 @@
           "basePrice": 130,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 25, "ecran": 55, "connecteurs": 8, "camera": 30, "boutons": 10 }
+        },
+        {
+          "model": "Moto G13",
+          "basePrice": 100,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G73",
+          "basePrice": 140,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "ThinkPhone",
+          "basePrice": 450,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 57, "ecran": 175, "connecteurs": 16, "camera": 94, "boutons": 27 },
+          "estimated": true
+        },
+        {
+          "model": "Moto E30",
+          "basePrice": 80,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 30 Neo",
+          "basePrice": 150,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 30 Ultra",
+          "basePrice": 350,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 49, "ecran": 141, "connecteurs": 14, "camera": 77, "boutons": 23 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G32",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G62",
+          "basePrice": 120,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 30",
+          "basePrice": 230,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 38, "ecran": 99, "connecteurs": 11, "camera": 54, "boutons": 17 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G82",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G31",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 20",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 20 Lite",
+          "basePrice": 140,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Edge 20 Pro",
+          "basePrice": 130,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G60S",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G100",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G50",
+          "basePrice": 120,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G10",
+          "basePrice": 90,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G30",
+          "basePrice": 90,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G9 Power",
+          "basePrice": 100,
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G9 Plus",
+          "basePrice": 120,
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Razr 5G",
+          "basePrice": 140,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G9 Play",
+          "basePrice": 90,
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G 5G Plus",
+          "basePrice": 170,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G Pro",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Moto Edge",
+          "basePrice": 300,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 45, "ecran": 124, "connecteurs": 13, "camera": 68, "boutons": 21 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G8 Power",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G8",
+          "basePrice": 90,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Razr (2019)",
+          "basePrice": 180,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G8 Plus",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Moto One Macro",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "One Action",
+          "basePrice": 120,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G7 Plus",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G7",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G7 Play",
+          "basePrice": 70,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 19, "ecran": 36, "connecteurs": 6, "camera": 21, "boutons": 8 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G7 Power",
+          "basePrice": 100,
+          "storageOptions": ["32GB", "64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G6",
+          "basePrice": 100,
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G6 Play",
+          "basePrice": 80,
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Moto G6 Plus",
+          "basePrice": 100,
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
         }
       ]
     },
@@ -804,6 +3068,48 @@
       "name": "Honor",
       "models": [
         {
+          "model": "Magic 8 Lite",
+          "basePrice": 340,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 48, "ecran": 138, "connecteurs": 14, "camera": 75, "boutons": 23 },
+          "estimated": true
+        },
+        {
+          "model": "Magic 8 Pro",
+          "basePrice": 860,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 83, "ecran": 305, "connecteurs": 23, "camera": 161, "boutons": 42 },
+          "estimated": true
+        },
+        {
+          "model": "Magic V5",
+          "basePrice": 1250,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 103, "ecran": 419, "connecteurs": 29, "camera": 218, "boutons": 54 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 400",
+          "basePrice": 320,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 46, "ecran": 131, "connecteurs": 13, "camera": 71, "boutons": 22 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 400 Pro",
+          "basePrice": 440,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 56, "ecran": 172, "connecteurs": 16, "camera": 93, "boutons": 27 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 400 Lite",
+          "basePrice": 210,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 36, "ecran": 91, "connecteurs": 10, "camera": 51, "boutons": 16 },
+          "estimated": true
+        },
+        {
           "model": "Magic 7 Pro",
           "basePrice": 650,
           "storageOptions": ["256GB", "512GB"],
@@ -814,6 +3120,34 @@
           "basePrice": 350,
           "storageOptions": ["256GB"],
           "repairs": { "batterie": 39, "ecran": 109, "connecteurs": 12, "camera": 60, "boutons": 20 }
+        },
+        {
+          "model": "Honor 200 Smart",
+          "basePrice": 110,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Magic V3",
+          "basePrice": 1030,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 92, "ecran": 355, "connecteurs": 26, "camera": 186, "boutons": 48 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 200 Lite",
+          "basePrice": 160,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 90 Smart",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
         },
         {
           "model": "Magic 6 Pro",
@@ -844,6 +3178,153 @@
           "basePrice": 180,
           "storageOptions": ["128GB", "256GB"],
           "repairs": { "batterie": 29, "ecran": 69, "connecteurs": 10, "camera": 35, "boutons": 12 }
+        },
+        {
+          "model": "Magic V2",
+          "basePrice": 910,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 86, "ecran": 320, "connecteurs": 24, "camera": 168, "boutons": 44 },
+          "estimated": true
+        },
+        {
+          "model": "Honor X6a",
+          "basePrice": 110,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 90",
+          "basePrice": 260,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 41, "ecran": 110, "connecteurs": 12, "camera": 60, "boutons": 19 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 90 Lite",
+          "basePrice": 120,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 70 Lite",
+          "basePrice": 100,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Magic 5 Pro",
+          "basePrice": 130,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Magic 5 Lite",
+          "basePrice": 160,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "X7a",
+          "basePrice": 150,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Magic VS",
+          "basePrice": 800,
+          "storageOptions": ["512GB"],
+          "repairs": { "batterie": 79, "ecran": 286, "connecteurs": 22, "camera": 151, "boutons": 40 },
+          "estimated": true
+        },
+        {
+          "model": "Honor X6",
+          "basePrice": 130,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 70",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Magic 4 Lite",
+          "basePrice": 150,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 30, "ecran": 69, "connecteurs": 9, "camera": 38, "boutons": 13 },
+          "estimated": true
+        },
+        {
+          "model": "Magic 4 Pro",
+          "basePrice": 120,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Honor X7",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Honor X8",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 50 Lite",
+          "basePrice": 170,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 50",
+          "basePrice": 280,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 43, "ecran": 117, "connecteurs": 12, "camera": 64, "boutons": 20 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 20 Pro",
+          "basePrice": 140,
+          "storageOptions": ["256GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 20",
+          "basePrice": 180,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Honor 20 Lite",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "View 20",
+          "basePrice": 200,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 35, "ecran": 88, "connecteurs": 10, "camera": 49, "boutons": 16 },
+          "estimated": true
         }
       ]
     },
@@ -879,6 +3360,247 @@
           "basePrice": 380,
           "storageOptions": ["128GB", "256GB", "512GB"],
           "repairs": { "batterie": 45, "ecran": 139, "connecteurs": 15, "camera": 75, "boutons": 22 }
+        }
+      ]
+    },
+    {
+      "name": "Nokia",
+      "models": [
+        {
+          "model": "Nokia G42",
+          "basePrice": 140,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 28, "ecran": 65, "connecteurs": 8, "camera": 36, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia XR21",
+          "basePrice": 280,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 43, "ecran": 117, "connecteurs": 12, "camera": 64, "boutons": 20 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia G22",
+          "basePrice": 100,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia G60",
+          "basePrice": 130,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia G11",
+          "basePrice": 100,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia G21",
+          "basePrice": 100,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia G50",
+          "basePrice": 130,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 27, "ecran": 61, "connecteurs": 8, "camera": 34, "boutons": 12 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia XR20",
+          "basePrice": 160,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia X10",
+          "basePrice": 170,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 32, "ecran": 76, "connecteurs": 9, "camera": 42, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia G20",
+          "basePrice": 90,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia X20",
+          "basePrice": 160,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia G10",
+          "basePrice": 70,
+          "storageOptions": ["32GB", "64GB"],
+          "repairs": { "batterie": 19, "ecran": 36, "connecteurs": 6, "camera": 21, "boutons": 8 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 1.4",
+          "basePrice": 60,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 17, "ecran": 31, "connecteurs": 5, "camera": 18, "boutons": 7 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 5.4",
+          "basePrice": 100,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 3.4",
+          "basePrice": 90,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 8.3 5G",
+          "basePrice": 270,
+          "storageOptions": ["64GB", "128GB"],
+          "repairs": { "batterie": 42, "ecran": 113, "connecteurs": 12, "camera": 62, "boutons": 19 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 5.3",
+          "basePrice": 90,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 6.2",
+          "basePrice": 120,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 7.2",
+          "basePrice": 110,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 25, "ecran": 53, "connecteurs": 7, "camera": 30, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 3.2",
+          "basePrice": 70,
+          "storageOptions": ["16GB"],
+          "repairs": { "batterie": 19, "ecran": 36, "connecteurs": 6, "camera": 21, "boutons": 8 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 4.2",
+          "basePrice": 80,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 9 Pureview",
+          "basePrice": 250,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 40, "ecran": 106, "connecteurs": 11, "camera": 58, "boutons": 18 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 8.1",
+          "basePrice": 180,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 33, "ecran": 80, "connecteurs": 9, "camera": 45, "boutons": 15 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 3.1 Plus",
+          "basePrice": 90,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 22, "ecran": 44, "connecteurs": 6, "camera": 25, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 7.1",
+          "basePrice": 120,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 5.1",
+          "basePrice": 80,
+          "storageOptions": ["16GB", "32GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 3.1",
+          "basePrice": 80,
+          "storageOptions": ["16GB"],
+          "repairs": { "batterie": 20, "ecran": 40, "connecteurs": 6, "camera": 23, "boutons": 9 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 6 (2018)",
+          "basePrice": 100,
+          "storageOptions": ["32GB"],
+          "repairs": { "batterie": 23, "ecran": 49, "connecteurs": 7, "camera": 27, "boutons": 10 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 8 Sirocco",
+          "basePrice": 260,
+          "storageOptions": ["128GB"],
+          "repairs": { "batterie": 41, "ecran": 110, "connecteurs": 12, "camera": 60, "boutons": 19 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 7 Plus",
+          "basePrice": 120,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 26, "ecran": 57, "connecteurs": 8, "camera": 32, "boutons": 11 },
+          "estimated": true
+        },
+        {
+          "model": "Nokia 8",
+          "basePrice": 160,
+          "storageOptions": ["64GB"],
+          "repairs": { "batterie": 31, "ecran": 73, "connecteurs": 9, "camera": 40, "boutons": 14 },
+          "estimated": true
+        }
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "models": [
+        {
+          "model": "Surface Duo 2",
+          "basePrice": 670,
+          "storageOptions": ["128GB", "256GB", "512GB"],
+          "repairs": { "batterie": 71, "ecran": 246, "connecteurs": 20, "camera": 131, "boutons": 36 },
+          "estimated": true
+        },
+        {
+          "model": "Surface Duo",
+          "basePrice": 620,
+          "storageOptions": ["128GB", "256GB"],
+          "repairs": { "batterie": 68, "ecran": 230, "connecteurs": 19, "camera": 123, "boutons": 34 },
+          "estimated": true
         }
       ]
     }

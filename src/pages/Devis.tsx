@@ -174,7 +174,7 @@ export default function DevisPage() {
           }
         } catch (error) {
           console.error(error);
-          setMarketResults({ resultats: { offres: [] } });
+          setMarketResults({ resultats: { offres: [] }, fetchFailed: true });
           setVentesResults(null);
         } finally {
           setIsFetchingPrices(false);
@@ -191,6 +191,18 @@ export default function DevisPage() {
     setVentesResults(null);
     setPriceForecast(null);
   }, [selectedModel, unitColor, unitCapacity, unitGrade]);
+
+  // Un modèle n'a pas forcément été vendu dans la capacité actuellement
+  // sélectionnée (ex. iPhone 16 Pro Max n'existe pas en 128 Go) : si elle
+  // devient invalide en changeant de modèle, on retombe sur la première
+  // capacité réellement proposée pour éviter une recherche de marché vouée
+  // à échouer sur tous les revendeurs.
+  useEffect(() => {
+    const options = getModel(selectedModel)?.storageOptions;
+    if (options && options.length > 0 && !options.includes(unitCapacity)) {
+      setUnitCapacity(options[0]);
+    }
+  }, [selectedModel, getModel]);
   // Calculate final Expertise object
   const expertise: Expertise = useMemo(() => {
     let items: DevisItem[] = [];
@@ -350,7 +362,7 @@ export default function DevisPage() {
 
         {/* Step 2: Unitaire Caractéristiques & Diagnostic */}
         {step === 2 && devisType === "unitaire" && (
-          <U_step2 unitCapacity={unitCapacity} unitColor={unitColor} unitGrade={unitGrade} setUnitCapacity={setUnitCapacity} setUnitColor={setUnitColor} setUnitGrade={setUnitGrade} />
+          <U_step2 unitCapacity={unitCapacity} unitColor={unitColor} unitGrade={unitGrade} setUnitCapacity={setUnitCapacity} setUnitColor={setUnitColor} setUnitGrade={setUnitGrade} storageOptions={getModel(selectedModel)?.storageOptions} />
         )}
 
         {/* Step 3: Unitaire Repairs */}

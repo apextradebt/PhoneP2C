@@ -32,6 +32,42 @@ interface U_step4Interface {
 }
 
 
+// Détail des échecs par revendeur (timeout scraper, site indisponible...) —
+// évite de confondre "vraiment aucune offre" avec "les agents ont tous planté".
+function DetailErreurs({ erreurs }: { erreurs: { revendeur: string; erreur: string }[] }) {
+    return (
+        <ul className="text-xs text-left inline-block space-y-1 mt-2 mx-auto">
+            {erreurs.map((e, i) => (
+                <li key={i}><span className="font-semibold">{e.revendeur}</span> : {e.erreur}</li>
+            ))}
+        </ul>
+    );
+}
+
+function MarketEmptyState({ marketResults, erreurs, emptyMessage, errorIntro }: { marketResults: any, erreurs?: { revendeur: string; erreur: string }[], emptyMessage: string, errorIntro: string }) {
+    if (marketResults?.fetchFailed) {
+        return (
+            <div className="text-center py-6 text-gray-500">
+                <p className="font-semibold text-red-500">Impossible de contacter le serveur de prix.</p>
+                <p className="text-xs mt-1">Vérifie que le backend tourne bien, puis réessaie.</p>
+            </div>
+        );
+    }
+    if (erreurs && erreurs.length > 0) {
+        return (
+            <div className="text-center py-6 text-gray-500">
+                <p>{errorIntro}</p>
+                <DetailErreurs erreurs={erreurs} />
+            </div>
+        );
+    }
+    return (
+        <div className="text-center py-6 text-gray-500">
+            {emptyMessage}
+        </div>
+    );
+}
+
 function MargeBadge({ marge }: { marge: number | null }) {
     if (marge === null) {
         return <span className="text-[11px] text-gray-400 mt-1">Marge : —</span>;
@@ -88,9 +124,12 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                                 ))}
                             </div>
                         ) : (
-                            <div className="text-center py-6 text-gray-500">
-                                Aucune offre trouvée sur le marché en temps réel.
-                            </div>
+                            <MarketEmptyState
+                                marketResults={marketResults}
+                                erreurs={marketResults?.erreurs}
+                                emptyMessage="Aucune offre trouvée sur le marché en temps réel."
+                                errorIntro="Aucune offre récupérée, tous les revendeurs ont échoué :"
+                            />
                         )}
                     </div>
 
@@ -114,9 +153,12 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                                 ))}
                             </div>
                         ) : (
-                            <div className="text-center py-6 text-gray-500">
-                                Aucun prix de revente comparable trouvé — la marge ne peut pas être estimée.
-                            </div>
+                            <MarketEmptyState
+                                marketResults={marketResults}
+                                erreurs={marketResults?.ventesErreurs}
+                                emptyMessage="Aucun prix de revente comparable trouvé — la marge ne peut pas être estimée."
+                                errorIntro="Aucun prix de revente récupéré, tous les revendeurs ont échoué :"
+                            />
                         )}
                     </div>
 

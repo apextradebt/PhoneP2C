@@ -119,7 +119,7 @@ export default function CataloguePage() {
               </button>
             )) : (
               <div className="col-span-full text-center py-10 text-gray-500 font-medium">
-                Aucun modèle trouvé pour "{globalSearch}"
+                {t('common.no_model_found', { query: globalSearch })}
               </div>
             )}
           </div>
@@ -135,7 +135,7 @@ export default function CataloguePage() {
                   <img src={`${import.meta.env.BASE_URL}logos/${brand.name}.png`} alt={brand.name} className="w-full h-full object-contain mix-blend-darken opacity-80 " />
                 </div>
                 <span className="text-xl font-bold text-[var(--color-brand-dark)]">{brand.name}</span>
-                <span className="text-xs text-gray-400 font-medium">{brand.models.length} modèles</span>
+                <span className="text-xs text-gray-400 font-medium">{t('catalogue.models', { count: brand.models.length })}</span>
               </button>
             ))}
           </div>
@@ -164,7 +164,7 @@ export default function CataloguePage() {
         <div className="flex flex-col">
           <h1 className="text-2xl font-bold tracking-tight">{selectedBrand}</h1>
           <p className="text-gray-500 font-medium text-sm">
-            {selectedModelName ? selectedModelName : `${currentBrand?.models.length} modèles disponibles`}
+            {selectedModelName ? selectedModelName : t('catalogue.models_available', { count: currentBrand?.models.length ?? 0 })}
           </p>
         </div>
       </header>
@@ -178,7 +178,7 @@ export default function CataloguePage() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Rechercher un modèle..."
+              placeholder={t('common.search_model')}
               className="w-full pl-10 pr-4 py-3 bg-[var(--brand-surface)]/40 rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
             />
           </div>
@@ -195,14 +195,14 @@ export default function CataloguePage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-bold text-[var(--color-brand-dark)] truncate">{model.model}</p>
-                  <p className="text-sm text-gray-500 font-medium">Prix de base : {model.basePrice} €</p>
+                  <p className="text-sm text-gray-500 font-medium">{t('catalogue.base_price', { price: model.basePrice })}</p>
                 </div>
               </button>
             ))}
 
             {filteredModels.length === 0 && (
               <div className="col-span-full text-center py-10 text-gray-500 font-medium">
-                Aucun modèle trouvé pour "{searchQuery}"
+                {t('common.no_model_found', { query: searchQuery })}
               </div>
             )}
           </div>
@@ -219,7 +219,7 @@ export default function CataloguePage() {
               <div className="flex-1">
                 <h2 className="text-xl font-bold text-[var(--color-brand-dark)]">{currentModel.model}</h2>
                 <p className="text-sm text-gray-500 font-medium mt-1">
-                  {selectedBrand} • Prix de base : <span className="text-[var(--color-brand-terracotta)] font-bold">{currentModel.basePrice} €</span>
+                  {selectedBrand} • {t('catalogue.base_price_label')} <span className="text-[var(--color-brand-terracotta)] font-bold">{currentModel.basePrice} €</span>
                 </p>
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function CataloguePage() {
             <div className="bg-[var(--brand-surface)]/40 p-6 sm:p-8 rounded-[2rem] shadow-soft">
               <h3 className="font-bold text-lg text-[var(--color-brand-dark)] mb-6 flex items-center gap-2">
                 <Wrench className="w-5 h-5 text-[var(--color-brand-terracotta)]" />
-                Coûts de réparation
+                {t('catalogue.repair_costs')}
               </h3>
 
               <div className="flex flex-col gap-4">
@@ -243,7 +243,7 @@ export default function CataloguePage() {
                         <Icon className="w-5 h-5 text-[var(--color-brand-terracotta)]" />
                       </div>
                       <span className="flex-1 font-semibold text-[var(--color-brand-dark)] text-sm">
-                        {repairLabels[key] || key}
+                        {t(`repairs.${key}`, { defaultValue: repairLabels[key] || key })}
                       </span>
                       <div className="flex items-center gap-2">
                         <input
@@ -264,7 +264,7 @@ export default function CataloguePage() {
                 <div className="flex items-center gap-2">
                   {savedMessage && (
                     <span className="text-sm text-green-600 font-semibold animate-in fade-in">
-                      ✓ Modifications sauvegardées
+                      {t('catalogue.saved')}
                     </span>
                   )}
                 </div>
@@ -273,7 +273,7 @@ export default function CataloguePage() {
                   className="flex items-center gap-2 bg-[var(--color-brand-dark)] text-white px-6 py-3 rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity"
                 >
                   <Save className="w-4 h-4" />
-                  Sauvegarder
+                  {t('catalogue.save')}
                 </button>
               </div>
             </div>

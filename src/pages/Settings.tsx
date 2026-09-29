@@ -96,10 +96,10 @@ export default function SettingsPage() {
         setProfileDirty(false);
       } else {
         const data = await res.json();
-        notify('error', data.error || 'Error');
+        notify('error', data.error || t('common.error'));
       }
     } catch (err) {
-      notify('error', 'Network error');
+      notify('error', t('common.network_error'));
     } finally {
       setProfileLoading(false);
     }
@@ -130,10 +130,10 @@ export default function SettingsPage() {
         await refreshUserData();
       } else {
         const data = await res.json();
-        notify('error', data.error || 'Error');
+        notify('error', data.error || t('common.error'));
       }
     } catch (err) {
-      notify('error', 'Network error');
+      notify('error', t('common.network_error'));
     } finally {
       setEmailLoading(false);
     }
@@ -166,10 +166,10 @@ export default function SettingsPage() {
         setConfirmPassword("");
       } else {
         const data = await res.json();
-        notify('error', data.error || 'Error');
+        notify('error', data.error || t('common.error'));
       }
     } catch (err) {
-      notify('error', 'Network error');
+      notify('error', t('common.network_error'));
     } finally {
       setPasswordLoading(false);
     }
@@ -193,10 +193,10 @@ export default function SettingsPage() {
         }, 1500);
       } else {
         const data = await res.json();
-        notify('error', data.error || 'Error');
+        notify('error', data.error || t('common.error'));
       }
     } catch (err) {
-      notify('error', 'Network error');
+      notify('error', t('common.network_error'));
     } finally {
       setDeleteLoading(false);
       setShowDeleteModal(false);
@@ -263,7 +263,7 @@ export default function SettingsPage() {
               <label className={labelClass}>{t('settings.role')}</label>
               <div className="flex items-center gap-2 p-3 rounded-xl bg-[var(--brand-surface)] shadow-inner-soft">
                 <Shield className="w-4 h-4 text-[var(--color-brand-terracotta)]" />
-                <span className="text-sm font-bold capitalize text-[var(--color-brand-terracotta)]">{userData?.role}</span>
+                <span className="text-sm font-bold capitalize text-[var(--color-brand-terracotta)]">{userData?.role && t(`roles.${userData.role}`, { defaultValue: userData.role })}</span>
               </div>
             </div>
           </div>
@@ -288,7 +288,7 @@ export default function SettingsPage() {
         <div className={sectionClass}>
           <h2 className="text-xl font-bold">{t('settings.email_section')}</h2>
           <p className="text-xs text-gray-400 -mt-4">
-            {t('settings.email')} : <span className="font-semibold text-[var(--color-brand-dark)]">{userData?.email}</span>
+            {t('settings.email_label')} <span className="font-semibold text-[var(--color-brand-dark)]">{userData?.email}</span>
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -298,7 +298,7 @@ export default function SettingsPage() {
                 type="email"
                 value={newEmail}
                 onChange={(e) => setNewEmail(e.target.value)}
-                placeholder="nouveau@email.com"
+                placeholder={t('settings.email_placeholder')}
                 className={inputClass}
               />
             </div>
@@ -308,7 +308,7 @@ export default function SettingsPage() {
                 type="email"
                 value={confirmEmail}
                 onChange={(e) => setConfirmEmail(e.target.value)}
-                placeholder="nouveau@email.com"
+                placeholder={t('settings.email_placeholder')}
                 className={inputClass}
               />
             </div>

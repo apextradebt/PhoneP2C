@@ -1,0 +1,2887 @@
+{
+ "generatedFrom": "nexusb2b/src/data/laptops.json + laptops-extra.json (même référentiel que le B2B, pour partager le cache LaptopsHistory)",
+ "models": [
+  {
+   "brand": "Apple",
+   "model": "Mac Studio 2025",
+   "year": 2025,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air 13 M4 2025",
+   "year": 2025,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air 15 M4 2025",
+   "year": 2025,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 14 M5 2025",
+   "year": 2025,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "iMac 24 M4 2024",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "Mac mini M4 2024",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air 13 M3 2024",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air 15 M3 2024",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 14 M4 2024",
+   "year": 2024,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 16 M4 2024",
+   "year": 2024,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "iMac 24 M3 2023",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "Mac mini M2 2023",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "Mac Studio 2023",
+   "year": 2023,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air 15 M2 2023",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 14 2023",
+   "year": 2023,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 16 2023",
+   "year": 2023,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "Mac Studio 2022",
+   "year": 2022,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air M2 2022",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 13 M2 2022",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "iMac 24 M1 2021",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 14 2021",
+   "year": 2021,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 16 2021",
+   "year": 2021,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "iMac 27 2020 Intel",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "Mac mini M1 2020",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air 2020 Intel",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air M1 2020",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 13 2020 Intel",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 13 M1 2020",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "iMac 21.5 2019 Intel",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "iMac 27 2019 Intel",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air 2019 Intel",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 13 2019 Intel",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 15 2019 Intel",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 16 2019 Intel",
+   "year": 2019,
+   "storageOptions": [
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB",
+    "8TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "Mac mini 2018 Intel",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Air 2018 Intel",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "1.5TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "MacBook Pro 15 2018 Intel",
+   "year": 2018,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB",
+    "4TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "iMac 21.5 2017 Intel",
+   "year": 2017,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Apple",
+   "model": "iMac 27 2017 Intel",
+   "year": 2017,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5450",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5550",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7450",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3440",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3540",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5340",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5440",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5540",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7340",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7440",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3330",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3430",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3530",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5330",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5430",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5530",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7430",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 9430",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Precision 3570",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "XPS 13 9315",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3320",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3420",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3520",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5320",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5420",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5520",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7420",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 9420",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Precision 3560",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Precision 5560",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "XPS 15 9510",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3410",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3510",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5310",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5410",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5510",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7310",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7410",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 9410",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Precision 3550",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Precision 5550",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "XPS 13 9300",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "XPS 13 9310",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "XPS 15 9500",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3310",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3400",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 3500",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5300",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5400",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5500",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7300",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7400",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Precision 3540",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5290",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5490",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5590",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7290",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7390",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7490",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5280",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5480",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 5580",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7280",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude 7480",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude E5470",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude E5570",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude E7270",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Dell",
+   "model": "Latitude E7470",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK E5412",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U7412",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK E5411",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK E5511",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U7311",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U7411",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U7511",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U9311",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK E5410",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK E5510",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U7410",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U7510",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK E549",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U749",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK E548",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U748",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Fujitsu",
+   "model": "LIFEBOOK U747",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G11",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G10",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 845 G10",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 860 G10",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 440 G10",
+   "year": 2023,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 450 G10",
+   "year": 2023,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "Elite Dragonfly G3",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 830 G9",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G9",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 845 G9",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 860 G9",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 1040 G9",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "Pro x360 Fortis 11 G9",
+   "year": 2022,
+   "storageOptions": [
+    "64GB eMMC",
+    "128GB",
+    "256GB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 440 G9",
+   "year": 2022,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 450 G9",
+   "year": 2022,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 640 G9",
+   "year": 2022,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "Elite Dragonfly G2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 830 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 835 G8",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 845 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 850 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook x360 830 G8",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook x360 1040 G8",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 430 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 440 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 445 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 450 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 455 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 640 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 650 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook x360 435 G8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ZBook Firefly 14 G8",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ZBook Firefly 15 G8",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 830 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 835 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 845 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 850 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook x360 830 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook x360 1030 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook x360 1040 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 430 G7",
+   "year": 2020,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 440 G7",
+   "year": 2020,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 445 G7",
+   "year": 2020,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 450 G7",
+   "year": 2020,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 455 G7",
+   "year": 2020,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 640 G7",
+   "year": 2020,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook x360 435 G7",
+   "year": 2020,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ZBook Firefly 14 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ZBook Firefly 15 G7",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 830 G6",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G6",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 845 G6",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 850 G6",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 430 G6",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 440 G6",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 450 G6",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 640 G5",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 650 G5",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ZBook 15u G6",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 830 G5",
+   "year": 2018,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G5",
+   "year": 2018,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 850 G5",
+   "year": 2018,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 430 G5",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 440 G5",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 450 G5",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 640 G4",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "ProBook 650 G4",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 820 G4",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G4",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 850 G4",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 820 G3",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 840 G3",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "HP",
+   "model": "EliteBook 850 G3",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14 Gen 5",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Carbon Gen 12",
+   "year": 2024,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L14 Gen 4",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14 Gen 4",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14s Gen 4",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T16 Gen 2",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Carbon Gen 11",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X13 Gen 4",
+   "year": 2023,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad E14 Gen 4",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad E15 Gen 4",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L14 Gen 3",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14 Gen 3",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14s Gen 3",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T16 Gen 1",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Carbon Gen 10",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Yoga Gen 7",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X13 Gen 3",
+   "year": 2022,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "500e Chromebook Gen 3",
+   "year": 2021,
+   "storageOptions": [
+    "32GB eMMC",
+    "64GB eMMC"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L13 Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L14 Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L15 Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad P14s Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad P15s Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14 Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14s Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T15 Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Carbon Gen 9",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Yoga Gen 6",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X13 Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X13 Yoga Gen 2",
+   "year": 2021,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad E14 Gen 2",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad E15 Gen 2",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L13 Gen 1",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L14 Gen 1",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L15 Gen 1",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14 Gen 1",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T14s Gen 1",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T15 Gen 1",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Carbon Gen 8",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Yoga Gen 5",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X13 Gen 1",
+   "year": 2020,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L490",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L590",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad P53",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T490",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB",
+    "2TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T490s",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T495",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T495s",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T590",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Carbon Gen 7",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X390",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X395",
+   "year": 2019,
+   "storageOptions": [
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L480",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad L580",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad P52",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T480",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T480s",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T580",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Carbon Gen 6",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X280",
+   "year": 2018,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T470",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T470s",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X1 Carbon Gen 5",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad X270",
+   "year": 2017,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T460",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Lenovo",
+   "model": "ThinkPad T460s",
+   "year": 2016,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "500GB HDD"
+   ]
+  },
+  {
+   "brand": "Microsoft",
+   "model": "Surface Laptop 5",
+   "year": 2022,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Microsoft",
+   "model": "Surface Laptop Go 2",
+   "year": 2022,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Microsoft",
+   "model": "Surface Pro 9",
+   "year": 2022,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Microsoft",
+   "model": "Surface Laptop 4",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Microsoft",
+   "model": "Surface Pro 8",
+   "year": 2021,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Microsoft",
+   "model": "Surface Laptop 3",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  },
+  {
+   "brand": "Microsoft",
+   "model": "Surface Pro 7",
+   "year": 2019,
+   "storageOptions": [
+    "128GB",
+    "256GB",
+    "512GB",
+    "1TB"
+   ]
+  }
+ ]
+}

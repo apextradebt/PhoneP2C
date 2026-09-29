@@ -3,6 +3,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function AuthWrapper({
   children,
@@ -11,6 +12,7 @@ export default function AuthWrapper({
 }) {
   const { user, error, isLoading, isAuthenticated } = useAuth0();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
@@ -48,7 +50,7 @@ export default function AuthWrapper({
               B2C Reprise
             </h2>
             <p className="text-[#E8E1D9]/70 text-sm font-medium animate-pulse">
-              Authentification en cours...
+              {t('auth.loading')}
             </p>
           </div>
         </div>
@@ -59,7 +61,7 @@ export default function AuthWrapper({
   if (error) {
     return (
       <div className="w-screen h-screen flex items-center justify-center bg-[var(--color-brand-dark)] text-white">
-        <p>Erreur d'authentification : {error.message}</p>
+        <p>{t('auth.error', { message: error.message })}</p>
       </div>
     );
   }

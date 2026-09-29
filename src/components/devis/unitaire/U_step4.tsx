@@ -1,9 +1,12 @@
-import { DeviceGrade } from "@/types";
+import { DeviceCategory, DeviceGrade } from "@/types";
 import { BarChart2, Loader2, Search, Shield, TrendingDown, Zap } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 import { Area, AreaChart, CartesianGrid, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { useTranslation } from "react-i18next";
+import { colorLabel } from "@/lib/format";
 
 interface U_step4Interface {
+    deviceCategory: DeviceCategory,
     marketResults: any,
     ventesResults: { total_offres: number; offres: { revendeur: string; prix: number }[] } | null,
     unitColor: string,
@@ -45,11 +48,12 @@ function DetailErreurs({ erreurs }: { erreurs: { revendeur: string; erreur: stri
 }
 
 function MarketEmptyState({ marketResults, erreurs, emptyMessage, errorIntro }: { marketResults: any, erreurs?: { revendeur: string; erreur: string }[], emptyMessage: string, errorIntro: string }) {
+    const { t } = useTranslation();
     if (marketResults?.fetchFailed) {
         return (
             <div className="text-center py-6 text-gray-500">
-                <p className="font-semibold text-red-500">Impossible de contacter le serveur de prix.</p>
-                <p className="text-xs mt-1">Vérifie que le backend tourne bien, puis réessaie.</p>
+                <p className="font-semibold text-red-500">{t('devis.strategy.server_unreachable')}</p>
+                <p className="text-xs mt-1">{t('devis.strategy.check_backend')}</p>
             </div>
         );
     }
@@ -69,18 +73,22 @@ function MarketEmptyState({ marketResults, erreurs, emptyMessage, errorIntro }: 
 }
 
 function MargeBadge({ marge }: { marge: number | null }) {
+    const { t } = useTranslation();
     if (marge === null) {
-        return <span className="text-[11px] text-gray-400 mt-1">Marge : —</span>;
+        return <span className="text-[11px] text-gray-400 mt-1">{t('devis.strategy.margin_none')}</span>;
     }
     const positive = marge >= 0;
     return (
         <span className={`text-[11px] font-semibold mt-1 ${positive ? "text-emerald-600" : "text-red-500"}`}>
-            Marge estimée : {positive ? "+" : ""}{marge} €
+            {t('devis.strategy.margin', { value: `${positive ? "+" : ""}${marge}` })}
         </span>
     );
 }
 
-export default function U_step4({ setPricingStrategy, marketResults, ventesResults, unitColor, unitCapacity, selectedModel, isFetchingPrices, unitGrade, unitairePricing, pricingStrategy }: U_step4Interface) {
+export default function U_step4({ deviceCategory, setPricingStrategy, marketResults, ventesResults, unitColor, unitCapacity, selectedModel, isFetchingPrices, unitGrade, unitairePricing, pricingStrategy }: U_step4Interface) {
+    const { t } = useTranslation();
+    // Les PC passent par orchestrateur-pc : autres revendeurs, et pas de coloris.
+    const isLaptop = deviceCategory === "laptop";
 
     return (
         <div className="flex flex-col gap-10 animate-in fade-in slide-in-from-bottom-4">
@@ -88,16 +96,18 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                 <div className="flex flex-col items-center justify-center py-20 gap-6">
                     <Loader2 className="w-16 h-16 text-(--color-brand-terracotta) animate-spin" />
                     <div className="text-center">
-                        <h2 className="text-2xl font-bold text-(--color-brand-dark) mb-3">Analyse du marché en cours...</h2>
-                        <p className="text-gray-500 max-w-md mx-auto">Nos agents parcourent le web (BackMarket, EasyCash, Rebuy...) pour extraire la meilleure stratégie de prix pour votre {selectedModel} ({unitCapacity}).</p>
+                        <h2 className="text-2xl font-bold text-(--color-brand-dark) mb-3">{t('devis.strategy.analysing')}</h2>
+                        <p className="text-gray-500 max-w-md mx-auto">{t(isLaptop ? 'devis.strategy.analysing_desc_pc' : 'devis.strategy.analysing_desc', { model: selectedModel, capacity: unitCapacity })}</p>
                     </div>
                 </div>
             ) : (
                 <>
                     <header>
-                        <h2 className="text-2xl font-bold mb-2">Stratégie & Analyse Marché</h2>
+                        <h2 className="text-2xl font-bold mb-2">{t('devis.strategy.title')}</h2>
                         <p className="text-sm text-gray-500">
-                            La valeur de base calculée pour ce {selectedModel} ({unitCapacity}, {unitColor}, Grade {unitGrade}) après réparations est de <span className="font-bold text-(--color-brand-dark)">{unitairePricing?.valNet} €</span>.
+                            {isLaptop
+                                ? t('devis.strategy.base_value_pc', { model: selectedModel, capacity: unitCapacity, grade: unitGrade })
+                                : t('devis.strategy.base_value', { model: selectedModel, capacity: unitCapacity, color: colorLabel(unitColor), grade: unitGrade })} <span className="font-bold text-(--color-brand-dark)">{unitairePricing?.valNet} €</span>.
                         </p>
                     </header>
 
@@ -105,7 +115,7 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                     <div className="bg-(--color-brand-light) p-6 rounded-2xl shadow-inner-soft">
                         <h3 className="font-bold text-(--color-brand-dark) mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
                             <Search className="w-4 h-4 text-(--color-brand-terracotta)" />
-                            Sources du marché en temps réel
+                            {t('devis.strategy.live_sources')}
                         </h3>
 
                         {marketResults?.resultats?.offres?.length > 0 ? (
@@ -127,8 +137,8 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                             <MarketEmptyState
                                 marketResults={marketResults}
                                 erreurs={marketResults?.erreurs}
-                                emptyMessage="Aucune offre trouvée sur le marché en temps réel."
-                                errorIntro="Aucune offre récupérée, tous les revendeurs ont échoué :"
+                                emptyMessage={t('devis.strategy.no_offers')}
+                                errorIntro={t('devis.strategy.offers_failed')}
                             />
                         )}
                     </div>
@@ -137,7 +147,7 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                     <div className="bg-(--color-brand-light) p-6 rounded-2xl shadow-inner-soft">
                         <h3 className="font-bold text-(--color-brand-dark) mb-4 text-sm uppercase tracking-wider flex items-center gap-2">
                             <TrendingDown className="w-4 h-4 text-(--color-brand-terracotta) rotate-180" />
-                            Prix de revente constatés (Back Market, CertiDeal, Recommerce)
+                            {t(isLaptop ? 'devis.strategy.resale_prices_pc' : 'devis.strategy.resale_prices')}
                         </h3>
 
                         {ventesResults?.offres && ventesResults.offres.length > 0 ? (
@@ -156,8 +166,8 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                             <MarketEmptyState
                                 marketResults={marketResults}
                                 erreurs={marketResults?.ventesErreurs}
-                                emptyMessage="Aucun prix de revente comparable trouvé — la marge ne peut pas être estimée."
-                                errorIntro="Aucun prix de revente récupéré, tous les revendeurs ont échoué :"
+                                emptyMessage={t('devis.strategy.no_resale')}
+                                errorIntro={t('devis.strategy.resale_failed')}
                             />
                         )}
                     </div>
@@ -174,8 +184,8 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                                 <Shield className="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-lg text-blue-900">Sécurisée</h3>
-                                <p className="text-xs text-gray-500 mt-1 mb-3">Risque minimal face à la dépréciation.</p>
+                                <h3 className="font-bold text-lg text-blue-900">{t('devis.strategy.safe')}</h3>
+                                <p className="text-xs text-gray-500 mt-1 mb-3">{t('devis.strategy.safe_desc')}</p>
                                 <span className="text-3xl font-bold text-blue-600">{unitairePricing?.safePrice} €</span>
                                 <MargeBadge marge={unitairePricing?.margeSafe ?? null} />
                             </div>
@@ -192,8 +202,8 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                                 <TrendingDown className="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-lg text-(--color-brand-terracotta)">Marché</h3>
-                                <p className="text-xs text-gray-500 mt-1 mb-3">Prix juste selon la cotation actuelle.</p>
+                                <h3 className="font-bold text-lg text-(--color-brand-terracotta)">{t('devis.strategy.market')}</h3>
+                                <p className="text-xs text-gray-500 mt-1 mb-3">{t('devis.strategy.market_desc')}</p>
                                 <span className="text-3xl font-bold text-(--color-brand-terracotta)">{unitairePricing?.marketPrice} €</span>
                                 <MargeBadge marge={unitairePricing?.margeMarket ?? null} />
                             </div>
@@ -210,8 +220,8 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                                 <Zap className="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 className="font-bold text-lg text-orange-900">Agressive</h3>
-                                <p className="text-xs text-gray-500 mt-1 mb-3">Pour être sûr de remporter la reprise.</p>
+                                <h3 className="font-bold text-lg text-orange-900">{t('devis.strategy.aggressive')}</h3>
+                                <p className="text-xs text-gray-500 mt-1 mb-3">{t('devis.strategy.aggressive_desc')}</p>
                                 <span className="text-3xl font-bold text-orange-600">{unitairePricing?.aggressivePrice} €</span>
                                 <MargeBadge marge={unitairePricing?.margeAggressive ?? null} />
                             </div>
@@ -221,9 +231,9 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                     <div className="p-8 rounded-[2rem] bg-(--color-brand-light) shadow-inner-soft mt-4">
                         <h3 className="font-bold text-(--color-brand-dark) mb-6 flex items-center gap-2">
                             <BarChart2 className="w-5 h-5 text-(--color-brand-terracotta)" />
-                            Prédiction de Dépréciation (12 prochains mois)
+                            {t('devis.strategy.forecast_title')}
                             <span className={`ml-2 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${unitairePricing?.forecastFromModel ? "bg-emerald-100 text-emerald-700" : "bg-gray-200 text-gray-500"}`}>
-                                {unitairePricing?.forecastFromModel ? "Modèle IA" : "Estimation"}
+                                {unitairePricing?.forecastFromModel ? t('devis.strategy.ai_model') : t('devis.strategy.estimate')}
                             </span>
                         </h3>
                         <ResponsiveContainer width="100%" height={250}>
@@ -240,9 +250,9 @@ export default function U_step4({ setPricingStrategy, marketResults, ventesResul
                                 <Tooltip
                                     contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '8px 8px 16px #d4d4dc, -8px -8px 16px #ffffff' }}
                                     itemStyle={{ color: '#1E1E24', fontWeight: 'bold' }}
-                                    formatter={(val: any) => [`${val} €`, 'Valeur estimée']}
+                                    formatter={(val: any) => [`${val} €`, t('common.estimated_value')]}
                                 />
-                                <ReferenceLine y={unitairePricing?.marketPrice} stroke="#E07A5F" strokeDasharray="3 3" label={{ position: 'top', value: 'Votre offre', fill: '#E07A5F', fontSize: 10 }} />
+                                <ReferenceLine y={unitairePricing?.marketPrice} stroke="#E07A5F" strokeDasharray="3 3" label={{ position: 'top', value: t('devis.strategy.your_offer'), fill: '#E07A5F', fontSize: 10 }} />
                                 <Area type="monotone" dataKey="Valeur" stroke="#E07A5F" strokeWidth={3} fillOpacity={1} fill="url(#colorValue)" />
                             </AreaChart>
                         </ResponsiveContainer>

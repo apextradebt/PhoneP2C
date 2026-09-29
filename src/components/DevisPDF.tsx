@@ -1,6 +1,12 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
-import { Expertise, DevisItem } from '@/types';
+import { Expertise } from '@/types';
+import type { TFunction } from 'i18next';
+import { colorLabel, formatDate } from '@/lib/format';
+
+// Par défaut react-pdf coupe les mots en fin de ligne (« Titane na-turel ») :
+// on renvoie le mot entier pour qu'il passe simplement à la ligne suivante.
+Font.registerHyphenationCallback(word => [word]);
 
 const styles = StyleSheet.create({
   page: {
@@ -65,6 +71,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#F4F4F9',
   },
   colModel: { width: '40%' },
+  itemDetail: { fontSize: 9, color: '#666666', marginTop: 2 },
   colGrade: { width: '15%', textAlign: 'center' },
   colQty: { width: '15%', textAlign: 'center' },
   colPrice: { width: '15%', textAlign: 'right' },
@@ -90,6 +97,24 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
   },
+  bottomSection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 30,
+  },
+  notesBox: {
+    width: '55%',
+  },
+  signatureBox: {
+    width: '40%',
+    height: 90,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#E8E1D9',
+    borderRadius: 8,
+    fontSize: 9,
+    color: '#666666',
+  },
   footer: {
     position: 'absolute',
     bottom: 30,
@@ -106,49 +131,56 @@ const styles = StyleSheet.create({
 
 interface Props {
   expertise: Expertise;
+  /** Passée par l'appelant : le PDF est rendu hors de l'arbre React de la page. */
+  t: TFunction;
 }
 
-export const DevisPDF: React.FC<Props> = ({ expertise }) => (
+export const DevisPDF: React.FC<Props> = ({ expertise, expertise: { client }, t }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.header}>
         <View style={styles.headerLeft}>
           <Text style={styles.title}>RepriseStore</Text>
-          <Text style={styles.subtitle}>Boutique de Paris</Text>
-          <Text style={styles.subtitle}>SIRET: 123 456 789 00012</Text>
+          <Text style={styles.subtitle}>{t('pdf.shop_subtitle')}</Text>
+          <Text style={styles.subtitle}>{t('pdf.shop_siret', { siret: '123 456 789 00012' })}</Text>
         </View>
         <View style={styles.headerRight}>
-          <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>DEVIS DE REPRISE</Text>
-          <Text style={styles.subtitle}>N° {expertise.id}</Text>
-          <Text style={styles.subtitle}>Date: {new Date(expertise.date).toLocaleDateString('fr-FR')}</Text>
-          <Text style={styles.subtitle}>Type: {expertise.type === 'flotte' ? 'Lot B2B' : 'Unitaire'}</Text>
+          <Text style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 8 }}>{t('pdf.title')}</Text>
+          <Text style={styles.subtitle}>{t('pdf.number', { id: expertise.id })}</Text>
+          <Text style={styles.subtitle}>{t('pdf.date', { date: formatDate(expertise.date) })}</Text>
+          <Text style={styles.subtitle}>{t('pdf.type', { type: t(expertise.type === 'flotte' ? 'pdf.type_fleet' : 'pdf.type_unit') })}</Text>
         </View>
       </View>
 
       <View style={styles.clientSection}>
-        <Text style={styles.clientTitle}>Informations Client</Text>
-        <Text>{expertise.client.firstName} {expertise.client.lastName}</Text>
-        {expertise.client.company && <Text>Société: {expertise.client.company}</Text>}
-        <Text>{expertise.client.email}</Text>
-        <Text>{expertise.client.phone}</Text>
+        <Text style={styles.clientTitle}>{t('pdf.client_info')}</Text>
+        {client.company && <Text style={{ fontWeight: 'bold' }}>{client.company}</Text>}
+        {client.siret && <Text>{t('pdf.siret', { siret: client.siret })}</Text>}
+        <Text>{client.company ? t('pdf.contact') : ''}{client.firstName} {client.lastName}</Text>
+        {client.address && <Text>{client.address}</Text>}
+        {(client.postalCode || client.city) && <Text>{[client.postalCode, client.city].filter(Boolean).join(' ')}</Text>}
+        {client.email && <Text>{client.email}</Text>}
+        {client.phone && <Text>{client.phone}</Text>}
       </View>
 
       <View style={styles.table}>
         <View style={styles.tableHeader}>
-          <Text style={styles.colModel}>Modèle</Text>
-          <Text style={styles.colGrade}>Grade</Text>
-          <Text style={styles.colQty}>Quantité</Text>
-          <Text style={styles.colPrice}>Prix U.</Text>
-          <Text style={styles.colTotal}>Total</Text>
+          <Text style={styles.colModel}>{t('pdf.col_model')}</Text>
+          <Text style={styles.colGrade}>{t('pdf.col_grade')}</Text>
+          <Text style={styles.colQty}>{t('pdf.col_qty')}</Text>
+          <Text style={styles.colPrice}>{t('pdf.col_unit_price')}</Text>
+          <Text style={styles.colTotal}>{t('pdf.col_total')}</Text>
         </View>
         
         {expertise.items.map((item, index) => (
           <View key={index} style={styles.tableRow}>
             <View style={styles.colModel}>
-              <Text>
-                {item.device.brand !== "Prestation" ? `${item.device.brand} ` : ""}{item.device.model} {item.device.storage ? `- ${item.device.storage}` : ''}
-                {item.device.imei ? `\nIMEI: ${item.device.imei}` : ''}
-              </Text>
+              <Text>{item.device.brand !== "Prestation" ? `${item.device.brand} ` : ""}{item.device.model}</Text>
+              {(item.device.storage || item.device.color) && (
+                <Text style={styles.itemDetail}>{[item.device.storage, item.device.color && colorLabel(item.device.color)].filter(Boolean).join(' · ')}</Text>
+              )}
+              {item.device.imei && <Text style={styles.itemDetail}>{t('pdf.imei', { imei: item.device.imei })}</Text>}
+              {item.device.serialNumber && <Text style={styles.itemDetail}>{t('pdf.serial', { serial: item.device.serialNumber })}</Text>}
             </View>
             <Text style={styles.colGrade}>{item.device.brand === "Prestation" ? "-" : item.grade}</Text>
             <Text style={styles.colQty}>{item.quantity}</Text>
@@ -161,20 +193,32 @@ export const DevisPDF: React.FC<Props> = ({ expertise }) => (
       <View style={styles.totalSection}>
         <View style={styles.totalBox}>
           <View style={styles.totalRow}>
-            <Text>Nb. Appareils :</Text>
+            <Text>{t('pdf.device_count')}</Text>
             <Text>{expertise.items.reduce((acc, i) => acc + i.quantity, 0)}</Text>
           </View>
           <View style={[styles.totalRow, { marginTop: 10, borderTopWidth: 1, borderTopColor: '#666', paddingTop: 10 }]}>
-            <Text style={styles.totalText}>Total Proposé</Text>
+            <Text style={styles.totalText}>{t('pdf.total')}</Text>
             <Text style={styles.totalText}>{expertise.totalProposedPrice} €</Text>
           </View>
         </View>
       </View>
 
-      <Text style={styles.footer}>
-        Ce devis est valable 15 jours à compter de sa date d'émission. L'offre de reprise définitive est soumise à la vérification physique du matériel. 
-        Pour valider ce devis, veuillez retourner ce document signé avec la mention "Bon pour accord".
-      </Text>
+      <View style={styles.bottomSection}>
+        <View style={styles.notesBox}>
+          {expertise.notes && (
+            <>
+              <Text style={styles.clientTitle}>{t('pdf.notes')}</Text>
+              <Text>{expertise.notes}</Text>
+            </>
+          )}
+        </View>
+        <View style={styles.signatureBox}>
+          <Text>{t('pdf.signature_1')}</Text>
+          <Text>{t('pdf.signature_2')}</Text>
+        </View>
+      </View>
+
+      <Text style={styles.footer}>{t('pdf.footer')}</Text>
     </Page>
   </Document>
 );

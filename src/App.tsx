@@ -8,6 +8,7 @@ import LayoutContent from './components/LayoutContent';
 import Home from './pages/Home';
 import Connexion from './pages/Connexion';
 import Devis from './pages/Devis';
+import Recherche from './pages/Recherche';
 import Catalogue from './pages/Catalogue';
 import Marche from './pages/Marche';
 import Settings from './pages/Settings';
@@ -39,6 +40,7 @@ export default function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/connexion" element={<Connexion />} />
                     <Route path="/devis" element={<Devis />} />
+                    <Route path="/recherche" element={<Recherche />} />
                     <Route path="/catalogue" element={<Catalogue />} />
                     <Route path="/marche" element={<Marche />} />
                     <Route path="/settings" element={<Settings />} />

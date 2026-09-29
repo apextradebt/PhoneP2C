@@ -3,13 +3,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Search, Filter, X } from "lucide-react";
-import { mockActivities } from "@/lib/mockActivities";
+import { translatedActivities } from "@/lib/mockActivities";
+import { useTranslation } from "react-i18next";
 
 export default function NotificationsPage() {
+  const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedActivity, setSelectedActivity] = useState<any | null>(null);
 
-  const filteredActivities = mockActivities.filter(act =>
+  const filteredActivities = translatedActivities(t).filter(act =>
     act.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     act.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
     act.details.toLowerCase().includes(searchQuery.toLowerCase())
@@ -19,8 +21,8 @@ export default function NotificationsPage() {
     <>
       <header className="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-6 md:gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight mb-2">Notifications</h1>
-          <p className="text-gray-500 font-medium text-sm">Ici, les nouveautés et mises à jour de vos commandes.</p>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">{t('notifications.title')}</h1>
+          <p className="text-gray-500 font-medium text-sm">{t('notifications.desc')}</p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -30,13 +32,13 @@ export default function NotificationsPage() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Rechercher une notification, un devis..."
+              placeholder={t('notifications.search')}
               className="w-full pl-10 pr-4 py-3 bg-[var(--color-brand-light)] rounded-2xl shadow-inner-soft text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-terracotta)]/50 transition-all text-[var(--color-brand-dark)] font-medium"
             />
           </div>
           <button className="flex items-center justify-center gap-2 bg-[var(--color-brand-light)] text-[var(--color-brand-dark)] px-6 py-3 rounded-2xl font-medium shadow-soft hover:shadow-soft-hover transition-all">
             <Filter className="w-4 h-4" />
-            Filtrer
+            {t('notifications.filter')}
           </button>
         </div>
       </header>
@@ -64,7 +66,7 @@ export default function NotificationsPage() {
           ))
         ) : (
           <div className="text-center py-12 text-gray-500 font-medium">
-            Aucune notification trouvée pour "{searchQuery}"
+            {t('notifications.none_for', { query: searchQuery })}
           </div>
         )}
       </div>
@@ -107,7 +109,7 @@ export default function NotificationsPage() {
                 onClick={() => setSelectedActivity(null)}
                 className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity"
               >
-                Fermer
+                {t('common.close')}
               </button>
             </div>
           </div>

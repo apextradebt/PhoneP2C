@@ -2,6 +2,7 @@
   "sidebar": {
     "overview": "Vue d'ensemble",
     "expertise": "Expertises & Devis",
+    "quick": "Recherche rapide",
     "catalog": "Catalogue",
     "logistics": "Logistique",
     "market": "Veille Marché",
@@ -41,7 +42,11 @@
     "trade_offer": "Offre de Reprise",
     "print_quote": "Imprimer Devis",
     "send_label": "Envoyer Étiquette",
-    "close": "Fermer"
+    "close": "Fermer",
+    "kpi_phones_trend": "+12% ce mois-ci",
+    "kpi_value_margin": "Marge moy : 28%",
+    "kpi_waiting_transit": "Colis en transit",
+    "no_accepted": "Aucun devis accepté pour le moment."
   },
   "connexion": {
     "restricted_access": "Accès Restreint",
@@ -51,11 +56,31 @@
   "catalogue": {
     "title": "Catalogue Appareils",
     "desc": "Gérez les modèles de téléphones et les coûts de réparation par défaut.",
-    "search": "Rechercher un modèle dans tout le catalogue..."
+    "search": "Rechercher un modèle dans tout le catalogue...",
+    "models_one": "{{count}} modèle",
+    "models_other": "{{count}} modèles",
+    "models_available_one": "{{count}} modèle disponible",
+    "models_available_other": "{{count}} modèles disponibles",
+    "base_price": "Prix de base : {{price}} €",
+    "base_price_label": "Prix de base :",
+    "repair_costs": "Coûts de réparation",
+    "saved": "✓ Modifications sauvegardées",
+    "save": "Sauvegarder"
   },
   "marche": {
     "title": "Veille Marché",
-    "desc": "Prix de référence scrappés en temps réel pour l'ajustement de vos offres."
+    "desc": "Prix de référence scrappés en temps réel pour l'ajustement de vos offres.",
+    "forecast_title": "Évolution de prix prévue (12 mois) — modèle IA",
+    "loading": "Chargement de la prévision...",
+    "no_forecast": "Aucune prévision disponible pour ce modèle. Lancez `npm run predict` côté backend.",
+    "fetch_error": "Erreur lors de la récupération de la prévision.",
+    "unreachable": "Impossible de contacter le serveur de prévisions.",
+    "factors": "Facteurs pris en compte : tendance de la marque, réparabilité économique ({{repairability}}%), indice matières premières ({{materials}}). Généré le {{date}}.",
+    "materials_live": "live",
+    "materials_static": "estimation statique",
+    "top_drops": "Top Baisses Récentes",
+    "synced_sources": "Sources Synchronisées",
+    "up_to_date": "À jour (il y a {{hours}} h)"
   },
   "settings": {
     "title": "Paramètres",
@@ -68,6 +93,7 @@
     "firstname": "Prénom",
     "lastname": "Nom",
     "email": "Email",
+    "email_label": "Email :",
     "workshop": "Magasin",
     "role": "Rôle",
     "save_profile": "Enregistrer le profil",
@@ -96,16 +122,172 @@
     "delete_confirm_label": "Tapez votre email pour confirmer",
     "delete_confirm_btn": "Supprimer définitivement",
     "cancel": "Annuler",
-    "account_deleted": "Compte supprimé. Déconnexion en cours..."
+    "account_deleted": "Compte supprimé. Déconnexion en cours...",
+    "email_placeholder": "nouveau@email.com"
   },
   "logistics": {
-    "tab_expertises": "Expertises",
+    "tab_shipments": "Expéditions",
     "tab_orders": "Commandes",
     "tab_notifications": "Notifications"
   },
   "devis": {
     "title": "Expertise & Devis",
-    "desc": "Évaluez l'état de l'appareil pour générer une offre de reprise."
+    "desc": "Évaluez l'état de l'appareil pour générer une offre de reprise.",
+    "steps": {
+      "devices": "Appareils",
+      "diagnostic": "Diagnostic",
+      "strategy": "Stratégie",
+      "client": "Client",
+      "pdf": "Devis PDF"
+    },
+    "nav": {
+      "back": "Retour",
+      "next": "Étape suivante"
+    },
+    "choice": {
+      "title": "Type de reprise",
+      "desc": "S'agit-il d'un client particulier (1 appareil) ou d'une flotte d'entreprise (plusieurs appareils) ?",
+      "unit": "Reprise Unitaire",
+      "fleet": "Reprise en Lot (Flotte)"
+    },
+    "device": {
+      "title": "Quel appareil souhaitez-vous reprendre ?",
+      "desc": "Sélectionnez le modèle.",
+      "category": "Type d'appareil",
+      "phone": "Téléphone",
+      "laptop": "PC"
+    },
+    "fleet": {
+      "title": "Marchandise (Lot)",
+      "desc": "Ajoutez les lignes de téléphones pour ce devis de flotte.",
+      "add_line": "Ajouter Ligne"
+    },
+    "diag": {
+      "title": "Caractéristiques & Diagnostic",
+      "desc": "Précisez les caractéristiques et l'état de l'appareil.",
+      "imei": "IMEI",
+      "imei_placeholder": "15 chiffres",
+      "imei_hint": "Composez *#06# sur l'appareil pour l'afficher.",
+      "imei_length": "Un IMEI comporte 15 chiffres ({{count}}/15).",
+      "imei_checksum": "Cet IMEI semble invalide (clé de contrôle incorrecte), vérifiez la saisie.",
+      "serial": "Numéro de série",
+      "serial_placeholder": "Ex. 5CG1234ABC",
+      "serial_hint": "Sous l'appareil, ou dans les paramètres système (rubrique « À propos »).",
+      "capacity": "Capacité",
+      "color": "Couleur",
+      "grade_title": "État Global (Grade)"
+    },
+    "strategy": {
+      "analysing": "Analyse du marché en cours...",
+      "analysing_desc": "Nos agents parcourent le web (BackMarket, EasyCash, Rebuy...) pour extraire la meilleure stratégie de prix pour votre {{model}} ({{capacity}}).",
+      "analysing_desc_pc": "Nos agents parcourent le web (Rebuy, Refurbed, AFB, Recommerce...) pour extraire la meilleure stratégie de prix pour votre {{model}} ({{capacity}}).",
+      "title": "Stratégie & Analyse Marché",
+      "base_value": "La valeur de base calculée pour ce {{model}} ({{capacity}}, {{color}}, Grade {{grade}}) est de",
+      "base_value_pc": "La valeur de base calculée pour ce {{model}} ({{capacity}}, Grade {{grade}}) est de",
+      "live_sources": "Sources du marché en temps réel",
+      "resale_prices": "Prix de revente constatés (Back Market, CertiDeal, Recommerce)",
+      "resale_prices_pc": "Prix de revente constatés (Rebuy, Refurbed, AFB, Recommerce...)",
+      "server_unreachable": "Impossible de contacter le serveur de prix.",
+      "check_backend": "Vérifie que le backend tourne bien, puis réessaie.",
+      "no_offers": "Aucune offre trouvée sur le marché en temps réel.",
+      "offers_failed": "Aucune offre récupérée, tous les revendeurs ont échoué :",
+      "no_resale": "Aucun prix de revente comparable trouvé — la marge ne peut pas être estimée.",
+      "resale_failed": "Aucun prix de revente récupéré, tous les revendeurs ont échoué :",
+      "margin_none": "Marge : —",
+      "margin": "Marge estimée : {{value}} €",
+      "safe": "Sécurisée",
+      "safe_desc": "Risque minimal face à la dépréciation.",
+      "market": "Marché",
+      "market_desc": "Prix juste selon la cotation actuelle.",
+      "aggressive": "Agressive",
+      "aggressive_desc": "Pour être sûr de remporter la reprise.",
+      "forecast_title": "Prédiction de Dépréciation (12 prochains mois)",
+      "ai_model": "Modèle IA",
+      "estimate": "Estimation",
+      "your_offer": "Votre offre"
+    },
+    "client": {
+      "title": "Informations Client",
+      "desc": "Ces informations apparaîtront sur le devis PDF.",
+      "individual": "Particulier",
+      "business": "Professionnel",
+      "company": "Société",
+      "company_placeholder": "Raison sociale",
+      "siret": "SIRET",
+      "siret_placeholder": "14 chiffres",
+      "siret_length": "Un SIRET comporte 14 chiffres ({{count}}/14).",
+      "firstname": "Prénom",
+      "lastname": "Nom",
+      "contact_firstname": "Prénom du contact",
+      "contact_lastname": "Nom du contact",
+      "email": "Email",
+      "email_placeholder": "client@exemple.fr",
+      "email_invalid": "Adresse email invalide.",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "address_placeholder": "N° et rue",
+      "postal_code": "Code postal",
+      "city": "Ville",
+      "notes": "Remarques",
+      "notes_hint": "Visibles par le client sur le devis.",
+      "notes_placeholder": "Ex. : accessoires fournis, boîte d'origine, conditions particulières…",
+      "required": "Champs obligatoires pour générer le devis."
+    },
+    "final": {
+      "ready": "Devis Prêt !",
+      "ready_desc": "Prévisualisez le devis professionnel ci-dessous.",
+      "open_pdf": "Ouvrir le PDF",
+      "download": "Télécharger",
+      "generating": "Génération...",
+      "generating_pdf": "Génération du PDF en cours..."
+    },
+    "decision": {
+      "title": "Décision du client",
+      "offer": "Offre de reprise de",
+      "refuse": "Refuser le devis",
+      "accept": "Accepter le devis",
+      "refuse_title": "Refuser le devis ?",
+      "refuse_desc": "Le devis {{id}} sera supprimé et vous repartirez d'un devis vierge. Cette action est définitive.",
+      "delete": "Supprimer le devis",
+      "payment_title": "Paiement du client",
+      "payment_desc": "Choisissez comment le client est réglé.",
+      "amount_to_pay": "Montant à verser",
+      "cash_unavailable": "Espèces indisponibles : un professionnel ne peut pas régler plus de {{limit}} € en espèces (art. L112-6 du Code monétaire et financier).",
+      "save_error": "Impossible d'enregistrer le devis.",
+      "saving": "Enregistrement…",
+      "confirm_payment": "Confirmer le paiement",
+      "saved": "Reprise enregistrée",
+      "saved_desc": "{{amount}} € versés par {{method}} · devis {{id}}",
+      "view_orders": "Voir dans les commandes",
+      "new_quote": "Nouveau devis"
+    }
+  },
+  "quick": {
+    "title": "Recherche rapide",
+    "desc": "Cotez un modèle en quelques secondes, sans créer de devis.",
+    "placeholder": "Modèle, capacité… ex. iPhone 13 128 Go",
+    "suggestions": "Modèles correspondants",
+    "device": "Appareil",
+    "get_price": "Obtenir le prix",
+    "running": "Interrogation des revendeurs…",
+    "running_desc": "Si ce modèle n'a pas été coté cette semaine, nos agents parcourent les sites des revendeurs : comptez environ une minute.",
+    "offer": "Prix de rachat conseillé",
+    "offer_market_one": "Moyenne de {{count}} offre concurrente",
+    "offer_market_other": "Moyenne de {{count}} offres concurrentes",
+    "offer_estimate": "Estimation catalogue : aucune offre relevée",
+    "resale": "Revente moyenne",
+    "resale_hint_one": "{{count}} prix relevé",
+    "resale_hint_other": "{{count}} prix relevés",
+    "margin": "Marge estimée",
+    "margin_hint": "Revente moyenne − rachat conseillé",
+    "no_resale": "Aucun prix de revente relevé",
+    "strategies": "Selon la stratégie",
+    "buyback_offers": "Offres de rachat concurrentes",
+    "resale_offers": "Prix de revente",
+    "none": "Aucun prix relevé.",
+    "as_of": "Relevé du {{date}}",
+    "recent": "Recherches récentes",
+    "clear_recent": "Effacer"
   },
   "users": {
     "title": "Gestion des Utilisateurs",
@@ -119,7 +301,14 @@
     "edit_role": "Modifier le rôle",
     "save": "Enregistrer",
     "access_denied": "Accès Refusé",
-    "access_denied_desc": "Vous n'avez pas les droits suffisants pour accéder à cette page."
+    "access_denied_desc": "Vous n'avez pas les droits suffisants pour accéder à cette page.",
+    "create_user": "Créer un utilisateur",
+    "no_users": "Aucun utilisateur trouvé.",
+    "firstname": "Prénom",
+    "lastname": "Nom",
+    "store": "Magasin",
+    "store_placeholder": "Nom du magasin",
+    "email_placeholder": "email@exemple.com"
   },
   "guest": {
     "title": "Compte en attente",
@@ -127,5 +316,206 @@
     "your_email": "Votre email",
     "refresh": "Vérifier mon accès",
     "logout": "Se déconnecter"
+  },
+  "common": {
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "create": "Créer",
+    "loading": "Chargement…",
+    "error": "Erreur",
+    "network_error": "Erreur réseau",
+    "now": "Actuel",
+    "estimated_value": "Valeur estimée",
+    "optional": "Facultatif",
+    "optional_lower": "facultatif",
+    "search_model": "Rechercher un modèle...",
+    "no_model_found": "Aucun modèle trouvé pour \"{{query}}\"",
+    "no_results_for": "Aucun résultat pour \"{{query}}\"",
+    "proposed_price": "Prix proposé",
+    "fleet_batch": "Lot flotte",
+    "type_unit": "Unitaire",
+    "type_fleet": "Flotte",
+    "grade": "Grade {{grade}}",
+    "devices_one": "{{count}} appareil",
+    "devices_other": "{{count}} appareils",
+    "orders_one": "{{count}} commande",
+    "orders_other": "{{count}} commandes",
+    "server_error": "Erreur serveur ({{status}})"
+  },
+  "orderStatus": {
+    "in_store": {
+      "label": "En boutique",
+      "description": "En stock en boutique, en attente d'expédition"
+    },
+    "shipped": {
+      "label": "Expédié",
+      "description": "En transit vers le centre de traitement"
+    },
+    "received": {
+      "label": "Réceptionné",
+      "description": "Reçu par le centre de traitement"
+    },
+    "processing": {
+      "label": "En traitement",
+      "description": "Contrôle, effacement des données et reconditionnement"
+    },
+    "closed": {
+      "label": "Clôturé",
+      "description": "Traitement terminé, commande finalisée"
+    },
+    "quote_sent": {
+      "label": "Devis envoyé",
+      "description": "Devis en cours, pas encore accepté"
+    }
+  },
+  "payment": {
+    "virement": "Virement bancaire",
+    "especes": "Espèces",
+    "bon_achat": "Bon d'achat / carte cadeau"
+  },
+  "roles": {
+    "admin": "Admin",
+    "manager": "Manager",
+    "employe": "Employé",
+    "pending": "En attente"
+  },
+  "repairs": {
+    "batterie": "Remplacement Batterie",
+    "ecran": "Changement Écran",
+    "connecteurs": "Nettoyage Connecteurs",
+    "camera": "Réparation Caméra",
+    "boutons": "Remplacement Boutons"
+  },
+  "grades": {
+    "A": "Comme neuf",
+    "B": "Micro-rayures",
+    "C": "Rayures marquées",
+    "D": "Cassé"
+  },
+  "activities": {
+    "parcel_received": {
+      "title": "Colis reçu",
+      "desc": "Le colis pour le devis #DEV-041 a été scanné par l'atelier.",
+      "time": "Il y a 10 min",
+      "details": "Le transporteur Chronopost a livré le colis. L'état de l'emballage est intact. L'appareil est en attente d'expertise."
+    },
+    "new_quote": {
+      "title": "Nouveau Devis",
+      "desc": "Création d'un devis pour un iPhone 14 Pro Max.",
+      "time": "Il y a 1 heure",
+      "details": "Devis initié par le client depuis la borne en boutique. Estimation initiale à 650€."
+    },
+    "label_generated": {
+      "title": "Étiquette générée",
+      "desc": "Étiquette d'expédition envoyée au client (M. Dupont).",
+      "time": "Il y a 2 heures",
+      "details": "Étiquette Colissimo n° 8V123456789. Le client a été notifié par email avec les instructions d'emballage."
+    },
+    "prices_updated": {
+      "title": "Prix marché MAJ",
+      "desc": "Les prix de référence ont été synchronisés depuis BackMarket.",
+      "time": "Ce matin",
+      "details": "Mise à jour de 125 modèles de la marque Apple et Samsung. Variation moyenne constatée : -2%."
+    },
+    "payment_sent": {
+      "title": "Paiement émis",
+      "desc": "Virement de 450€ initié pour le devis #DEV-038.",
+      "time": "Hier",
+      "details": "Ordre de virement transmis à la banque. Le client devrait recevoir les fonds sous 48h."
+    },
+    "issue_reported": {
+      "title": "Anomalie signalée",
+      "desc": "Colis endommagé à la réception (#DEV-045).",
+      "time": "Hier",
+      "details": "Des réserves ont été émises auprès du transporteur. Une photo a été jointe au dossier."
+    }
+  },
+  "auth": {
+    "error": "Erreur d'authentification : {{message}}",
+    "loading": "Authentification en cours..."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "desc": "Ici, les nouveautés et mises à jour de vos commandes.",
+    "search": "Rechercher une notification, un devis...",
+    "filter": "Filtrer",
+    "none_for": "Aucune notification trouvée pour \"{{query}}\""
+  },
+  "orders": {
+    "search": "Rechercher une commande, un client, un IMEI, une expédition...",
+    "all": "Toutes",
+    "loading": "Chargement des commandes…",
+    "load_error": "Impossible de charger les commandes.",
+    "status_error": "Impossible de mettre à jour le statut.",
+    "none": "Aucune commande pour le moment : les devis acceptés apparaîtront ici.",
+    "none_status": "Aucune commande « {{status}} ».",
+    "fleet_title": "Reprise Flotte B2B",
+    "client": "Client",
+    "devices": "Appareils",
+    "identification": "Identification",
+    "tracking": "Suivi logistique",
+    "total": "Total",
+    "trade_offer": "Offre de Reprise",
+    "paid_by": "Payé par {{method}} le {{date}}",
+    "next_step": "Étape suivante : {{description}}.",
+    "in_store_hint": "Cette commande sera marquée « {{status}} » lors de la création d'une expédition.",
+    "advance": "Passer à « {{status}} »",
+    "imei_label": "IMEI :",
+    "serial_label": "N° de série :"
+  },
+  "shipments": {
+    "to_ship": "À expédier",
+    "to_ship_desc": "Sélectionnez les commandes en boutique à envoyer au centre de traitement.",
+    "select_all": "Tout sélectionner ({{count}})",
+    "created": "Expédition {{id}} créée vers {{facility}} : {{orders}} passée(s) à « {{status}} ».",
+    "none_in_store": "Aucune commande en boutique à expédier.",
+    "facility": "Centre de traitement",
+    "facility_placeholder": "Ex. : 3stepIT",
+    "carrier": "Transporteur",
+    "carrier_placeholder": "Ex. : Colissimo",
+    "tracking_number": "N° de suivi",
+    "tracking": "Suivi",
+    "none_selected": "Aucune commande sélectionnée.",
+    "create": "Créer l'expédition",
+    "create_error": "Impossible de créer l'expédition.",
+    "history": "Expéditions",
+    "history_desc": "Suivi des envois vers les centres de traitement.",
+    "created_on": "Créée le {{date}}",
+    "received_on": "Réceptionnée le {{date}}",
+    "show_orders": "Voir les commandes",
+    "hide_orders": "Masquer les commandes",
+    "mark_received": "Marquer comme réceptionnée",
+    "receive_error": "Impossible de mettre à jour l'expédition.",
+    "orders_not_found": "Commandes introuvables.",
+    "loading": "Chargement des expéditions…",
+    "load_error": "Impossible de charger les expéditions.",
+    "none": "Aucune expédition pour le moment."
+  },
+  "pdf": {
+    "shop_subtitle": "Boutique de Paris",
+    "shop_siret": "SIRET : {{siret}}",
+    "title": "DEVIS DE REPRISE",
+    "number": "N° {{id}}",
+    "date": "Date : {{date}}",
+    "type": "Type : {{type}}",
+    "type_fleet": "Lot B2B",
+    "type_unit": "Unitaire",
+    "client_info": "Informations Client",
+    "siret": "SIRET : {{siret}}",
+    "contact": "Contact : ",
+    "col_model": "Modèle",
+    "col_grade": "Grade",
+    "col_qty": "Quantité",
+    "col_unit_price": "Prix U.",
+    "col_total": "Total",
+    "imei": "IMEI : {{imei}}",
+    "serial": "N° de série : {{serial}}",
+    "device_count": "Nb. Appareils :",
+    "total": "Total Proposé",
+    "notes": "Remarques",
+    "signature_1": "Date et signature du client,",
+    "signature_2": "précédées de la mention « Bon pour accord »",
+    "footer": "Ce devis est valable 15 jours à compter de sa date d'émission. L'offre de reprise définitive est soumise à la vérification physique du matériel. Pour valider ce devis, veuillez retourner ce document signé avec la mention \"Bon pour accord\"."
   }
 }

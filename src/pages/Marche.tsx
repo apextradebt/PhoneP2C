@@ -4,6 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { Loader2, TrendingUp } from "lucide-react";
 import { useCatalog } from "@/lib/CatalogContext";
+import { formatDateTime, monthLabel } from "@/lib/format";
 
 type ForecastMonth = { month: number; retention: number; predictedPrice: number };
 type ForecastDoc = {
@@ -19,7 +20,7 @@ type ForecastDoc = {
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export default function MarchePage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { catalog } = useCatalog();
   const { getAccessTokenSilently } = useAuth0();
 
@@ -66,8 +67,8 @@ export default function MarchePage() {
             setForecast(null);
             setErrorMsg(
               res.status === 404
-                ? "Aucune prévision disponible pour ce modèle. Lancez `npm run predict` côté backend."
-                : "Erreur lors de la récupération de la prévision."
+                ? "marche.no_forecast"
+                : "marche.fetch_error"
             );
           }
           return;
@@ -76,7 +77,7 @@ export default function MarchePage() {
         const data = await res.json();
         if (!cancelled) setForecast(data);
       } catch {
-        if (!cancelled) setErrorMsg("Impossible de contacter le serveur de prévisions.");
+        if (!cancelled) setErrorMsg("marche.unreachable");
       } finally {
         if (!cancelled) setIsLoading(false);
       }
@@ -90,17 +91,16 @@ export default function MarchePage() {
 
   const chartData = useMemo(() => {
     if (!forecast) return [];
-    const months = ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Aoû", "Sep", "Oct", "Nov", "Déc"];
     const now = new Date();
 
     return [
-      { name: "Actuel", Valeur: forecast.basePrice },
+      { name: t("common.now"), Valeur: forecast.basePrice },
       ...forecast.forecast.map((f) => {
         const d = new Date(now.getFullYear(), now.getMonth() + f.month, 1);
-        return { name: `${months[d.getMonth()]} '${d.getFullYear().toString().slice(-2)}`, Valeur: f.predictedPrice };
+        return { name: monthLabel(d), Valeur: f.predictedPrice };
       }),
     ];
-  }, [forecast]);
+  }, [forecast, t, i18n.language]);
 
   return (
     <div className="flex flex-col gap-10 max-w-7xl mx-auto pb-12">
@@ -113,7 +113,7 @@ export default function MarchePage() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <h2 className="text-xl font-bold flex items-center gap-2">
             <TrendingUp className="w-5 h-5 text-(--color-brand-terracotta)" />
-            Évolution de prix prévue (12 mois) — modèle IA
+            {t('marche.forecast_title')}
           </h2>
 
           <div className="flex gap-3">
@@ -141,11 +141,11 @@ export default function MarchePage() {
         {isLoading ? (
           <div className="h-64 flex items-center justify-center gap-3 text-gray-400 font-medium">
             <Loader2 className="w-5 h-5 animate-spin" />
-            Chargement de la prévision...
+            {t('marche.loading')}
           </div>
         ) : errorMsg ? (
           <div className="h-64 border-2 border-dashed border-[#E8E1D9] rounded-2xl flex items-center justify-center text-gray-400 font-medium text-center px-6">
-            {errorMsg}
+            {t(errorMsg)}
           </div>
         ) : (
           <ResponsiveContainer width="100%" height={280}>
@@ -162,7 +162,7 @@ export default function MarchePage() {
               <Tooltip
                 contentStyle={{ borderRadius: '12px', border: 'none' }}
                 itemStyle={{ color: '#1E1E24', fontWeight: 'bold' }}
-                formatter={(val: any) => [`${val} €`, 'Valeur estimée']}
+                formatter={(val: any) => [`${val} €`, t('common.estimated_value')]}
               />
               <Area type="monotone" dataKey="Valeur" stroke="#E07A5F" strokeWidth={3} fillOpacity={1} fill="url(#colorMarche)" />
             </AreaChart>
@@ -171,16 +171,18 @@ export default function MarchePage() {
 
         {forecast && (
           <p className="text-xs text-gray-400">
-            Facteurs pris en compte : tendance de la marque, réparabilité économique ({Math.round(forecast.repairabilityScore * 100)}%),
-            indice matières premières ({forecast.materialsIndex.source === "live" ? "live" : "estimation statique"}).
-            Généré le {new Date(forecast.generatedAt).toLocaleString('fr-FR')}.
+            {t('marche.factors', {
+              repairability: Math.round(forecast.repairabilityScore * 100),
+              materials: t(forecast.materialsIndex.source === "live" ? 'marche.materials_live' : 'marche.materials_static'),
+              date: formatDateTime(forecast.generatedAt),
+            })}
           </p>
         )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-[var(--brand-surface)]/40 p-6 rounded-[2rem] shadow-soft">
-          <h3 className="font-bold mb-4">Top Baisses Récents</h3>
+          <h3 className="font-bold mb-4">{t('marche.top_drops')}</h3>
           <ul className="space-y-3">
             <li className="flex justify-between text-sm"><span className="text-gray-500">iPhone 13 Pro</span><span className="text-red-500 font-medium">-15 € (BackMarket)</span></li>
             <li className="flex justify-between text-sm"><span className="text-gray-500">Samsung S21</span><span className="text-red-500 font-medium">-8 € (Amazon Renewed)</span></li>
@@ -188,10 +190,10 @@ export default function MarchePage() {
         </div>
 
         <div className="bg-[var(--brand-surface)]/40 p-6 rounded-[2rem] shadow-soft">
-          <h3 className="font-bold mb-4">Sources Synchronisées</h3>
+          <h3 className="font-bold mb-4">{t('marche.synced_sources')}</h3>
           <ul className="space-y-3">
-            <li className="flex justify-between text-sm"><span className="text-gray-500">BackMarket API</span><span className="text-green-500 font-medium">À jour (il y a 2h)</span></li>
-            <li className="flex justify-between text-sm"><span className="text-gray-500">Certideal Scraper</span><span className="text-green-500 font-medium">À jour (il y a 5h)</span></li>
+            <li className="flex justify-between text-sm"><span className="text-gray-500">BackMarket API</span><span className="text-green-500 font-medium">{t('marche.up_to_date', { hours: 2 })}</span></li>
+            <li className="flex justify-between text-sm"><span className="text-gray-500">Certideal Scraper</span><span className="text-green-500 font-medium">{t('marche.up_to_date', { hours: 5 })}</span></li>
           </ul>
         </div>
       </div>

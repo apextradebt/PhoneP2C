@@ -3,8 +3,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { Smartphone, CheckCircle, Clock, Search, Plus, X, User, Tag, Calendar, PenTool } from "lucide-react";
-import { mockExpertises } from "@/lib/mockData";
-import { mockActivities } from "@/lib/mockActivities";
+import { useDevisList } from "@/lib/devisApi";
+import { translatedActivities } from "@/lib/mockActivities";
 import { Expertise } from "@/types";
 
 import { useTranslation } from "react-i18next";
@@ -17,9 +17,12 @@ export default function Home() {
   const [isNewDevisDrawerOpen, setIsNewDevisDrawerOpen] = useState(false);
   const [selectedExpertise, setSelectedExpertise] = useState<Expertise | null>(null);
   const [selectedActivity, setSelectedActivity] = useState<any | null>(null);
-  const filteredExpertises = mockExpertises.filter(exp =>
+  const { devis, loading, error } = useDevisList();
+  const activities = translatedActivities(t);
+  const filteredExpertises = devis.filter(exp =>
     exp.items.some(item => item.device.model.toLowerCase().includes(searchQuery.toLowerCase())) ||
     exp.items.some(item => item.device.imei?.includes(searchQuery)) ||
+    exp.items.some(item => item.device.serialNumber?.toLowerCase().includes(searchQuery.toLowerCase())) ||
     exp.client.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
     exp.client.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
     exp.id.toLowerCase().includes(searchQuery.toLowerCase())
@@ -55,9 +58,9 @@ export default function Home() {
       {/* KPI Cards */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { title: t('home.kpi_phones'), value: "124", label: "+12% ce mois-ci" },
-          { title: t('home.kpi_value'), value: "24,500 €", label: "Marge moy: 28%" },
-          { title: t('home.kpi_waiting'), value: "18", label: "Colis en transit" }
+          { title: t('home.kpi_phones'), value: "124", label: t('home.kpi_phones_trend') },
+          { title: t('home.kpi_value'), value: "24,500 €", label: t('home.kpi_value_margin') },
+          { title: t('home.kpi_waiting'), value: "18", label: t('home.kpi_waiting_transit') }
         ].map((kpi, i) => (
           <div key={i} className="p-8 rounded-[2rem] shadow-soft flex flex-col gap-2">
             <h3 className="text-gray-500 font-medium text-sm uppercase tracking-wider">{kpi.title}</h3>
@@ -78,7 +81,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {filteredExpertises.map((exp) => {
+            {(searchQuery ? filteredExpertises : filteredExpertises.slice(0, 6)).map((exp) => {
 
               return (
                 <PhoneOrder
@@ -97,7 +100,10 @@ export default function Home() {
 
             {filteredExpertises.length === 0 && (
               <div className="col-span-1 sm:col-span-2 text-center py-10 text-gray-500 font-medium">
-                {t('home.no_results')} "{searchQuery}"
+                {loading ? t('common.loading')
+                  : error ? error
+                    : searchQuery ? `${t('home.no_results')} "${searchQuery}"`
+                      : t('home.no_accepted')}
               </div>
             )}
           </div>
@@ -111,7 +117,7 @@ export default function Home() {
           </div>
 
           <div className="bg-[var(--color-brand-light)] p-4 rounded-[2rem] shadow-soft flex flex-col gap-2 h-full">
-            {mockActivities.slice(0, 4).map((activity, i) => (
+            {activities.slice(0, 4).map((activity, i) => (
               <div
                 key={i}
                 onClick={() => setSelectedActivity(activity)}
@@ -182,7 +188,7 @@ export default function Home() {
                 onClick={() => setSelectedActivity(null)}
                 className="bg-[var(--color-brand-dark)] text-white px-6 py-2 rounded-full font-bold shadow-soft hover:opacity-90 transition-opacity"
               >
-                Fermer
+                {t('common.close')}
               </button>
             </div>
           </div>

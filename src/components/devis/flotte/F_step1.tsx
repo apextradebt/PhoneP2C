@@ -1,5 +1,6 @@
 import { DeviceGrade } from "@/types";
 import { Plus, Trash2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface F_step1Interface {
     addBulkItem: () => void,
@@ -10,16 +11,17 @@ interface F_step1Interface {
 }
 
 export default function F_step1({ addBulkItem, bulkItems, updateBulkItem, allModels, removeBulkItem }: F_step1Interface) {
+    const { t } = useTranslation();
 
     return (
         <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-4">
             <div className="flex justify-between items-end">
                 <div>
-                    <h2 className="text-xl font-bold mb-1">Marchandise (Lot)</h2>
-                    <p className="text-sm text-gray-500">Ajoutez les lignes de téléphones pour ce devis de flotte.</p>
+                    <h2 className="text-xl font-bold mb-1">{t('devis.fleet.title')}</h2>
+                    <p className="text-sm text-gray-500">{t('devis.fleet.desc')}</p>
                 </div>
                 <button onClick={addBulkItem} className="flex items-center gap-2 text-sm font-bold text-[var(--color-brand-terracotta)] hover:underline">
-                    <Plus className="w-4 h-4" /> Ajouter Ligne
+                    <Plus className="w-4 h-4" /> {t('devis.fleet.add_line')}
                 </button>
             </div>
 
@@ -39,10 +41,9 @@ export default function F_step1({ addBulkItem, bulkItems, updateBulkItem, allMod
                             onChange={e => updateBulkItem(index, 'grade', e.target.value)}
                             className="w-24 p-2 bg-[var(--color-brand-light)] rounded-xl outline-none font-medium text-center"
                         >
-                            <option value="A">Grade A</option>
-                            <option value="B">Grade B</option>
-                            <option value="C">Grade C</option>
-                            <option value="D">Grade D</option>
+                            {(["A", "B", "C", "D"] as const).map(g => (
+                                <option key={g} value={g}>{t('common.grade', { grade: g })}</option>
+                            ))}
                         </select>
 
                         <input

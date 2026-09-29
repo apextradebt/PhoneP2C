@@ -10,8 +10,13 @@ export type PhoneModel = {
   /** Real storage capacities this model was actually sold in. Undefined for
    * brands not yet audited — callers should fall back to a generic list. */
   storageOptions?: string[];
+  /** Official colors this model was sold in. Undefined for models not yet
+   * audited — callers should fall back to a generic list. */
+  colors?: PhoneColor[];
   repairs: Record<string, number>;
 };
+
+export type PhoneColor = { name: string; hex: string };
 
 export type PhoneBrand = {
   name: string;
@@ -23,7 +28,7 @@ export type CatalogData = {
   repairLabels: Record<string, string>;
 };
 
-type CatalogModel = { brand: string; model: string; basePrice: number; storageOptions?: string[]; repairs: Record<string, number> };
+export type CatalogModel = { brand: string; model: string; basePrice: number; storageOptions?: string[]; colors?: PhoneColor[]; repairs: Record<string, number> };
 
 type CatalogContextType = {
   catalog: CatalogData;
@@ -84,6 +89,7 @@ export function CatalogProvider({ children }: { children: React.ReactNode }) {
         model: model.model,
         basePrice: model.basePrice,
         storageOptions: model.storageOptions,
+        colors: model.colors,
         repairs: model.repairs,
       }))
     );

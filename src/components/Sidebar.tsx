@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, Smartphone, ClipboardList, Truck, LineChart, Settings, Menu, X, LogOut, Globe, Users } from "lucide-react";
+import { LayoutDashboard, Smartphone, ClipboardList, Zap, Truck, LineChart, Settings, Menu, X, LogOut, Globe, Users } from "lucide-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useTranslation } from "react-i18next";
 import { useUser } from "@/lib/UserContext";
+import { LANGUAGES } from "@/i18n";
 
 const navigationKeys = [
   { key: "sidebar.overview", href: "/", icon: LayoutDashboard },
   { key: "sidebar.expertise", href: "/devis", icon: ClipboardList },
+  { key: "sidebar.quick", href: "/recherche", icon: Zap },
   { key: "sidebar.catalog", href: "/catalogue", icon: Smartphone },
   { key: "sidebar.logistics", href: "/logistique", icon: Truck },
   { key: "sidebar.market", href: "/marche", icon: LineChart },
@@ -24,10 +26,6 @@ export default function Sidebar() {
   const { user, logout } = useAuth0();
   const { t, i18n } = useTranslation();
   const { userData, loading } = useUser()
-  const toggleLanguage = () => {
-    const nextLang = i18n.language === 'fr' ? 'en' : 'fr';
-    i18n.changeLanguage(nextLang);
-  };
 
   return (
     <>
@@ -136,20 +134,31 @@ export default function Sidebar() {
             </Link>
           )}
 
-          {/* Language Toggle */}
-
-
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center px-4 py-2 rounded-xl text-gray-500 hover:bg-(--color-brand-light) hover:shadow-soft hover:text-(--color-brand-dark) transition-all duration-300 w-full group/lang"
-          >
+          {/* Language selector */}
+          <div className="flex items-center px-4 py-2 rounded-xl text-gray-500 w-full">
             <div className="flex items-center justify-center min-w-5">
               <Globe className="w-5 h-5 relative right-1.5" strokeWidth={1.5} />
             </div>
-            <span className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-medium text-sm">
-              {i18n.language === 'fr' ? 'English' : 'Français'}
-            </span>
-          </button>
+            <div className="flex gap-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+              {LANGUAGES.map(lang => {
+                const active = i18n.resolvedLanguage === lang.code;
+                return (
+                  <button
+                    key={lang.code}
+                    onClick={() => i18n.changeLanguage(lang.code)}
+                    title={lang.label}
+                    aria-label={lang.label}
+                    aria-pressed={active}
+                    className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${active
+                      ? "bg-brand-terracotta/10 text-(--color-brand-terracotta)"
+                      : "hover:bg-(--color-brand-light) hover:shadow-soft hover:text-(--color-brand-dark)"}`}
+                  >
+                    {lang.short}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
           <div className="flex items-center overflow-hidden p-2 -mx-2 rounded-xl group/profile">
             <div className="flex items-center justify-between w-full">
@@ -168,7 +177,7 @@ export default function Sidebar() {
                     {user?.email ? user.email.split('@')[0].replace('.', ' ') : (userData?.nom || "Manager")}
                   </span>
                   <span className="mt-1 bg-brand-terracotta/10 text-(--color-brand-terracotta) text-[10px] font-bold px-2 py-0.5 rounded-full w-max uppercase tracking-wider">
-                    {(userData?.role)}
+                    {userData?.role && t(`roles.${userData.role}`, { defaultValue: userData.role })}
                   </span>
                 </div>
               </div>

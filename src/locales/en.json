@@ -2,6 +2,7 @@
   "sidebar": {
     "overview": "Overview",
     "expertise": "Appraisals & Quotes",
+    "quick": "Quick lookup",
     "catalog": "Catalog",
     "logistics": "Logistics",
     "market": "Market Watch",
@@ -41,7 +42,11 @@
     "trade_offer": "Trade-in Offer",
     "print_quote": "Print Quote",
     "send_label": "Send Label",
-    "close": "Close"
+    "close": "Close",
+    "kpi_phones_trend": "+12% this month",
+    "kpi_value_margin": "Avg. margin: 28%",
+    "kpi_waiting_transit": "Parcels in transit",
+    "no_accepted": "No accepted quotes yet."
   },
   "connexion": {
     "restricted_access": "Restricted Access",
@@ -51,11 +56,31 @@
   "catalogue": {
     "title": "Device Catalog",
     "desc": "Manage phone models and default repair costs.",
-    "search": "Search for a model across the catalog..."
+    "search": "Search for a model across the catalog...",
+    "models_one": "{{count}} model",
+    "models_other": "{{count}} models",
+    "models_available_one": "{{count}} model available",
+    "models_available_other": "{{count}} models available",
+    "base_price": "Base price: {{price}} €",
+    "base_price_label": "Base price:",
+    "repair_costs": "Repair costs",
+    "saved": "✓ Changes saved",
+    "save": "Save"
   },
   "marche": {
     "title": "Market Watch",
-    "desc": "Real-time scraped reference prices for offer adjustments."
+    "desc": "Real-time scraped reference prices for offer adjustments.",
+    "forecast_title": "Forecast price trend (12 months) — AI model",
+    "loading": "Loading forecast...",
+    "no_forecast": "No forecast available for this model. Run `npm run predict` on the backend.",
+    "fetch_error": "Error while fetching the forecast.",
+    "unreachable": "Unable to reach the forecast server.",
+    "factors": "Factors considered: brand trend, economic repairability ({{repairability}}%), raw materials index ({{materials}}). Generated on {{date}}.",
+    "materials_live": "live",
+    "materials_static": "static estimate",
+    "top_drops": "Top Recent Drops",
+    "synced_sources": "Synced Sources",
+    "up_to_date": "Up to date ({{hours}}h ago)"
   },
   "settings": {
     "title": "Settings",
@@ -68,6 +93,7 @@
     "firstname": "First Name",
     "lastname": "Last Name",
     "email": "Email",
+    "email_label": "Email:",
     "workshop": "Workshop",
     "role": "Role",
     "save_profile": "Save Profile",
@@ -96,16 +122,172 @@
     "delete_confirm_label": "Type your email to confirm",
     "delete_confirm_btn": "Delete Permanently",
     "cancel": "Cancel",
-    "account_deleted": "Account deleted. Logging out..."
+    "account_deleted": "Account deleted. Logging out...",
+    "email_placeholder": "new@email.com"
   },
   "logistics": {
-    "tab_expertises": "Appraisals",
+    "tab_shipments": "Shipments",
     "tab_orders": "Orders",
     "tab_notifications": "Notifications"
   },
   "devis": {
     "title": "Appraisal & Quote",
-    "desc": "Evaluate the device condition to generate a trade-in offer."
+    "desc": "Evaluate the device condition to generate a trade-in offer.",
+    "steps": {
+      "devices": "Devices",
+      "diagnostic": "Diagnostics",
+      "strategy": "Strategy",
+      "client": "Customer",
+      "pdf": "PDF Quote"
+    },
+    "nav": {
+      "back": "Back",
+      "next": "Next step"
+    },
+    "choice": {
+      "title": "Trade-in type",
+      "desc": "Is this an individual customer (1 device) or a business fleet (several devices)?",
+      "unit": "Single Trade-in",
+      "fleet": "Bulk Trade-in (Fleet)"
+    },
+    "device": {
+      "title": "Which device are you buying back?",
+      "desc": "Select the model.",
+      "category": "Device type",
+      "phone": "Phone",
+      "laptop": "PC"
+    },
+    "fleet": {
+      "title": "Goods (Batch)",
+      "desc": "Add phone lines for this fleet quote.",
+      "add_line": "Add Line"
+    },
+    "diag": {
+      "title": "Specifications & Diagnostics",
+      "desc": "Specify the device's specifications and condition.",
+      "imei": "IMEI",
+      "imei_placeholder": "15 digits",
+      "imei_hint": "Dial *#06# on the device to display it.",
+      "imei_length": "An IMEI has 15 digits ({{count}}/15).",
+      "imei_checksum": "This IMEI looks invalid (wrong check digit), please check it.",
+      "serial": "Serial number",
+      "serial_placeholder": "E.g. 5CG1234ABC",
+      "serial_hint": "Under the device, or in the system settings (\"About\" section).",
+      "capacity": "Storage",
+      "color": "Color",
+      "grade_title": "Overall Condition (Grade)"
+    },
+    "strategy": {
+      "analysing": "Market analysis in progress...",
+      "analysing_desc": "Our agents are scanning the web (BackMarket, EasyCash, Rebuy...) to find the best pricing strategy for your {{model}} ({{capacity}}).",
+      "analysing_desc_pc": "Our agents are scanning the web (Rebuy, Refurbed, AFB, Recommerce...) to find the best pricing strategy for your {{model}} ({{capacity}}).",
+      "title": "Strategy & Market Analysis",
+      "base_value": "The calculated base value for this {{model}} ({{capacity}}, {{color}}, Grade {{grade}}) is",
+      "base_value_pc": "The calculated base value for this {{model}} ({{capacity}}, Grade {{grade}}) is",
+      "live_sources": "Live market sources",
+      "resale_prices": "Observed resale prices (Back Market, CertiDeal, Recommerce)",
+      "resale_prices_pc": "Observed resale prices (Rebuy, Refurbed, AFB, Recommerce...)",
+      "server_unreachable": "Unable to reach the price server.",
+      "check_backend": "Check that the backend is running, then try again.",
+      "no_offers": "No offers found on the live market.",
+      "offers_failed": "No offers retrieved, all resellers failed:",
+      "no_resale": "No comparable resale price found — the margin cannot be estimated.",
+      "resale_failed": "No resale prices retrieved, all resellers failed:",
+      "margin_none": "Margin: —",
+      "margin": "Estimated margin: {{value}} €",
+      "safe": "Safe",
+      "safe_desc": "Minimal risk against depreciation.",
+      "market": "Market",
+      "market_desc": "Fair price based on current market rates.",
+      "aggressive": "Aggressive",
+      "aggressive_desc": "To be sure to win the trade-in.",
+      "forecast_title": "Depreciation Forecast (next 12 months)",
+      "ai_model": "AI model",
+      "estimate": "Estimate",
+      "your_offer": "Your offer"
+    },
+    "client": {
+      "title": "Customer Information",
+      "desc": "This information will appear on the PDF quote.",
+      "individual": "Individual",
+      "business": "Business",
+      "company": "Company",
+      "company_placeholder": "Company name",
+      "siret": "SIRET",
+      "siret_placeholder": "14 digits",
+      "siret_length": "A SIRET number has 14 digits ({{count}}/14).",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "contact_firstname": "Contact first name",
+      "contact_lastname": "Contact last name",
+      "email": "Email",
+      "email_placeholder": "customer@example.com",
+      "email_invalid": "Invalid email address.",
+      "phone": "Phone",
+      "address": "Address",
+      "address_placeholder": "Street address",
+      "postal_code": "Postcode",
+      "city": "City",
+      "notes": "Notes",
+      "notes_hint": "Visible to the customer on the quote.",
+      "notes_placeholder": "E.g. accessories included, original box, special conditions…",
+      "required": "Required fields to generate the quote."
+    },
+    "final": {
+      "ready": "Quote Ready!",
+      "ready_desc": "Preview the professional quote below.",
+      "open_pdf": "Open PDF",
+      "download": "Download",
+      "generating": "Generating...",
+      "generating_pdf": "Generating PDF..."
+    },
+    "decision": {
+      "title": "Customer decision",
+      "offer": "Trade-in offer of",
+      "refuse": "Decline quote",
+      "accept": "Accept quote",
+      "refuse_title": "Decline the quote?",
+      "refuse_desc": "Quote {{id}} will be deleted and you will start again from a blank quote. This cannot be undone.",
+      "delete": "Delete quote",
+      "payment_title": "Customer payment",
+      "payment_desc": "Choose how the customer is paid.",
+      "amount_to_pay": "Amount to pay",
+      "cash_unavailable": "Cash unavailable: a business cannot pay more than {{limit}} € in cash (French Monetary and Financial Code, art. L112-6).",
+      "save_error": "Unable to save the quote.",
+      "saving": "Saving…",
+      "confirm_payment": "Confirm payment",
+      "saved": "Trade-in recorded",
+      "saved_desc": "{{amount}} € paid by {{method}} · quote {{id}}",
+      "view_orders": "View in orders",
+      "new_quote": "New quote"
+    }
+  },
+  "quick": {
+    "title": "Quick lookup",
+    "desc": "Price a model in seconds, without creating a quote.",
+    "placeholder": "Model, storage… e.g. iPhone 13 128 GB",
+    "suggestions": "Matching models",
+    "device": "Device",
+    "get_price": "Get price",
+    "running": "Checking resellers…",
+    "running_desc": "If this model hasn't been priced this week, our agents browse the resellers' sites: allow about a minute.",
+    "offer": "Recommended buyback price",
+    "offer_market_one": "Average of {{count}} competitor offer",
+    "offer_market_other": "Average of {{count}} competitor offers",
+    "offer_estimate": "Catalog estimate: no offers found",
+    "resale": "Average resale",
+    "resale_hint_one": "{{count}} price found",
+    "resale_hint_other": "{{count}} prices found",
+    "margin": "Estimated margin",
+    "margin_hint": "Average resale − recommended buyback",
+    "no_resale": "No resale prices found",
+    "strategies": "By strategy",
+    "buyback_offers": "Competitor buyback offers",
+    "resale_offers": "Resale prices",
+    "none": "No prices found.",
+    "as_of": "Prices from {{date}}",
+    "recent": "Recent lookups",
+    "clear_recent": "Clear"
   },
   "users": {
     "title": "User Management",
@@ -119,6 +301,221 @@
     "edit_role": "Edit Role",
     "save": "Save",
     "access_denied": "Access Denied",
-    "access_denied_desc": "You do not have sufficient permissions to access this page."
+    "access_denied_desc": "You do not have sufficient permissions to access this page.",
+    "create_user": "Create a user",
+    "no_users": "No users found.",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "store": "Store",
+    "store_placeholder": "Store name",
+    "email_placeholder": "email@example.com"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "create": "Create",
+    "loading": "Loading…",
+    "error": "Error",
+    "network_error": "Network error",
+    "now": "Now",
+    "estimated_value": "Estimated value",
+    "optional": "Optional",
+    "optional_lower": "optional",
+    "search_model": "Search for a model...",
+    "no_model_found": "No model found for \"{{query}}\"",
+    "no_results_for": "No results for \"{{query}}\"",
+    "proposed_price": "Offered price",
+    "fleet_batch": "Fleet batch",
+    "type_unit": "Single",
+    "type_fleet": "Fleet",
+    "grade": "Grade {{grade}}",
+    "devices_one": "{{count}} device",
+    "devices_other": "{{count}} devices",
+    "orders_one": "{{count}} order",
+    "orders_other": "{{count}} orders",
+    "server_error": "Server error ({{status}})"
+  },
+  "orderStatus": {
+    "in_store": {
+      "label": "In store",
+      "description": "In stock at the store, awaiting shipment"
+    },
+    "shipped": {
+      "label": "Shipped",
+      "description": "In transit to the processing facility"
+    },
+    "received": {
+      "label": "Received",
+      "description": "Received by the processing facility"
+    },
+    "processing": {
+      "label": "Processing",
+      "description": "Inspection, data erasure and refurbishment"
+    },
+    "closed": {
+      "label": "Completed",
+      "description": "Processing complete, order finalised"
+    },
+    "quote_sent": {
+      "label": "Quote sent",
+      "description": "Quote in progress, not yet accepted"
+    }
+  },
+  "payment": {
+    "virement": "Bank transfer",
+    "especes": "Cash",
+    "bon_achat": "Store credit / gift card"
+  },
+  "roles": {
+    "admin": "Admin",
+    "manager": "Manager",
+    "employe": "Employee",
+    "pending": "Pending"
+  },
+  "repairs": {
+    "batterie": "Battery Replacement",
+    "ecran": "Screen Replacement",
+    "connecteurs": "Connector Cleaning",
+    "camera": "Camera Repair",
+    "boutons": "Button Replacement"
+  },
+  "grades": {
+    "A": "Like new",
+    "B": "Micro-scratches",
+    "C": "Visible scratches",
+    "D": "Broken"
+  },
+  "activities": {
+    "parcel_received": {
+      "title": "Parcel received",
+      "desc": "The parcel for quote #DEV-041 was scanned by the workshop.",
+      "time": "10 min ago",
+      "details": "Chronopost delivered the parcel. The packaging is intact. The device is awaiting appraisal."
+    },
+    "new_quote": {
+      "title": "New Quote",
+      "desc": "Quote created for an iPhone 14 Pro Max.",
+      "time": "1 hour ago",
+      "details": "Quote started by the customer at the in-store kiosk. Initial estimate: 650€."
+    },
+    "label_generated": {
+      "title": "Label generated",
+      "desc": "Shipping label sent to the customer (Mr Dupont).",
+      "time": "2 hours ago",
+      "details": "Colissimo label no. 8V123456789. The customer was notified by email with packing instructions."
+    },
+    "prices_updated": {
+      "title": "Market prices updated",
+      "desc": "Reference prices were synced from BackMarket.",
+      "time": "This morning",
+      "details": "125 Apple and Samsung models updated. Average change observed: -2%."
+    },
+    "payment_sent": {
+      "title": "Payment issued",
+      "desc": "450€ bank transfer initiated for quote #DEV-038.",
+      "time": "Yesterday",
+      "details": "Transfer order sent to the bank. The customer should receive the funds within 48 hours."
+    },
+    "issue_reported": {
+      "title": "Issue reported",
+      "desc": "Parcel damaged on arrival (#DEV-045).",
+      "time": "Yesterday",
+      "details": "A claim was filed with the carrier. A photo was added to the file."
+    }
+  },
+  "auth": {
+    "error": "Authentication error: {{message}}",
+    "loading": "Signing in..."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "desc": "Latest news and updates on your orders.",
+    "search": "Search notifications, quotes...",
+    "filter": "Filter",
+    "none_for": "No notifications found for \"{{query}}\""
+  },
+  "guest": {
+    "title": "Account pending",
+    "desc": "An administrator or manager must assign you a store and a role before you can access the application.",
+    "your_email": "Your email",
+    "refresh": "Check my access",
+    "logout": "Log out"
+  },
+  "orders": {
+    "search": "Search an order, customer, IMEI, shipment...",
+    "all": "All",
+    "loading": "Loading orders…",
+    "load_error": "Unable to load orders.",
+    "status_error": "Unable to update the status.",
+    "none": "No orders yet: accepted quotes will appear here.",
+    "none_status": "No \"{{status}}\" orders.",
+    "fleet_title": "B2B Fleet Trade-in",
+    "client": "Customer",
+    "devices": "Devices",
+    "identification": "Identification",
+    "tracking": "Logistics tracking",
+    "total": "Total",
+    "trade_offer": "Trade-in Offer",
+    "paid_by": "Paid by {{method}} on {{date}}",
+    "next_step": "Next step: {{description}}.",
+    "in_store_hint": "This order will be marked \"{{status}}\" when a shipment is created.",
+    "advance": "Move to \"{{status}}\"",
+    "imei_label": "IMEI:",
+    "serial_label": "Serial number:"
+  },
+  "shipments": {
+    "to_ship": "To ship",
+    "to_ship_desc": "Select the in-store orders to send to the processing facility.",
+    "select_all": "Select all ({{count}})",
+    "created": "Shipment {{id}} created to {{facility}}: {{orders}} moved to \"{{status}}\".",
+    "none_in_store": "No in-store orders to ship.",
+    "facility": "Processing facility",
+    "facility_placeholder": "E.g. 3stepIT",
+    "carrier": "Carrier",
+    "carrier_placeholder": "E.g. Colissimo",
+    "tracking_number": "Tracking number",
+    "tracking": "Tracking",
+    "none_selected": "No orders selected.",
+    "create": "Create shipment",
+    "create_error": "Unable to create the shipment.",
+    "history": "Shipments",
+    "history_desc": "Tracking of shipments to processing facilities.",
+    "created_on": "Created on {{date}}",
+    "received_on": "Received on {{date}}",
+    "show_orders": "Show orders",
+    "hide_orders": "Hide orders",
+    "mark_received": "Mark as received",
+    "receive_error": "Unable to update the shipment.",
+    "orders_not_found": "Orders not found.",
+    "loading": "Loading shipments…",
+    "load_error": "Unable to load shipments.",
+    "none": "No shipments yet."
+  },
+  "pdf": {
+    "shop_subtitle": "Paris store",
+    "shop_siret": "SIRET: {{siret}}",
+    "title": "TRADE-IN QUOTE",
+    "number": "No. {{id}}",
+    "date": "Date: {{date}}",
+    "type": "Type: {{type}}",
+    "type_fleet": "B2B batch",
+    "type_unit": "Single",
+    "client_info": "Customer Information",
+    "siret": "SIRET: {{siret}}",
+    "contact": "Contact: ",
+    "col_model": "Model",
+    "col_grade": "Grade",
+    "col_qty": "Quantity",
+    "col_unit_price": "Unit price",
+    "col_total": "Total",
+    "imei": "IMEI: {{imei}}",
+    "serial": "Serial number: {{serial}}",
+    "device_count": "No. of devices:",
+    "total": "Proposed Total",
+    "notes": "Notes",
+    "signature_1": "Date and customer signature,",
+    "signature_2": "preceded by the words \"Read and approved\"",
+    "footer": "This quote is valid for 15 days from its issue date. The final trade-in offer is subject to physical inspection of the device. To accept this quote, please return this document signed with the words \"Read and approved\"."
   }
 }
